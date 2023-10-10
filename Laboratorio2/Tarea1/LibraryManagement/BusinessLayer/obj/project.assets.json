@@ -505,19 +505,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jordi\\.nuget\\packages\\": {}
+    "C:\\Users\\RabanTRJO\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jordi\\source\\repos\\LibraryManagement\\BusinessLayer\\BusinessLayer.csproj",
+      "projectUniqueName": "C:\\Users\\RabanTRJO\\source\\repos\\PoeLaboratorio2Tarea1\\Laboratorio2\\Tarea1\\LibraryManagement\\BusinessLayer\\BusinessLayer.csproj",
       "projectName": "BusinessLayer",
-      "projectPath": "C:\\Users\\jordi\\source\\repos\\LibraryManagement\\BusinessLayer\\BusinessLayer.csproj",
-      "packagesPath": "C:\\Users\\jordi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jordi\\source\\repos\\LibraryManagement\\BusinessLayer\\obj\\",
+      "projectPath": "C:\\Users\\RabanTRJO\\source\\repos\\PoeLaboratorio2Tarea1\\Laboratorio2\\Tarea1\\LibraryManagement\\BusinessLayer\\BusinessLayer.csproj",
+      "packagesPath": "C:\\Users\\RabanTRJO\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\RabanTRJO\\source\\repos\\PoeLaboratorio2Tarea1\\Laboratorio2\\Tarea1\\LibraryManagement\\BusinessLayer\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\jordi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\RabanTRJO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -525,17 +530,18 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\jordi\\source\\repos\\LibraryManagement\\CommonLayer\\CommonLayer.csproj": {
-              "projectPath": "C:\\Users\\jordi\\source\\repos\\LibraryManagement\\CommonLayer\\CommonLayer.csproj"
+            "C:\\Users\\RabanTRJO\\source\\repos\\PoeLaboratorio2Tarea1\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj": {
+              "projectPath": "C:\\Users\\RabanTRJO\\source\\repos\\PoeLaboratorio2Tarea1\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj"
             },
-            "C:\\Users\\jordi\\source\\repos\\LibraryManagement\\DataLayer\\DataLayer.csproj": {
-              "projectPath": "C:\\Users\\jordi\\source\\repos\\LibraryManagement\\DataLayer\\DataLayer.csproj"
+            "C:\\Users\\RabanTRJO\\source\\repos\\PoeLaboratorio2Tarea1\\Laboratorio2\\Tarea1\\LibraryManagement\\DataLayer\\DataLayer.csproj": {
+              "projectPath": "C:\\Users\\RabanTRJO\\source\\repos\\PoeLaboratorio2Tarea1\\Laboratorio2\\Tarea1\\LibraryManagement\\DataLayer\\DataLayer.csproj"
             }
           }
         }
@@ -565,7 +571,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
