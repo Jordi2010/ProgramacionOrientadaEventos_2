@@ -12,19 +12,19 @@ namespace PresentationLayer.Validations
     {
         public ReturnValidator() 
         {
-            RuleFor(Return => Return.IdReturn)
+            RuleFor(reeturn => reeturn.IdReturn)
                .Cascade(CascadeMode.Stop)
                .NotEmpty().WithMessage("El ID no puede estar vacío.")
                .GreaterThan(0).WithMessage("El ID debe ser mayor que cero.");
 
-            RuleFor(Return => Return.IdLoan)
+            RuleFor(reeturn => reeturn.IdLoan)
                .NotEmpty().WithMessage("El ID no puede estar vacío.")
                .GreaterThan(0).WithMessage("El ID debe ser mayor que cero.");
 
-            RuleFor(Return => Return.EstimatedReturnDate)
+            RuleFor(reeturn => reeturn.EstimatedReturnDate)
                .NotEmpty().WithMessage("Ingrese una fecha válida.");
 
-            RuleFor(Return => Return.ActualReturnDate)
+            RuleFor(reeturn => reeturn.ActualReturnDate)
                 .NotEmpty().WithMessage("Ingrese una fecha válida.");
         }
     }

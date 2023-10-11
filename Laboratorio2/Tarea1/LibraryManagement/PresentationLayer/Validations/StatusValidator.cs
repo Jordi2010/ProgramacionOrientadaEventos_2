@@ -12,7 +12,7 @@ namespace PresentationLayer.Validations
     {
         public StatusValidator() 
         {
-            RuleFor(Status => Status.IdStatus)
+            RuleFor(status => status.IdStatus)
                .Cascade(CascadeMode.Stop)
                .NotEmpty().WithMessage("El ID no puede estar vacío.")
                .GreaterThan(0).WithMessage("El ID debe ser mayor que cero.");
