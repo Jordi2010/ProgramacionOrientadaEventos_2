@@ -1,15 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/UZQa0bG1M/4D2gu8JG1Q6kouL3Ctv1qwM0q8JSlFZgD1F+EVMuFUAc2Xs0BMdsE5QlIHvSk+ZBXVKyD29oqCw==",
+  "dgSpecHash": "njkdQWJeoexMVfN6A3uzH+83bM/vSLUYVye4QNbPP1piJmXoaKl3hjkvOVgwSzOvvYtgQHBW1pCu9PLI3ZaMRw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Javie\\source\\repos\\ProgramaciónOrientadaEventos\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj",
+  "projectFilePath": "C:\\Users\\RabanTRJO\\source\\repos\\Biblioteca\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema al leer el archivo de caché C:\\Users\\Javie\\source\\repos\\ProgramaciónOrientadaEventos\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
