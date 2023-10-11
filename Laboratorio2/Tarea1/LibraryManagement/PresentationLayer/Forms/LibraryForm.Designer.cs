@@ -36,6 +36,9 @@
             this.booksDataGridView = new System.Windows.Forms.DataGridView();
             this.adminBooksLabel = new System.Windows.Forms.Label();
             this.booksGroupBox = new System.Windows.Forms.GroupBox();
+            this.statusBookComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.authorBookComboBox = new System.Windows.Forms.ComboBox();
             this.saveBookButton = new System.Windows.Forms.Button();
             this.statusBookLabel = new System.Windows.Forms.Label();
             this.genreBookTextBox = new System.Windows.Forms.TextBox();
@@ -53,6 +56,10 @@
             this.loansDataGridView = new System.Windows.Forms.DataGridView();
             this.adminLoansLabel = new System.Windows.Forms.Label();
             this.loansGroupBox = new System.Windows.Forms.GroupBox();
+            this.estimatedReturnDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.loanDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.bookComboBox = new System.Windows.Forms.ComboBox();
             this.loanDateLabel = new System.Windows.Forms.Label();
             this.saveLoanButton = new System.Windows.Forms.Button();
             this.customerTextBox = new System.Windows.Forms.TextBox();
@@ -65,32 +72,26 @@
             this.returnsDataGridView = new System.Windows.Forms.DataGridView();
             this.adminReturnsLabel = new System.Windows.Forms.Label();
             this.returnsGroupBox = new System.Windows.Forms.GroupBox();
+            this.LoanComboBox = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.statusLoanComboBox = new System.Windows.Forms.ComboBox();
+            this.actualReturnDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.actualReturnDateLabel = new System.Windows.Forms.Label();
             this.saveReturnButton = new System.Windows.Forms.Button();
             this.loanLabel = new System.Windows.Forms.Label();
             this.AuthorTabPage = new System.Windows.Forms.TabPage();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.authorLastNameTextBox = new System.Windows.Forms.TextBox();
-            this.authorFirstNameTextBox = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.authorBookComboBox = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bookComboBox = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.loanDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.estimatedReturnDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.actualReturnDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.statusLoanComboBox = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.LoanComboBox = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.statusBookComboBox = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.authorLastNameTextBox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.authorFirstNameTextBox = new System.Windows.Forms.TextBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label6 = new System.Windows.Forms.Label();
             this.libraryTabControl.SuspendLayout();
             this.booksTabPage.SuspendLayout();
             this.booksButtonsGroupBox.SuspendLayout();
@@ -105,9 +106,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.returnsDataGridView)).BeginInit();
             this.returnsGroupBox.SuspendLayout();
             this.AuthorTabPage.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // libraryTabControl
@@ -207,6 +208,31 @@
             this.booksGroupBox.Size = new System.Drawing.Size(360, 428);
             this.booksGroupBox.TabIndex = 0;
             this.booksGroupBox.TabStop = false;
+            // 
+            // statusBookComboBox
+            // 
+            this.statusBookComboBox.FormattingEnabled = true;
+            this.statusBookComboBox.Location = new System.Drawing.Point(86, 232);
+            this.statusBookComboBox.Name = "statusBookComboBox";
+            this.statusBookComboBox.Size = new System.Drawing.Size(256, 25);
+            this.statusBookComboBox.TabIndex = 16;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 17);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Autor:";
+            // 
+            // authorBookComboBox
+            // 
+            this.authorBookComboBox.FormattingEnabled = true;
+            this.authorBookComboBox.Location = new System.Drawing.Point(86, 65);
+            this.authorBookComboBox.Name = "authorBookComboBox";
+            this.authorBookComboBox.Size = new System.Drawing.Size(256, 25);
+            this.authorBookComboBox.TabIndex = 14;
             // 
             // saveBookButton
             // 
@@ -380,6 +406,38 @@
             this.loansGroupBox.TabIndex = 4;
             this.loansGroupBox.TabStop = false;
             // 
+            // estimatedReturnDateTimePicker
+            // 
+            this.estimatedReturnDateTimePicker.Location = new System.Drawing.Point(6, 264);
+            this.estimatedReturnDateTimePicker.Name = "estimatedReturnDateTimePicker";
+            this.estimatedReturnDateTimePicker.Size = new System.Drawing.Size(256, 25);
+            this.estimatedReturnDateTimePicker.TabIndex = 20;
+            // 
+            // loanDateTimePicker
+            // 
+            this.loanDateTimePicker.Location = new System.Drawing.Point(6, 182);
+            this.loanDateTimePicker.Name = "loanDateTimePicker";
+            this.loanDateTimePicker.Size = new System.Drawing.Size(256, 25);
+            this.loanDateTimePicker.TabIndex = 19;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(6, 231);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(213, 20);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Fecha de devolucion esperada:";
+            // 
+            // bookComboBox
+            // 
+            this.bookComboBox.FormattingEnabled = true;
+            this.bookComboBox.Location = new System.Drawing.Point(80, 38);
+            this.bookComboBox.Name = "bookComboBox";
+            this.bookComboBox.Size = new System.Drawing.Size(256, 25);
+            this.bookComboBox.TabIndex = 16;
+            // 
             // loanDateLabel
             // 
             this.loanDateLabel.AutoSize = true;
@@ -509,6 +567,39 @@
             this.returnsGroupBox.TabIndex = 8;
             this.returnsGroupBox.TabStop = false;
             // 
+            // LoanComboBox
+            // 
+            this.LoanComboBox.FormattingEnabled = true;
+            this.LoanComboBox.Location = new System.Drawing.Point(92, 34);
+            this.LoanComboBox.Name = "LoanComboBox";
+            this.LoanComboBox.Size = new System.Drawing.Size(255, 25);
+            this.LoanComboBox.TabIndex = 19;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(6, 175);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(142, 20);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Estado de prestamo";
+            // 
+            // statusLoanComboBox
+            // 
+            this.statusLoanComboBox.FormattingEnabled = true;
+            this.statusLoanComboBox.Location = new System.Drawing.Point(6, 212);
+            this.statusLoanComboBox.Name = "statusLoanComboBox";
+            this.statusLoanComboBox.Size = new System.Drawing.Size(256, 25);
+            this.statusLoanComboBox.TabIndex = 17;
+            // 
+            // actualReturnDateTimePicker
+            // 
+            this.actualReturnDateTimePicker.Location = new System.Drawing.Point(6, 125);
+            this.actualReturnDateTimePicker.Name = "actualReturnDateTimePicker";
+            this.actualReturnDateTimePicker.Size = new System.Drawing.Size(255, 25);
+            this.actualReturnDateTimePicker.TabIndex = 16;
+            // 
             // actualReturnDateLabel
             // 
             this.actualReturnDateLabel.AutoSize = true;
@@ -541,6 +632,7 @@
             // 
             // AuthorTabPage
             // 
+            this.AuthorTabPage.Controls.Add(this.label6);
             this.AuthorTabPage.Controls.Add(this.groupBox2);
             this.AuthorTabPage.Controls.Add(this.dataGridView1);
             this.AuthorTabPage.Controls.Add(this.groupBox1);
@@ -551,65 +643,6 @@
             this.AuthorTabPage.TabIndex = 3;
             this.AuthorTabPage.Text = "Autores";
             this.AuthorTabPage.UseVisualStyleBackColor = true;
-            // 
-            // authorLastNameTextBox
-            // 
-            this.authorLastNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.authorLastNameTextBox.Location = new System.Drawing.Point(77, 93);
-            this.authorLastNameTextBox.Name = "authorLastNameTextBox";
-            this.authorLastNameTextBox.PlaceholderText = "Glukhovsky";
-            this.authorLastNameTextBox.Size = new System.Drawing.Size(256, 25);
-            this.authorLastNameTextBox.TabIndex = 15;
-            // 
-            // authorFirstNameTextBox
-            // 
-            this.authorFirstNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.authorFirstNameTextBox.Location = new System.Drawing.Point(77, 35);
-            this.authorFirstNameTextBox.Name = "authorFirstNameTextBox";
-            this.authorFirstNameTextBox.PlaceholderText = "Dmitry";
-            this.authorFirstNameTextBox.Size = new System.Drawing.Size(256, 25);
-            this.authorFirstNameTextBox.TabIndex = 14;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.authorLastNameTextBox);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.authorFirstNameTextBox);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(465, 50);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(360, 329);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(132, 278);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 32);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // authorBookComboBox
-            // 
-            this.authorBookComboBox.FormattingEnabled = true;
-            this.authorBookComboBox.Location = new System.Drawing.Point(86, 65);
-            this.authorBookComboBox.Name = "authorBookComboBox";
-            this.authorBookComboBox.Size = new System.Drawing.Size(256, 25);
-            this.authorBookComboBox.TabIndex = 14;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 73);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 17);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Autor:";
             // 
             // groupBox2
             // 
@@ -650,79 +683,19 @@
             this.dataGridView1.Size = new System.Drawing.Size(424, 329);
             this.dataGridView1.TabIndex = 4;
             // 
-            // bookComboBox
+            // groupBox1
             // 
-            this.bookComboBox.FormattingEnabled = true;
-            this.bookComboBox.Location = new System.Drawing.Point(80, 38);
-            this.bookComboBox.Name = "bookComboBox";
-            this.bookComboBox.Size = new System.Drawing.Size(256, 25);
-            this.bookComboBox.TabIndex = 16;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(6, 231);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(213, 20);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Fecha de devolucion esperada:";
-            // 
-            // loanDateTimePicker
-            // 
-            this.loanDateTimePicker.Location = new System.Drawing.Point(6, 182);
-            this.loanDateTimePicker.Name = "loanDateTimePicker";
-            this.loanDateTimePicker.Size = new System.Drawing.Size(256, 25);
-            this.loanDateTimePicker.TabIndex = 19;
-            // 
-            // estimatedReturnDateTimePicker
-            // 
-            this.estimatedReturnDateTimePicker.Location = new System.Drawing.Point(6, 264);
-            this.estimatedReturnDateTimePicker.Name = "estimatedReturnDateTimePicker";
-            this.estimatedReturnDateTimePicker.Size = new System.Drawing.Size(256, 25);
-            this.estimatedReturnDateTimePicker.TabIndex = 20;
-            // 
-            // actualReturnDateTimePicker
-            // 
-            this.actualReturnDateTimePicker.Location = new System.Drawing.Point(6, 125);
-            this.actualReturnDateTimePicker.Name = "actualReturnDateTimePicker";
-            this.actualReturnDateTimePicker.Size = new System.Drawing.Size(255, 25);
-            this.actualReturnDateTimePicker.TabIndex = 16;
-            // 
-            // statusLoanComboBox
-            // 
-            this.statusLoanComboBox.FormattingEnabled = true;
-            this.statusLoanComboBox.Location = new System.Drawing.Point(6, 212);
-            this.statusLoanComboBox.Name = "statusLoanComboBox";
-            this.statusLoanComboBox.Size = new System.Drawing.Size(256, 25);
-            this.statusLoanComboBox.TabIndex = 17;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(6, 175);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 20);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Estado de prestamo";
-            // 
-            // LoanComboBox
-            // 
-            this.LoanComboBox.FormattingEnabled = true;
-            this.LoanComboBox.Location = new System.Drawing.Point(92, 34);
-            this.LoanComboBox.Name = "LoanComboBox";
-            this.LoanComboBox.Size = new System.Drawing.Size(255, 25);
-            this.LoanComboBox.TabIndex = 19;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(5, 37);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 17);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Nombre";
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.authorLastNameTextBox);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.authorFirstNameTextBox);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox1.Location = new System.Drawing.Point(465, 50);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(360, 329);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
             // 
             // label5
             // 
@@ -733,13 +706,52 @@
             this.label5.TabIndex = 17;
             this.label5.Text = "Apellido";
             // 
-            // statusBookComboBox
+            // label4
             // 
-            this.statusBookComboBox.FormattingEnabled = true;
-            this.statusBookComboBox.Location = new System.Drawing.Point(86, 232);
-            this.statusBookComboBox.Name = "statusBookComboBox";
-            this.statusBookComboBox.Size = new System.Drawing.Size(256, 25);
-            this.statusBookComboBox.TabIndex = 16;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(5, 37);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 17);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Nombre";
+            // 
+            // authorLastNameTextBox
+            // 
+            this.authorLastNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.authorLastNameTextBox.Location = new System.Drawing.Point(77, 93);
+            this.authorLastNameTextBox.Name = "authorLastNameTextBox";
+            this.authorLastNameTextBox.PlaceholderText = "Glukhovsky";
+            this.authorLastNameTextBox.Size = new System.Drawing.Size(256, 25);
+            this.authorLastNameTextBox.TabIndex = 15;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(132, 278);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 32);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Guardar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // authorFirstNameTextBox
+            // 
+            this.authorFirstNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.authorFirstNameTextBox.Location = new System.Drawing.Point(77, 35);
+            this.authorFirstNameTextBox.Name = "authorFirstNameTextBox";
+            this.authorFirstNameTextBox.PlaceholderText = "Dmitry";
+            this.authorFirstNameTextBox.Size = new System.Drawing.Size(256, 25);
+            this.authorFirstNameTextBox.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(286, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(211, 21);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Administración de autores";
             // 
             // LibraryForm
             // 
@@ -770,10 +782,11 @@
             this.returnsGroupBox.ResumeLayout(false);
             this.returnsGroupBox.PerformLayout();
             this.AuthorTabPage.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.AuthorTabPage.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -843,5 +856,6 @@
         private DateTimePicker actualReturnDateTimePicker;
         private Label label5;
         private Label label4;
+        private Label label6;
     }
 }
