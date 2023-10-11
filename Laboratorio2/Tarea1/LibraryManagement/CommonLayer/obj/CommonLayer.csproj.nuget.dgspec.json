@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jordi\\source\\repos\\LibraryManagement\\CommonLayer\\CommonLayer.csproj": {}
+    "C:\\Users\\Javie\\source\\repos\\ProgramaciónOrientadaEventos\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jordi\\source\\repos\\LibraryManagement\\CommonLayer\\CommonLayer.csproj": {
+    "C:\\Users\\Javie\\source\\repos\\ProgramaciónOrientadaEventos\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jordi\\source\\repos\\LibraryManagement\\CommonLayer\\CommonLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Javie\\source\\repos\\ProgramaciónOrientadaEventos\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj",
         "projectName": "CommonLayer",
-        "projectPath": "C:\\Users\\jordi\\source\\repos\\LibraryManagement\\CommonLayer\\CommonLayer.csproj",
-        "packagesPath": "C:\\Users\\jordi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jordi\\source\\repos\\LibraryManagement\\CommonLayer\\obj\\",
+        "projectPath": "C:\\Users\\Javie\\source\\repos\\ProgramaciónOrientadaEventos\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj",
+        "packagesPath": "C:\\Users\\Javie\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Javie\\source\\repos\\ProgramaciónOrientadaEventos\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jordi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Javie\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
