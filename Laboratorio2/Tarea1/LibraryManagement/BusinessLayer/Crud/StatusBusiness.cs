@@ -11,5 +11,11 @@ namespace BusinessLayer.Crud
 {
     public class StatusBusiness
     {
+        StatusData statusData = new StatusData(); 
+
+        public DataTable GetStatuses()
+        {
+            return statusData.GetAllStatuses(); 
+        }
     }
 }

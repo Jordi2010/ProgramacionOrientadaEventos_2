@@ -11,5 +11,29 @@ namespace BusinessLayer.Crud
 {
     public class BookBusiness
     {
+        BookData bookData = new BookData();
+
+        public DataTable GetBook()
+        {
+            DataTable booksTable = new DataTable();
+
+            booksTable = bookData.GetAllBook();
+
+            return booksTable;
+        }
+
+        public void AddBook(Book book)
+        {
+            bookData.AddBook(book);
+        }
+
+        public void UpdateBook(Book book)
+        {
+            bookData.UpdateBook(book);
+        }
+        public void DeleteBook(Book book)
+        {
+            bookData.DeleteBook(book);
+        }
     }
 }

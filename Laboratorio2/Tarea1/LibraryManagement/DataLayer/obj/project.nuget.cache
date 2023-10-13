@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tIkD12g0kcYDGy9yPPCLiUPE80JPu4W9XcfSEUTsYfHNhze9xza+V76DTW7QpCVioW8zP4xC1ZpbobRDPg0kTg==",
+  "dgSpecHash": "PfeAq3//ya5E/hb3vCzMSsAwC98h8TJ4McxuRpGg5gMzxA2OOFxRJV4Huiv1fHkzJlpUyy5mK3udHDnt9J96MA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\RabanTRJO\\source\\repos\\Biblioteca\\Laboratorio2\\Tarea1\\LibraryManagement\\DataLayer\\DataLayer.csproj",
+  "projectFilePath": "C:\\Users\\RabanTRJO\\source\\repos\\POElab\\Laboratorio2\\Tarea1\\LibraryManagement\\DataLayer\\DataLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\RabanTRJO\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\RabanTRJO\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

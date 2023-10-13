@@ -11,5 +11,30 @@ namespace BusinessLayer.Crud
 {
     public class AuthorBusiness
     {
+        AuthorData authorData = new AuthorData();
+        public DataTable GetAuthor()
+        {
+            DataTable authorTable = new DataTable();
+
+            AuthorData authorData = new AuthorData();
+            authorTable = authorData.GetAllAutores();
+            
+            return authorTable;
+        }
+
+        public void AddAuthor(Author author)
+        {
+            authorData.AddAuthor(author);
+        }
+        public void UpdateAuthor(Author author)
+        {
+            authorData.UpdateAuthor(author);
+        }
+
+        public void DeleteAuthor(Author author)
+        {
+            authorData.DeleteAuthor(author);
+        }
+
     }
 }

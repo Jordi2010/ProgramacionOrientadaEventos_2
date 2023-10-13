@@ -10,21 +10,22 @@ namespace DataLayer.Data
 {
     public class Connection
     {
-        SqlConnection _connection = new SqlConnection( /*la conexion va aqui*/ );
+        private SqlConnection _connection = new SqlConnection(@"aqui la coonexion");
 
-         public SqlConnection OpenConnection()
+        public SqlConnection OpenConnection()
         {
-            if (_connection.State == ConnectionState.Closed)  
-            _connection.Open();
+            if (_connection.State == ConnectionState.Closed)
+                _connection.Open();
+
             return _connection;
         }
 
         public SqlConnection CloseConnection()
         {
-            if(_connection.State == ConnectionState.Open)
+            if (_connection.State == ConnectionState.Open)
                 _connection.Close();
+
             return _connection;
         }
-
     }
 }
