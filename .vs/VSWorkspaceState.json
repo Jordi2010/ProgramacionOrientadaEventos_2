@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Laboratorio2",
+    "\\Laboratorio2\\Tarea1",
+    "\\Laboratorio2\\Tarea1\\LibraryManagement"
   ],
-  "SelectedNode": "\\C:\\Users\\RabanTRJO\\source\\repos\\POElab",
+  "SelectedNode": "\\Laboratorio2\\Tarea1\\LibraryManagement\\LibraryManagement.sln",
   "PreviewInSolutionExplorer": false
 }

@@ -12,10 +12,6 @@ namespace PresentationLayer.Validations
     {
         public BookValidator() 
         {
-            RuleFor(book => book.IdBook)
-                .Cascade(CascadeMode.Stop)
-                .NotEmpty().WithMessage("El ID no puede estar vacío.")
-                .GreaterThan(0).WithMessage("El ID debe ser mayor que cero.");
             
             RuleFor(book => book.IdAuthor).NotEmpty()
                 .NotEmpty().WithMessage("El ID no puede estar vacío.")

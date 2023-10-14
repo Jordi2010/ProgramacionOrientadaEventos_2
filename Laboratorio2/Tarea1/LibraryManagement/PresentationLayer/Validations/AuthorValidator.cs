@@ -12,11 +12,6 @@ namespace PresentationLayer.Validations
     {
         public AuthorValidator() 
         {
-            RuleFor(author => author.IdAuthor)
-                .Cascade(CascadeMode.Stop)
-                .NotEmpty().WithMessage("El ID no puede estar vacío.")
-                .GreaterThan(0).WithMessage("El ID debe ser mayor que cero.");
-
             RuleFor(author => author.FirstName).NotEmpty()
                 .WithMessage("El nombre no puede estar vacío.");
 

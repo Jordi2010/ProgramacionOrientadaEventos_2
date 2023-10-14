@@ -19,7 +19,7 @@ namespace DataLayer.Data
         public DataTable GetAllStatuses()
         {
             _sqlCommand.Connection = _connection.OpenConnection();
-            _sqlCommand.CommandText = "SELECT * FROM Estados";
+            _sqlCommand.CommandText = "SELECT * FROM estadoLibro";
             _sqlCommand.CommandType = CommandType.Text;
 
             _readerRows = _sqlCommand.ExecuteReader();

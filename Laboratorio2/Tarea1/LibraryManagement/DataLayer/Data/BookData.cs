@@ -19,7 +19,9 @@ namespace DataLayer.Data
         public DataTable GetAllBook()
         {
             _sqlCommand.Connection = _connection.OpenConnection();
-            _sqlCommand.CommandText = "SELECT * FROM Libros";
+            _sqlCommand.CommandText = "SELECT l.idLibro, l.editorialLibro, l.nombreLibro, l.isbnLibro, l.generoLibro, a.nombre, s.estadoLibro, l.idAutor, l.idestadoLibro " +
+                "FROM libros as l inner join autores as a on l.idAutor = a.idAutor " +
+                "inner join estadoLibro as s on l.idestadoLibro = s.idestadoLibro";
             _sqlCommand.CommandType = CommandType.Text;
 
             _readerRows = _sqlCommand.ExecuteReader();
@@ -33,14 +35,17 @@ namespace DataLayer.Data
         public void AddBook(Book book)
         {
             _sqlCommand.Connection = _connection.OpenConnection();
-            _sqlCommand.CommandText = "INSERT INTO Libros ( Editorial, Titulo, Isbn, Genero) " +
-                                      "VALUES ( @Publisher, @Title, @Isbn, @Genre)";
+            _sqlCommand.CommandText = "INSERT INTO libros (editorialLibro, nombreLibro, isbnLibro, generoLibro, idAutor, idestadoLibro) " +
+                                      "VALUES ( @Publisher, @Title, @Isbn, @Genre, @idAutor,@idestadoLibro)";
             _sqlCommand.CommandType = CommandType.Text;
 
             _sqlCommand.Parameters.AddWithValue("@Publisher", book.Publisher);
             _sqlCommand.Parameters.AddWithValue("@Title", book.Title);
             _sqlCommand.Parameters.AddWithValue("@Isbn", book.Isbn);
             _sqlCommand.Parameters.AddWithValue("@Genre", book.Genre);
+
+            _sqlCommand.Parameters.AddWithValue("@idAutor", book.IdAuthor);
+            _sqlCommand.Parameters.AddWithValue("@idestadoLibro", book.IdStatus);
 
             _sqlCommand.ExecuteNonQuery();
             _sqlCommand.Parameters.Clear();
@@ -49,9 +54,7 @@ namespace DataLayer.Data
         public void UpdateBook(Book book)
         {
             _sqlCommand.Connection = _connection.OpenConnection();
-            _sqlCommand.CommandText = "UPDATE Libros " +
-                                      "SET Editorial = @Publisher, Titulo = @Title, Isbn = @Isbn, Genero = @Genre, id_autor = @IdAuthor, id_estado = @IdStatus " +
-                                      "WHERE id_libro = @IdBook";
+            _sqlCommand.CommandText = "UPDATE libros SET editorialLibro = @Publisher, nombreLibro = @Title, isbnLibro = @Isbn, generoLibro = @Genre, idAutor = @IdAuthor, idestadoLibro = @IdStatus WHERE idLibro = @IdBook";
             _sqlCommand.CommandType = CommandType.Text;
 
             _sqlCommand.Parameters.AddWithValue("@Publisher", book.Publisher);
@@ -69,7 +72,7 @@ namespace DataLayer.Data
         public void DeleteBook(Book book)
         {
             _sqlCommand.Connection = _connection.OpenConnection();
-            _sqlCommand.CommandText = "DELETE FROM Libros WHERE id_libro = @Id";
+            _sqlCommand.CommandText = "DELETE FROM Libros WHERE idLibro = @Id";
             _sqlCommand.CommandType = CommandType.Text;
 
             _sqlCommand.Parameters.AddWithValue("@Id", book.IdBook);

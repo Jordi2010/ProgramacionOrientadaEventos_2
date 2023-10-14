@@ -45,8 +45,8 @@ namespace DataLayer.Data
         public void UpdateAuthor(Author author)
         {
             _sqlCommand.Connection = _connection.OpenConnection();
-            _sqlCommand.CommandText = "UPDATE Autores "
-                                    + "SET Nombre = @Nombre, Apellido = @Apellido WHERE id_autor = @IdAutor";
+            _sqlCommand.CommandText = "UPDATE autores "
+                                    + "SET nombre = @Nombre, apellido = @Apellido WHERE idAutor = @IdAutor";
             _sqlCommand.CommandType = CommandType.Text;
 
             _sqlCommand.Parameters.AddWithValue("@Nombre", author.FirstName);
@@ -60,7 +60,7 @@ namespace DataLayer.Data
         public void DeleteAuthor(Author author)
         {
             _sqlCommand.Connection = _connection.OpenConnection();
-            _sqlCommand.CommandText = "DELETE FROM Autores WHERE id_autor = @IdAutor";
+            _sqlCommand.CommandText = "DELETE FROM Autores WHERE idAutor = @IdAutor";
             _sqlCommand.CommandType = CommandType.Text;
 
             _sqlCommand.Parameters.AddWithValue("@IdAutor", author.IdAuthor);
