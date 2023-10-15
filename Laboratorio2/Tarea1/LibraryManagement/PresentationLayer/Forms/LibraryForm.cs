@@ -27,6 +27,12 @@ namespace PresentationLayer.Forms
             LoadAutoresComboBoxData();
             LoadStatusComboBoxData();
 
+            LoadLoanData();
+            LoadReturnData();
+            LoadBookComboBoxData();
+            LoadLoanComboBoxData();
+            statusLoanCoamboBoxData();
+
             if (booksDataGridView.Columns.Contains("idestadoLibro"))
                 booksDataGridView.Columns["idestadoLibro"].Visible = false;
 
@@ -53,6 +59,40 @@ namespace PresentationLayer.Forms
         }
 
 
+        private void LoadLoanData()
+        {
+            LoanBusiness LoanBusiness = new LoanBusiness();
+            loansDataGridView.DataSource = LoanBusiness.GetLoan();
+        }
+        private void LoadReturnData()
+        {
+            ReturnBusiness ReturnBusiness = new ReturnBusiness();
+            returnsDataGridView.DataSource = ReturnBusiness.GetReturn();
+        }
+
+        private void LoadBookComboBoxData()
+        {
+            StatusBusiness statusBusiness = new StatusBusiness();
+            bookComboBox.DataSource = statusBusiness.GetStatuses();
+            bookComboBox.DisplayMember = "Titulo";
+            bookComboBox.ValueMember = "id_libro";
+        }
+
+        private void LoadLoanComboBoxData()
+        {
+            StatusBusiness statusBusiness = new StatusBusiness();
+            LoanComboBox.DataSource = statusBusiness.GetStatuses();
+            LoanComboBox.DisplayMember = "Prestamo";
+            LoanComboBox.ValueMember = "idPrestamo";
+        }
+
+        private void statusLoanCoamboBoxData()
+        {
+            StatusBusiness statusBusiness = new StatusBusiness();
+            statusLoanComboBox.DataSource = statusBusiness.GetStatuses();
+            statusLoanComboBox.DisplayMember = "EstadoLibro";
+            statusLoanComboBox.ValueMember = "idestadoPrestamo";
+        }
 
 
 
@@ -236,6 +276,137 @@ namespace PresentationLayer.Forms
 
         #endregion
 
-       
+        private void saveLoanButton_Click(object sender, EventArgs e)
+        {
+            LoanBusiness loanBusiness = new LoanBusiness();
+            Loan loan = new Loan
+            {
+
+                IdBook = Convert.ToInt32(bookComboBox.SelectedValue),
+                Customer = customerTextBox.Text,
+                LoanDate = loanDateTimePicker.Text,
+
+            };
+            if (isEditMode)
+            {
+                loan.IdBook = int.Parse(loansDataGridView.CurrentRow.Cells["idPrestamo"].Value.ToString());
+                loanBusiness.UpdateLoan(loan);
+                isEditMode = false;
+            }
+            else
+            {
+                loanBusiness.AddLoan(loan);
+            }
+
+
+            LoadLoanData();
+          
+        }
+
+        private void editLoanButton_Click(object sender, EventArgs e)
+        {
+
+            if (loansDataGridView.SelectedRows.Count > 0)
+            {
+                customerTextBox.Text = loansDataGridView.CurrentRow.Cells["clientePrestamo"].Value.ToString();
+                loanDateTimePicker.Text = loansDataGridView.CurrentRow.Cells["fechaPrestamo"].Value.ToString();
+                statusBookComboBox.SelectedValue = loansDataGridView.CurrentRow.Cells["IdBook"].Value;
+
+                isEditMode = true;
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar una fila para editar");
+            }
+        }
+
+        private void deleteLoanButton_Click(object sender, EventArgs e)
+        {
+            if (loansDataGridView.SelectedRows.Count > 0)
+            {
+                int loanId = int.Parse(loansDataGridView.CurrentRow.Cells[0].Value.ToString());
+
+                LoanBusiness loanBusiness = new LoanBusiness();
+                Loan loan = new Loan();
+
+                loan.IdLoan = loanId;
+
+
+                loanBusiness.DeleteLoan(loan);
+
+                LoadLoanData();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar una fila antes de eliminar");
+            }
+        }
+        //trabajo devolucion 
+
+        private void saveReturnButton_Click(object sender, EventArgs e)
+        {
+
+            ReturnBusiness returnBusiness = new ReturnBusiness();
+            Return Return = new Return
+            {
+
+                IdLoan = Convert.ToInt32(LoanComboBox.SelectedValue),
+                ActualReturnDate = actualReturnDateTimePicker.Text,
+
+
+            };
+            if (isEditMode)
+            {
+                Return.IdReturn = int.Parse(returnsDataGridView.CurrentRow.Cells["idDevoluciones"].Value.ToString());
+                returnBusiness.UpdateReturn(Return);
+                isEditMode = false;
+            }
+            else
+            {
+                returnBusiness.AddReturn(Return);
+            }
+
+
+            LoadReturnData();
+            
+        }
+
+        private void editReturnButton_Click(object sender, EventArgs e)
+        {
+
+            if (returnsDataGridView.SelectedRows.Count > 0)
+            {
+                actualReturnDateTimePicker.Text = returnsDataGridView.CurrentRow.Cells["fechaDevolucionReal"].Value.ToString();
+                LoanComboBox.SelectedValue = loansDataGridView.CurrentRow.Cells["idPrestamo"].Value;
+
+                isEditMode = true;
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar una fila para editar");
+            }
+        }
+
+        private void deleteReturnButton_Click(object sender, EventArgs e)
+        {
+            if (returnsDataGridView.SelectedRows.Count > 0)
+            {
+                int returnId = int.Parse(returnsDataGridView.CurrentRow.Cells[0].Value.ToString());
+
+                ReturnBusiness returnBusiness = new ReturnBusiness();
+                Return Return = new Return();
+
+                Return.IdReturn = returnId;
+
+
+                returnBusiness.DeleteReturn(Return);
+
+                LoadLoanData();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar una fila antes de eliminar");
+            }
+        }
     }
 }
