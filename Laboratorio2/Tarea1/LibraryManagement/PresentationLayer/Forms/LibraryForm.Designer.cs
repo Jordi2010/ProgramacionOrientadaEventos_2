@@ -72,8 +72,6 @@
             this.returnsDataGridView = new System.Windows.Forms.DataGridView();
             this.adminReturnsLabel = new System.Windows.Forms.Label();
             this.returnsGroupBox = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.returnBookComboBox = new System.Windows.Forms.ComboBox();
             this.LoanComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.statusLoanComboBox = new System.Windows.Forms.ComboBox();
@@ -571,8 +569,6 @@
             // 
             // returnsGroupBox
             // 
-            this.returnsGroupBox.Controls.Add(this.label7);
-            this.returnsGroupBox.Controls.Add(this.returnBookComboBox);
             this.returnsGroupBox.Controls.Add(this.LoanComboBox);
             this.returnsGroupBox.Controls.Add(this.label3);
             this.returnsGroupBox.Controls.Add(this.statusLoanComboBox);
@@ -586,25 +582,6 @@
             this.returnsGroupBox.Size = new System.Drawing.Size(360, 428);
             this.returnsGroupBox.TabIndex = 8;
             this.returnsGroupBox.TabStop = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(6, 256);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 20);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "Estado del libro";
-            // 
-            // returnBookComboBox
-            // 
-            this.returnBookComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.returnBookComboBox.FormattingEnabled = true;
-            this.returnBookComboBox.Location = new System.Drawing.Point(6, 293);
-            this.returnBookComboBox.Name = "returnBookComboBox";
-            this.returnBookComboBox.Size = new System.Drawing.Size(256, 25);
-            this.returnBookComboBox.TabIndex = 20;
             // 
             // LoanComboBox
             // 
@@ -903,7 +880,5 @@
         private Label label4;
         private Label label6;
         private Button UpdateAuthorButton;
-        private Label label7;
-        private ComboBox returnBookComboBox;
     }
 }

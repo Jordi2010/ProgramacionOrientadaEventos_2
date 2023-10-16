@@ -42,7 +42,6 @@ namespace PresentationLayer.Forms
             LoadBookComboBoxData();
             LoadLoanComboBoxData();
             statusLoanCoamboBoxData();
-            loadreturnBookComboBox();
 
 
         }
@@ -90,13 +89,7 @@ namespace PresentationLayer.Forms
             LoanComboBox.DisplayMember = "clientePrestamo";
             LoanComboBox.ValueMember = "idPrestamo";
         }
-        private void loadreturnBookComboBox()
-        {
-            StatusBusiness statusBusiness = new StatusBusiness();
-            returnBookComboBox.DataSource = statusBusiness.GetStatuses();
-            returnBookComboBox.DisplayMember = "EstadoLibro";
-            returnBookComboBox.ValueMember = "idestadoLibro";
-        }
+       
 
         private void statusLoanCoamboBoxData()
         {
@@ -387,9 +380,7 @@ namespace PresentationLayer.Forms
             LoanBusiness loanBussines = new LoanBusiness();
             Loan loan = new Loan();
 
-            BookBusiness bookBussines = new BookBusiness(); 
-            Book book = new Book();
-
+           
             Return.IdLoan = Convert.ToInt32(LoanComboBox.SelectedValue);
             Return.ActualReturnDate = actualReturnDateTimePicker.Value;
             if (isEditMode)
@@ -405,8 +396,6 @@ namespace PresentationLayer.Forms
                 loanBussines.UpdateStatusLoan(loan);
                 returnBusiness.AddReturn(Return);
 
-                book.IdStatus = Convert.ToInt32(returnBookComboBox.SelectedValue);
-                bookBusiness.UpdateBookStatus(book);
             }
 
             LoadAllData();
