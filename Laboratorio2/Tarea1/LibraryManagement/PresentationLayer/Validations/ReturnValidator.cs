@@ -21,8 +21,6 @@ namespace PresentationLayer.Validations
                .NotEmpty().WithMessage("El ID no puede estar vacío.")
                .GreaterThan(0).WithMessage("El ID debe ser mayor que cero.");
 
-            RuleFor(reeturn => reeturn.EstimatedReturnDate)
-               .NotEmpty().WithMessage("Ingrese una fecha válida.");
 
             RuleFor(reeturn => reeturn.ActualReturnDate)
                 .NotEmpty().WithMessage("Ingrese una fecha válida.");

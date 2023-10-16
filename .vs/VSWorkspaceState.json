@@ -3,8 +3,10 @@
     "",
     "\\Laboratorio2",
     "\\Laboratorio2\\Tarea1",
-    "\\Laboratorio2\\Tarea1\\LibraryManagement"
+    "\\Laboratorio2\\Tarea1\\LibraryManagement",
+    "\\Laboratorio2\\Tarea1\\LibraryManagement\\PresentationLayer",
+    "\\Laboratorio2\\Tarea1\\LibraryManagement\\PresentationLayer\\Forms"
   ],
-  "SelectedNode": "\\Laboratorio2\\Tarea1\\LibraryManagement\\LibraryManagement.sln",
+  "SelectedNode": "\\Laboratorio2\\Tarea1\\LibraryManagement\\PresentationLayer\\Forms\\LibraryForm.cs",
   "PreviewInSolutionExplorer": false
 }

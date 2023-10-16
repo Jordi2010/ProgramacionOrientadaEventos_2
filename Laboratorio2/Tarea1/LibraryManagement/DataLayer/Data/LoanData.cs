@@ -19,7 +19,21 @@ namespace DataLayer.Data
         public DataTable GetAllLoan()
         {
             _sqlCommand.Connection = _connection.OpenConnection();
-            _sqlCommand.CommandText = "SELECT * FROM Prestamos";
+            _sqlCommand.CommandText = "select p.idPrestamo, l.nombreLibro, p.clientePrestamo,ep.estadoPrestamo, p.fechaDevolucionEstimada, p.fechaPrestamo, p.idLibro, p.idestadoPrestamo from prestamos as p\r\ninner join estadoPrestamo as ep on p.idestadoPrestamo = ep.idestadoPrestamo\r\ninner join libros as l on p.idLibro = l.idLibro";
+            _sqlCommand.CommandType = CommandType.Text;
+
+            _readerRows = _sqlCommand.ExecuteReader();
+            booksTable.Load(_readerRows);
+
+            _connection.CloseConnection();
+
+            return booksTable;
+        }
+
+        public DataTable GetFilterLoan()
+        {
+            _sqlCommand.Connection = _connection.OpenConnection();
+            _sqlCommand.CommandText = "select p.idPrestamo, l.nombreLibro, p.clientePrestamo,ep.estadoPrestamo, p.fechaDevolucionEstimada, p.fechaPrestamo, p.idLibro, p.idestadoPrestamo from prestamos as p\r\ninner join estadoPrestamo as ep on p.idestadoPrestamo = ep.idestadoPrestamo\r\ninner join libros as l on p.idLibro = l.idLibro where p.idestadoPrestamo = 2 ";
             _sqlCommand.CommandType = CommandType.Text;
 
             _readerRows = _sqlCommand.ExecuteReader();
@@ -33,17 +47,21 @@ namespace DataLayer.Data
         public void AddLoan(Loan loan)
         {
             _sqlCommand.Connection = _connection.OpenConnection();
-            _sqlCommand.CommandText = "INSERT INTO Prestamos ( Cliente, FechaPrestamo) " +
-                                      "VALUES ( @Customer, @LoanDate)";
+            _sqlCommand.CommandText = "INSERT INTO Prestamos (idLibro,clientePrestamo, fechaPrestamo, fechaDevolucionEstimada,idestadoPrestamo) " +
+                                      "VALUES (@IdBook, @Customer, @LoanDate,@ReturnEstimatedDate,@IdLoanStatus)";
             _sqlCommand.CommandType = CommandType.Text;
 
+            _sqlCommand.Parameters.AddWithValue("@IdBook", loan.IdBook);
             _sqlCommand.Parameters.AddWithValue("@Customer", loan.Customer);
             _sqlCommand.Parameters.AddWithValue("@LoanDate", loan.LoanDate);
+            _sqlCommand.Parameters.AddWithValue("@ReturnEstimatedDate", loan.ReturnEstimatedDate);
+            _sqlCommand.Parameters.AddWithValue("@IdLoanStatus", loan.IdLoanStatus);
 
 
             _sqlCommand.ExecuteNonQuery();
             _sqlCommand.Parameters.Clear();
             _connection.CloseConnection();
+
         }
 
         public void UpdateLoan(Loan loan)
@@ -61,10 +79,25 @@ namespace DataLayer.Data
             _connection.CloseConnection();
         }
 
+        public void UpdateStatusLoan(Loan loan)
+        {
+            _sqlCommand.Connection = _connection.OpenConnection();
+            _sqlCommand.CommandText = "update prestamos set idestadoPrestamo = @IdLoanStatus where idPrestamo = @IdLoan";
+            _sqlCommand.CommandType = CommandType.Text;
+
+            _sqlCommand.Parameters.AddWithValue("@IdLoanStatus", loan.IdLoanStatus);
+            _sqlCommand.Parameters.AddWithValue("@IdLoan", loan.IdLoan);
+
+            _sqlCommand.ExecuteNonQuery();
+            _sqlCommand.Parameters.Clear();
+            _connection.CloseConnection();
+
+        }
+
         public void DeleteLoan(Loan loan)
         {
             _sqlCommand.Connection = _connection.OpenConnection();
-            _sqlCommand.CommandText = "DELETE FROM Prestamos WHERE id_prestamo = @Id";
+            _sqlCommand.CommandText = "DELETE FROM Prestamos WHERE idPrestamo = @Id";
             _sqlCommand.CommandType = CommandType.Text;
 
             _sqlCommand.Parameters.AddWithValue("@Id", loan.IdLoan);

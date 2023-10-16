@@ -21,6 +21,16 @@ namespace BusinessLayer.Crud
 
             return loanTable;
         }
+
+        public DataTable GetFilterLoan()
+        {
+            DataTable loanTable = new DataTable();
+
+            loanTable = loanData.GetFilterLoan();
+
+            return loanTable;
+        }
+
         public void AddLoan(Loan loan)
         {
             loanData.AddLoan(loan);
@@ -29,6 +39,10 @@ namespace BusinessLayer.Crud
         public void UpdateLoan(Loan loan)
         {
             loanData.UpdateLoan(loan);
+        }
+        public void UpdateStatusLoan(Loan loan)
+        {
+            loanData.UpdateStatusLoan(loan);
         }
         public void DeleteLoan(Loan loan)
         {

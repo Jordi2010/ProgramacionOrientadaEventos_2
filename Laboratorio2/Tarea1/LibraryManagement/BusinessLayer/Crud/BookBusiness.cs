@@ -22,6 +22,13 @@ namespace BusinessLayer.Crud
             return booksTable;
         }
 
+        public DataTable GetBookFilter()
+        {
+            DataTable bookFilterTable = new DataTable();
+            bookFilterTable = bookData.getFilterBook();
+            return bookFilterTable;
+        }
+
         public void AddBook(Book book)
         {
             bookData.AddBook(book);
@@ -30,6 +37,10 @@ namespace BusinessLayer.Crud
         public void UpdateBook(Book book)
         {
             bookData.UpdateBook(book);
+        }
+        public void UpdateBookStatus(Book book)
+        {
+            bookData.UpdateBookStatus(book);
         }
         public void DeleteBook(Book book)
         {

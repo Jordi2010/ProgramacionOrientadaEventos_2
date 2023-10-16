@@ -32,6 +32,18 @@ namespace DataLayer.Data
             return booksTable;
         }
 
+        public DataTable getFilterBook() {
+            DataTable bookFilterTable = new DataTable();
+            _sqlCommand.Connection = _connection.OpenConnection();
+            _sqlCommand.CommandText = "SELECT * FROM libros where idestadoLibro = 1";
+            _sqlCommand.CommandType= CommandType.Text;
+            _readerRows= _sqlCommand.ExecuteReader();
+            bookFilterTable.Load(_readerRows);
+            _sqlCommand.Connection = _connection.CloseConnection();
+
+            return bookFilterTable;
+        }
+
         public void AddBook(Book book)
         {
             _sqlCommand.Connection = _connection.OpenConnection();
@@ -62,6 +74,19 @@ namespace DataLayer.Data
             _sqlCommand.Parameters.AddWithValue("@Isbn", book.Isbn);
             _sqlCommand.Parameters.AddWithValue("@Genre", book.Genre);
             _sqlCommand.Parameters.AddWithValue("@IdAuthor", book.IdAuthor);
+            _sqlCommand.Parameters.AddWithValue("@IdStatus", book.IdStatus);
+            _sqlCommand.Parameters.AddWithValue("@IdBook", book.IdBook);
+
+            _sqlCommand.ExecuteNonQuery();
+            _sqlCommand.Parameters.Clear();
+            _connection.CloseConnection();
+        }
+        public void UpdateBookStatus(Book book)
+        {
+            _sqlCommand.Connection = _connection.OpenConnection();
+            _sqlCommand.CommandText = "UPDATE libros SET  idestadoLibro = @IdStatus WHERE idLibro = @IdBook";
+            _sqlCommand.CommandType = CommandType.Text;
+
             _sqlCommand.Parameters.AddWithValue("@IdStatus", book.IdStatus);
             _sqlCommand.Parameters.AddWithValue("@IdBook", book.IdBook);
 

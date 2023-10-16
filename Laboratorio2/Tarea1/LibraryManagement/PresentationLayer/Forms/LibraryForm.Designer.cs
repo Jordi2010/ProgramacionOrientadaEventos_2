@@ -72,6 +72,8 @@
             this.returnsDataGridView = new System.Windows.Forms.DataGridView();
             this.adminReturnsLabel = new System.Windows.Forms.Label();
             this.returnsGroupBox = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.returnBookComboBox = new System.Windows.Forms.ComboBox();
             this.LoanComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.statusLoanComboBox = new System.Windows.Forms.ComboBox();
@@ -364,6 +366,7 @@
             this.deleteLoanButton.TabIndex = 15;
             this.deleteLoanButton.Text = "Eliminar";
             this.deleteLoanButton.UseVisualStyleBackColor = true;
+            this.deleteLoanButton.Click += new System.EventHandler(this.deleteLoanButton_Click);
             // 
             // editLoanButton
             // 
@@ -374,6 +377,7 @@
             this.editLoanButton.TabIndex = 14;
             this.editLoanButton.Text = "Editar";
             this.editLoanButton.UseVisualStyleBackColor = true;
+            this.editLoanButton.Click += new System.EventHandler(this.editLoanButton_Click);
             // 
             // loansDataGridView
             // 
@@ -419,6 +423,7 @@
             this.estimatedReturnDateTimePicker.Name = "estimatedReturnDateTimePicker";
             this.estimatedReturnDateTimePicker.Size = new System.Drawing.Size(256, 25);
             this.estimatedReturnDateTimePicker.TabIndex = 20;
+            this.estimatedReturnDateTimePicker.Value = new System.DateTime(2023, 10, 15, 0, 0, 0, 0);
             // 
             // loanDateTimePicker
             // 
@@ -426,6 +431,7 @@
             this.loanDateTimePicker.Name = "loanDateTimePicker";
             this.loanDateTimePicker.Size = new System.Drawing.Size(256, 25);
             this.loanDateTimePicker.TabIndex = 19;
+            this.loanDateTimePicker.Value = new System.DateTime(2023, 9, 15, 0, 0, 0, 0);
             // 
             // label2
             // 
@@ -465,6 +471,7 @@
             this.saveLoanButton.TabIndex = 13;
             this.saveLoanButton.Text = "Guardar";
             this.saveLoanButton.UseVisualStyleBackColor = true;
+            this.saveLoanButton.Click += new System.EventHandler(this.saveLoanButton_Click);
             // 
             // customerTextBox
             // 
@@ -529,6 +536,7 @@
             this.deleteReturnButton.TabIndex = 15;
             this.deleteReturnButton.Text = "Eliminar";
             this.deleteReturnButton.UseVisualStyleBackColor = true;
+            this.deleteReturnButton.Click += new System.EventHandler(this.deleteReturnButton_Click);
             // 
             // editReturnButton
             // 
@@ -539,6 +547,7 @@
             this.editReturnButton.TabIndex = 14;
             this.editReturnButton.Text = "Editar";
             this.editReturnButton.UseVisualStyleBackColor = true;
+            this.editReturnButton.Click += new System.EventHandler(this.editReturnButton_Click);
             // 
             // returnsDataGridView
             // 
@@ -562,6 +571,8 @@
             // 
             // returnsGroupBox
             // 
+            this.returnsGroupBox.Controls.Add(this.label7);
+            this.returnsGroupBox.Controls.Add(this.returnBookComboBox);
             this.returnsGroupBox.Controls.Add(this.LoanComboBox);
             this.returnsGroupBox.Controls.Add(this.label3);
             this.returnsGroupBox.Controls.Add(this.statusLoanComboBox);
@@ -575,6 +586,25 @@
             this.returnsGroupBox.Size = new System.Drawing.Size(360, 428);
             this.returnsGroupBox.TabIndex = 8;
             this.returnsGroupBox.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(6, 256);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(114, 20);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Estado del libro";
+            // 
+            // returnBookComboBox
+            // 
+            this.returnBookComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.returnBookComboBox.FormattingEnabled = true;
+            this.returnBookComboBox.Location = new System.Drawing.Point(6, 293);
+            this.returnBookComboBox.Name = "returnBookComboBox";
+            this.returnBookComboBox.Size = new System.Drawing.Size(256, 25);
+            this.returnBookComboBox.TabIndex = 20;
             // 
             // LoanComboBox
             // 
@@ -597,6 +627,7 @@
             // 
             // statusLoanComboBox
             // 
+            this.statusLoanComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.statusLoanComboBox.FormattingEnabled = true;
             this.statusLoanComboBox.Location = new System.Drawing.Point(6, 212);
             this.statusLoanComboBox.Name = "statusLoanComboBox";
@@ -629,6 +660,7 @@
             this.saveReturnButton.TabIndex = 13;
             this.saveReturnButton.Text = "Guardar";
             this.saveReturnButton.UseVisualStyleBackColor = true;
+            this.saveReturnButton.Click += new System.EventHandler(this.saveReturnButton_Click);
             // 
             // loanLabel
             // 
@@ -871,5 +903,7 @@
         private Label label4;
         private Label label6;
         private Button UpdateAuthorButton;
+        private Label label7;
+        private ComboBox returnBookComboBox;
     }
 }

@@ -22,6 +22,16 @@ namespace PresentationLayer.Forms
         public LibraryForm()
         {
             InitializeComponent();
+            LoadAllData();
+            if (booksDataGridView.Columns.Contains("idestadoLibro"))
+                booksDataGridView.Columns["idestadoLibro"].Visible = false;
+
+            if (booksDataGridView.Columns.Contains("idAutor"))
+                booksDataGridView.Columns["idAutor"].Visible = false;
+        }
+
+        public void LoadAllData()
+        {
             LoadBookData();
             LoadAutoresData();
             LoadAutoresComboBoxData();
@@ -32,17 +42,12 @@ namespace PresentationLayer.Forms
             LoadBookComboBoxData();
             LoadLoanComboBoxData();
             statusLoanCoamboBoxData();
+            loadreturnBookComboBox();
 
-            if (booksDataGridView.Columns.Contains("idestadoLibro"))
-                booksDataGridView.Columns["idestadoLibro"].Visible = false;
 
-            if (booksDataGridView.Columns.Contains("idAutor"))
-                booksDataGridView.Columns["idAutor"].Visible = false;
         }
-     
-    
 
-   
+
         private void LoadAutoresComboBoxData()
         {
             AuthorBusiness authorBusiness = new AuthorBusiness();
@@ -72,25 +77,32 @@ namespace PresentationLayer.Forms
 
         private void LoadBookComboBoxData()
         {
-            StatusBusiness statusBusiness = new StatusBusiness();
-            bookComboBox.DataSource = statusBusiness.GetStatuses();
-            bookComboBox.DisplayMember = "Titulo";
-            bookComboBox.ValueMember = "id_libro";
+            BookBusiness bookBussines = new BookBusiness();
+            bookComboBox.DataSource = bookBussines.GetBookFilter();
+            bookComboBox.DisplayMember = "nombreLibro";
+            bookComboBox.ValueMember = "idLibro";
         }
 
         private void LoadLoanComboBoxData()
         {
-            StatusBusiness statusBusiness = new StatusBusiness();
-            LoanComboBox.DataSource = statusBusiness.GetStatuses();
-            LoanComboBox.DisplayMember = "Prestamo";
+            LoanBusiness loanBusiness = new LoanBusiness();
+            LoanComboBox.DataSource = loanBusiness.GetFilterLoan();
+            LoanComboBox.DisplayMember = "clientePrestamo";
             LoanComboBox.ValueMember = "idPrestamo";
+        }
+        private void loadreturnBookComboBox()
+        {
+            StatusBusiness statusBusiness = new StatusBusiness();
+            returnBookComboBox.DataSource = statusBusiness.GetStatuses();
+            returnBookComboBox.DisplayMember = "EstadoLibro";
+            returnBookComboBox.ValueMember = "idestadoLibro";
         }
 
         private void statusLoanCoamboBoxData()
         {
-            StatusBusiness statusBusiness = new StatusBusiness();
-            statusLoanComboBox.DataSource = statusBusiness.GetStatuses();
-            statusLoanComboBox.DisplayMember = "EstadoLibro";
+            LoanStatusBussines loanStatusBusiness = new LoanStatusBussines();
+            statusLoanComboBox.DataSource = loanStatusBusiness.GetAllLoanStatus();
+            statusLoanComboBox.DisplayMember = "estadoPrestamo";
             statusLoanComboBox.ValueMember = "idestadoPrestamo";
         }
 
@@ -137,8 +149,8 @@ namespace PresentationLayer.Forms
                     bookBusiness.AddBook(book);
                 }
             }
-            
-            LoadBookData();
+
+            LoadAllData();
             ClearBookForm();
         }
         private void editBookButton_Click(object sender, EventArgs e)
@@ -171,7 +183,7 @@ namespace PresentationLayer.Forms
                 book.IdBook = bookId;
 
                 bookBusiness.DeleteBook(book);
-                LoadBookData();
+                LoadAllData();
             }
             else
             {
@@ -227,7 +239,7 @@ namespace PresentationLayer.Forms
                     isEditMode = false;
                 }
 
-                LoadAutoresData();
+                LoadAllData();
                 ClearAuthorForm();
             }
 
@@ -258,7 +270,7 @@ namespace PresentationLayer.Forms
                 author.IdAuthor = authorId;
 
                 authorBussines.DeleteAuthor(author);
-                LoadAutoresData();
+                LoadAllData();
             }
             else
             {
@@ -276,17 +288,21 @@ namespace PresentationLayer.Forms
 
         #endregion
 
+        #region Loan Manager
         private void saveLoanButton_Click(object sender, EventArgs e)
         {
             LoanBusiness loanBusiness = new LoanBusiness();
-            Loan loan = new Loan
-            {
+            Loan loan = new Loan();
 
-                IdBook = Convert.ToInt32(bookComboBox.SelectedValue),
-                Customer = customerTextBox.Text,
-                LoanDate = loanDateTimePicker.Text,
+            BookBusiness bookBusiness = new BookBusiness();
+            Book book = new Book();
+            
+            loan.IdBook = Convert.ToInt32(bookComboBox.SelectedValue);
+            loan.Customer = customerTextBox.Text;
+            loan.LoanDate = loanDateTimePicker.Value;
+            loan.ReturnEstimatedDate = estimatedReturnDateTimePicker.Value;
+            loan.IdLoanStatus = 2;
 
-            };
             if (isEditMode)
             {
                 loan.IdBook = int.Parse(loansDataGridView.CurrentRow.Cells["idPrestamo"].Value.ToString());
@@ -295,22 +311,33 @@ namespace PresentationLayer.Forms
             }
             else
             {
-                loanBusiness.AddLoan(loan);
+                try
+                {
+                    loanBusiness.AddLoan(loan);
+
+                    book.IdBook = Convert.ToInt32(bookComboBox.SelectedValue);
+                    book.IdStatus= 2;
+                    bookBusiness.UpdateBookStatus(book);
+                    LoadAllData();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+                customerTextBox.Clear();
             }
 
 
             LoadLoanData();
-          
         }
-
         private void editLoanButton_Click(object sender, EventArgs e)
         {
-
             if (loansDataGridView.SelectedRows.Count > 0)
             {
                 customerTextBox.Text = loansDataGridView.CurrentRow.Cells["clientePrestamo"].Value.ToString();
-                loanDateTimePicker.Text = loansDataGridView.CurrentRow.Cells["fechaPrestamo"].Value.ToString();
-                statusBookComboBox.SelectedValue = loansDataGridView.CurrentRow.Cells["IdBook"].Value;
+                loanDateTimePicker.Value = (DateTime)loansDataGridView.CurrentRow.Cells["fechaPrestamo"].Value;
+                statusBookComboBox.SelectedValue = loansDataGridView.CurrentRow.Cells["idLibro"].Value;
 
                 isEditMode = true;
             }
@@ -319,9 +346,11 @@ namespace PresentationLayer.Forms
                 MessageBox.Show("Debe seleccionar una fila para editar");
             }
         }
-
         private void deleteLoanButton_Click(object sender, EventArgs e)
         {
+            BookBusiness bookBusiness = new BookBusiness();
+            Book book = new Book();
+
             if (loansDataGridView.SelectedRows.Count > 0)
             {
                 int loanId = int.Parse(loansDataGridView.CurrentRow.Cells[0].Value.ToString());
@@ -331,30 +360,38 @@ namespace PresentationLayer.Forms
 
                 loan.IdLoan = loanId;
 
-
                 loanBusiness.DeleteLoan(loan);
-
-                LoadLoanData();
+                int idbook = int.Parse(loansDataGridView.CurrentRow.Cells["idLibro"].Value.ToString());
+                book.IdBook = idbook;
+                book.IdStatus = 1;
+                bookBusiness.UpdateBookStatus(book);
+                LoadAllData();
             }
             else
             {
                 MessageBox.Show("Debe seleccionar una fila antes de eliminar");
             }
         }
-        //trabajo devolucion 
 
+
+        #endregion
+
+
+
+        #region Return Manager
         private void saveReturnButton_Click(object sender, EventArgs e)
         {
-
             ReturnBusiness returnBusiness = new ReturnBusiness();
-            Return Return = new Return
-            {
+            Return Return = new Return();
 
-                IdLoan = Convert.ToInt32(LoanComboBox.SelectedValue),
-                ActualReturnDate = actualReturnDateTimePicker.Text,
+            LoanBusiness loanBussines = new LoanBusiness();
+            Loan loan = new Loan();
 
+            BookBusiness bookBussines = new BookBusiness(); 
+            Book book = new Book();
 
-            };
+            Return.IdLoan = Convert.ToInt32(LoanComboBox.SelectedValue);
+            Return.ActualReturnDate = actualReturnDateTimePicker.Value;
             if (isEditMode)
             {
                 Return.IdReturn = int.Parse(returnsDataGridView.CurrentRow.Cells["idDevoluciones"].Value.ToString());
@@ -363,17 +400,19 @@ namespace PresentationLayer.Forms
             }
             else
             {
+                loan.IdLoan = Convert.ToInt32(LoanComboBox.SelectedValue);
+                loan.IdLoanStatus = Convert.ToInt32(statusLoanComboBox.SelectedValue);
+                loanBussines.UpdateStatusLoan(loan);
                 returnBusiness.AddReturn(Return);
+
+                book.IdStatus = Convert.ToInt32(returnBookComboBox.SelectedValue);
+                bookBusiness.UpdateBookStatus(book);
             }
 
-
-            LoadReturnData();
-            
+            LoadAllData();
         }
-
         private void editReturnButton_Click(object sender, EventArgs e)
         {
-
             if (returnsDataGridView.SelectedRows.Count > 0)
             {
                 actualReturnDateTimePicker.Text = returnsDataGridView.CurrentRow.Cells["fechaDevolucionReal"].Value.ToString();
@@ -386,7 +425,6 @@ namespace PresentationLayer.Forms
                 MessageBox.Show("Debe seleccionar una fila para editar");
             }
         }
-
         private void deleteReturnButton_Click(object sender, EventArgs e)
         {
             if (returnsDataGridView.SelectedRows.Count > 0)
@@ -400,13 +438,21 @@ namespace PresentationLayer.Forms
 
 
                 returnBusiness.DeleteReturn(Return);
-
-                LoadLoanData();
+                LoadAllData();
             }
             else
             {
                 MessageBox.Show("Debe seleccionar una fila antes de eliminar");
             }
         }
+
+
+
+
+
+
+        #endregion
+
+        
     }
 }

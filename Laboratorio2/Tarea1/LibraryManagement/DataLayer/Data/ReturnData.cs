@@ -19,7 +19,7 @@ namespace DataLayer.Data
         public DataTable GetAllReturn()
         {
             _sqlCommand.Connection = _connection.OpenConnection();
-            _sqlCommand.CommandText = "SELECT * FROM Devoluciones";
+            _sqlCommand.CommandText = "select d.idDevoluciones, p.clientePrestamo, l.nombreLibro,  d.fechaDevolucionReal, d.idPrestamo from devoluciones as d\r\ninner join prestamos as p on d.idPrestamo = p.idPrestamo\r\ninner join libros as l on p.idLibro = l.idLibro";
             _sqlCommand.CommandType = CommandType.Text;
 
             _readerRows = _sqlCommand.ExecuteReader();
@@ -29,14 +29,16 @@ namespace DataLayer.Data
 
             return booksTable;
         }
+
+     
         public void AddReturn(Return Return)
         {
             _sqlCommand.Connection = _connection.OpenConnection();
-            _sqlCommand.CommandText = "INSERT INTO Devoluciones ( FechaDevolucionEstimada, FechaDevolucionReal) " +
-                                      "VALUES ( @EstimatedReturnDate, @ActualReturnDate)";
+            _sqlCommand.CommandText = "INSERT INTO Devoluciones ( idPrestamo, FechaDevolucionReal) " +
+                                      "VALUES ( @IdLoan, @ActualReturnDate)";
             _sqlCommand.CommandType = CommandType.Text;
 
-            _sqlCommand.Parameters.AddWithValue("@EstimatedReturnDate", Return.EstimatedReturnDate);
+            _sqlCommand.Parameters.AddWithValue("@IdLoan", Return.IdLoan);
             _sqlCommand.Parameters.AddWithValue("@ActualReturnDate", Return.ActualReturnDate);
 
 
@@ -52,7 +54,7 @@ namespace DataLayer.Data
                                       "SET FechaDevolucionEstimada = @EstimatedReturnDate, FechaDevolucionReal = @ActualReturnDate";
             _sqlCommand.CommandType = CommandType.Text;
 
-            _sqlCommand.Parameters.AddWithValue("@EstimatedReturnDate", Return.EstimatedReturnDate);
+            _sqlCommand.Parameters.AddWithValue("@EstimatedReturnDate", Return.IdLoan);
             _sqlCommand.Parameters.AddWithValue("@ActualReturnDate", Return.ActualReturnDate);
 
             _sqlCommand.ExecuteNonQuery();
@@ -63,7 +65,7 @@ namespace DataLayer.Data
         public void DeleteReturn(Return Return)
         {
             _sqlCommand.Connection = _connection.OpenConnection();
-            _sqlCommand.CommandText = "DELETE FROM Devoluciones WHERE id_devolucion  = @Id";
+            _sqlCommand.CommandText = "DELETE FROM devoluciones WHERE idDevoluciones  = @Id";
             _sqlCommand.CommandType = CommandType.Text;
 
             _sqlCommand.Parameters.AddWithValue("@Id", Return.IdReturn);

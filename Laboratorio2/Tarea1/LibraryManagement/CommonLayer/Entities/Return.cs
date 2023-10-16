@@ -10,7 +10,6 @@ namespace CommonLayer.Entities
     {
         public int IdReturn { get; set; }
         public int IdLoan { get; set; }
-        public string EstimatedReturnDate { get; set; }
-        public string ActualReturnDate { get; set; }
+        public DateTime ActualReturnDate { get; set; }
     }
 }
