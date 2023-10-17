@@ -26,7 +26,12 @@ namespace PresentationLayer.Validations
                .MinimumLength(5).WithMessage("Por favor introduzca mímino 5 carácteres.");
 
             RuleFor(loan => loan.LoanDate)
-               .NotEmpty().WithMessage("Ingrese una fecha de préstamo válida.");
+                .NotEmpty().WithMessage("Por favor, ingrese una fecha.")
+                .Must(date => date > DateTime.Now).WithMessage("Ingrese una fecha válida y posterior a la actual.");
+
+            RuleFor(loan => loan.ReturnEstimatedDate)
+                .NotEmpty().WithMessage("Por favor, ingrese una fecha.")
+                .Must(date => date.Date > DateTime.Today).WithMessage("Ingrese una fecha válida y posterior a la actual.");
         }
     }
 }

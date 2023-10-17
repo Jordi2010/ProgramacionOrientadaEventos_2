@@ -23,7 +23,8 @@ namespace PresentationLayer.Validations
 
 
             RuleFor(reeturn => reeturn.ActualReturnDate)
-                .NotEmpty().WithMessage("Ingrese una fecha válida.");
+            .NotEmpty().WithMessage("Por favor ingrese la fecha de devolución.")
+            .Must(date => date > DateTime.MinValue).WithMessage("Por favor ingrese una fecha válida.");
         }
     }
 }
