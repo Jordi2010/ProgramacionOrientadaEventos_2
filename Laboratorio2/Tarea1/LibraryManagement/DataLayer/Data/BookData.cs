@@ -96,15 +96,28 @@ namespace DataLayer.Data
         }
         public void DeleteBook(Book book)
         {
-            _sqlCommand.Connection = _connection.OpenConnection();
-            _sqlCommand.CommandText = "DELETE FROM Libros WHERE idLibro = @Id";
-            _sqlCommand.CommandType = CommandType.Text;
+            try
+            {
+                _sqlCommand.Connection = _connection.OpenConnection();
+                _sqlCommand.CommandText = "DELETE FROM Libros WHERE idLibro = @Id";
+                _sqlCommand.CommandType = CommandType.Text;
 
-            _sqlCommand.Parameters.AddWithValue("@Id", book.IdBook);
+                _sqlCommand.Parameters.AddWithValue("@Id", book.IdBook);
+                _sqlCommand.ExecuteNonQuery();
 
-            _sqlCommand.ExecuteNonQuery();
-            _sqlCommand.Parameters.Clear();
-            _connection.CloseConnection();
+            }
+            catch (Exception ex)
+            {
+
+                string errorMessage = ex.Message;
+            }
+            finally
+            {
+                _sqlCommand.Parameters.Clear();
+                _connection.CloseConnection();
+
+            }
+
         }
 
     }

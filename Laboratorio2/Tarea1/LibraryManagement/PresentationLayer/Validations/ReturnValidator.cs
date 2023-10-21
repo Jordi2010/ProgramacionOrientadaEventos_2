@@ -12,11 +12,7 @@ namespace PresentationLayer.Validations
     {
         public ReturnValidator() 
         {
-            RuleFor(reeturn => reeturn.IdReturn)
-               .Cascade(CascadeMode.Stop)
-               .NotEmpty().WithMessage("El ID no puede estar vacío.")
-               .GreaterThan(0).WithMessage("El ID debe ser mayor que cero.");
-
+            
             RuleFor(reeturn => reeturn.IdLoan)
                .NotEmpty().WithMessage("El ID no puede estar vacío.")
                .GreaterThan(0).WithMessage("El ID debe ser mayor que cero.");

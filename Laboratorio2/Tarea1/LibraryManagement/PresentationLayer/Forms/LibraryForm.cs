@@ -326,6 +326,35 @@ namespace PresentationLayer.Forms
         #endregion
 
         #region Loan Manager
+
+        private void LoanComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Loan loan = new Loan();
+            LoanBusiness loanBusiness = new LoanBusiness();
+            if (LoanComboBox.SelectedItem != null)
+            {
+                // Obtén el valor seleccionado del ComboBox como un DataRowView
+                DataRowView selectedRow = (DataRowView)LoanComboBox.SelectedItem;
+
+                // Accede al valor de idPrestamo dentro del DataRowView y conviértelo a entero
+                int idPrestamo = (int)selectedRow["idPrestamo"];
+
+                loan.IdLoan = idPrestamo;
+
+                // Llama al método GetClientNameByLoanID que devuelve un DataTable.
+                DataTable dataTable = loanBusiness.GetClientNameByLoanID(loan);
+
+                // Asegúrate de que el DataTable tenga al menos una fila.
+                if (dataTable.Rows.Count > 0)
+                {
+                    labelClientName.Text = dataTable.Rows[0]["clientePrestamo"].ToString();
+                }
+                else
+                {
+                    labelClientName.Text = "Nombre del cliente no encontrado.";
+                }
+            }
+        }
         private void saveLoanButton_Click(object sender, EventArgs e)
         {
             LoanBusiness loanBusiness = new LoanBusiness();
@@ -340,30 +369,46 @@ namespace PresentationLayer.Forms
             loan.ReturnEstimatedDate = estimatedReturnDateTimePicker.Value;
             loan.IdLoanStatus = 2;
 
-            if (isEditMode)
+            LoanValidator loanvalidator = new LoanValidator();
+            ValidationResult loanResults = loanvalidator.Validate(loan);
+
+            if (!loanResults.IsValid)
             {
-                loan.IdBook = int.Parse(loansDataGridView.CurrentRow.Cells["idPrestamo"].Value.ToString());
-                loanBusiness.UpdateLoan(loan);
-                isEditMode = false;
+                foreach (var failure in loanResults.Errors)
+                {
+                    MessageBox.Show("Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage);
+                }
             }
             else
             {
-                try
+                if (isEditMode)
                 {
-                    loanBusiness.AddLoan(loan);
-
-                    book.IdBook = Convert.ToInt32(bookComboBox.SelectedValue);
-                    book.IdStatus= 2;
-                    bookBusiness.UpdateBookStatus(book);
-                    LoadAllData();
+                    loan.IdBook = int.Parse(loansDataGridView.CurrentRow.Cells["idPrestamo"].Value.ToString());
+                    loanBusiness.UpdateLoan(loan);
+                    isEditMode = false;
                 }
-                catch (Exception ex)
+                else
                 {
+                    try
+                    {
+                        loanBusiness.AddLoan(loan);
 
-                    MessageBox.Show("Error: " + ex.Message);
+                        book.IdBook = Convert.ToInt32(bookComboBox.SelectedValue);
+                        book.IdStatus = 2;
+                        bookBusiness.UpdateBookStatus(book);
+                        LoadAllData();
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                    customerTextBox.Clear();
                 }
-                customerTextBox.Clear();
             }
+
+
+          
 
 
             LoadLoanData();
@@ -427,20 +472,39 @@ namespace PresentationLayer.Forms
            
             Return.IdLoan = Convert.ToInt32(LoanComboBox.SelectedValue);
             Return.ActualReturnDate = actualReturnDateTimePicker.Value;
-            if (isEditMode)
+
+
+            ReturnValidator returnvalidator = new ReturnValidator();
+            ValidationResult returnResults = returnvalidator.Validate(Return);
+
+            if (!returnResults.IsValid)
             {
-                Return.IdReturn = int.Parse(returnsDataGridView.CurrentRow.Cells["idDevoluciones"].Value.ToString());
-                returnBusiness.UpdateReturn(Return);
-                isEditMode = false;
+                foreach (var failure in returnResults.Errors)
+                {
+                    MessageBox.Show("Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage);
+                }
             }
             else
             {
-                loan.IdLoan = Convert.ToInt32(LoanComboBox.SelectedValue);
-                loan.IdLoanStatus = Convert.ToInt32(statusLoanComboBox.SelectedValue);
-                loanBussines.UpdateStatusLoan(loan);
-                returnBusiness.AddReturn(Return);
+                if (isEditMode)
+                {
+                    Return.IdReturn = int.Parse(returnsDataGridView.CurrentRow.Cells["idDevoluciones"].Value.ToString());
+                    returnBusiness.UpdateReturn(Return);
+                    isEditMode = false;
+                }
+                else
+                {
+                    loan.IdLoan = Convert.ToInt32(LoanComboBox.SelectedValue);
+                    loan.IdLoanStatus = Convert.ToInt32(statusLoanComboBox.SelectedValue);
+                    loanBussines.UpdateStatusLoan(loan);
+                    returnBusiness.AddReturn(Return);
 
+                }
             }
+
+
+
+           
 
             LoadAllData();
         }
@@ -487,33 +551,6 @@ namespace PresentationLayer.Forms
 
         #endregion
 
-        private void LoanComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Loan loan = new Loan();
-            LoanBusiness loanBusiness = new LoanBusiness();
-            if (LoanComboBox.SelectedItem != null)
-            {
-                // Obtén el valor seleccionado del ComboBox como un DataRowView
-                DataRowView selectedRow = (DataRowView)LoanComboBox.SelectedItem;
-
-                // Accede al valor de idPrestamo dentro del DataRowView y conviértelo a entero
-                int idPrestamo = (int)selectedRow["idPrestamo"];
-
-                loan.IdLoan = idPrestamo;
-
-                // Llama al método GetClientNameByLoanID que devuelve un DataTable.
-                DataTable dataTable = loanBusiness.GetClientNameByLoanID(loan);
-
-                // Asegúrate de que el DataTable tenga al menos una fila.
-                if (dataTable.Rows.Count > 0)
-                {
-                    labelClientName.Text = dataTable.Rows[0]["clientePrestamo"].ToString();
-                }
-                else
-                {
-                    labelClientName.Text = "Nombre del cliente no encontrado.";
-                }
-            }
-        }
+    
     }
 }

@@ -52,7 +52,6 @@
             this.loansTabPage = new System.Windows.Forms.TabPage();
             this.loansButtonsGroupBox = new System.Windows.Forms.GroupBox();
             this.deleteLoanButton = new System.Windows.Forms.Button();
-            this.editLoanButton = new System.Windows.Forms.Button();
             this.loansDataGridView = new System.Windows.Forms.DataGridView();
             this.adminLoansLabel = new System.Windows.Forms.Label();
             this.loansGroupBox = new System.Windows.Forms.GroupBox();
@@ -68,7 +67,6 @@
             this.returnsTabPage = new System.Windows.Forms.TabPage();
             this.returnsButtonsGroupBox = new System.Windows.Forms.GroupBox();
             this.deleteReturnButton = new System.Windows.Forms.Button();
-            this.editReturnButton = new System.Windows.Forms.Button();
             this.returnsDataGridView = new System.Windows.Forms.DataGridView();
             this.adminReturnsLabel = new System.Windows.Forms.Label();
             this.returnsGroupBox = new System.Windows.Forms.GroupBox();
@@ -350,7 +348,6 @@
             // loansButtonsGroupBox
             // 
             this.loansButtonsGroupBox.Controls.Add(this.deleteLoanButton);
-            this.loansButtonsGroupBox.Controls.Add(this.editLoanButton);
             this.loansButtonsGroupBox.Location = new System.Drawing.Point(15, 383);
             this.loansButtonsGroupBox.Name = "loansButtonsGroupBox";
             this.loansButtonsGroupBox.Size = new System.Drawing.Size(424, 93);
@@ -367,17 +364,6 @@
             this.deleteLoanButton.Text = "Eliminar";
             this.deleteLoanButton.UseVisualStyleBackColor = true;
             this.deleteLoanButton.Click += new System.EventHandler(this.deleteLoanButton_Click);
-            // 
-            // editLoanButton
-            // 
-            this.editLoanButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.editLoanButton.Location = new System.Drawing.Point(81, 39);
-            this.editLoanButton.Name = "editLoanButton";
-            this.editLoanButton.Size = new System.Drawing.Size(85, 32);
-            this.editLoanButton.TabIndex = 14;
-            this.editLoanButton.Text = "Editar";
-            this.editLoanButton.UseVisualStyleBackColor = true;
-            this.editLoanButton.Click += new System.EventHandler(this.editLoanButton_Click);
             // 
             // loansDataGridView
             // 
@@ -520,7 +506,6 @@
             // returnsButtonsGroupBox
             // 
             this.returnsButtonsGroupBox.Controls.Add(this.deleteReturnButton);
-            this.returnsButtonsGroupBox.Controls.Add(this.editReturnButton);
             this.returnsButtonsGroupBox.Location = new System.Drawing.Point(15, 383);
             this.returnsButtonsGroupBox.Name = "returnsButtonsGroupBox";
             this.returnsButtonsGroupBox.Size = new System.Drawing.Size(424, 93);
@@ -537,17 +522,6 @@
             this.deleteReturnButton.Text = "Eliminar";
             this.deleteReturnButton.UseVisualStyleBackColor = true;
             this.deleteReturnButton.Click += new System.EventHandler(this.deleteReturnButton_Click);
-            // 
-            // editReturnButton
-            // 
-            this.editReturnButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.editReturnButton.Location = new System.Drawing.Point(81, 39);
-            this.editReturnButton.Name = "editReturnButton";
-            this.editReturnButton.Size = new System.Drawing.Size(85, 32);
-            this.editReturnButton.TabIndex = 14;
-            this.editReturnButton.Text = "Editar";
-            this.editReturnButton.UseVisualStyleBackColor = true;
-            this.editReturnButton.Click += new System.EventHandler(this.editReturnButton_Click);
             // 
             // returnsDataGridView
             // 
@@ -860,7 +834,6 @@
         private Button saveBookButton;
         private GroupBox loansButtonsGroupBox;
         private Button deleteLoanButton;
-        private Button editLoanButton;
         private DataGridView loansDataGridView;
         private Label adminLoansLabel;
         private GroupBox loansGroupBox;
@@ -871,7 +844,6 @@
         private Label loanDateLabel;
         private GroupBox returnsButtonsGroupBox;
         private Button deleteReturnButton;
-        private Button editReturnButton;
         private DataGridView returnsDataGridView;
         private Label adminReturnsLabel;
         private GroupBox returnsGroupBox;

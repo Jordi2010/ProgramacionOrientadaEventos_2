@@ -46,15 +46,3 @@ C:\Users\RabanTRJO\source\repos\POElab\Laboratorio2\Tarea1\LibraryManagement\Com
 C:\Users\RabanTRJO\source\repos\POElab\Laboratorio2\Tarea1\LibraryManagement\CommonLayer\obj\Debug\net7.0\refint\CommonLayer.dll
 C:\Users\RabanTRJO\source\repos\POElab\Laboratorio2\Tarea1\LibraryManagement\CommonLayer\obj\Debug\net7.0\CommonLayer.pdb
 C:\Users\RabanTRJO\source\repos\POElab\Laboratorio2\Tarea1\LibraryManagement\CommonLayer\obj\Debug\net7.0\ref\CommonLayer.dll
-C:\Users\RabanTRJO\source\repos\POE\Laboratorio2\Tarea1\LibraryManagement\CommonLayer\bin\Debug\net7.0\CommonLayer.deps.json
-C:\Users\RabanTRJO\source\repos\POE\Laboratorio2\Tarea1\LibraryManagement\CommonLayer\bin\Debug\net7.0\CommonLayer.dll
-C:\Users\RabanTRJO\source\repos\POE\Laboratorio2\Tarea1\LibraryManagement\CommonLayer\bin\Debug\net7.0\CommonLayer.pdb
-C:\Users\RabanTRJO\source\repos\POE\Laboratorio2\Tarea1\LibraryManagement\CommonLayer\obj\Debug\net7.0\CommonLayer.csproj.AssemblyReference.cache
-C:\Users\RabanTRJO\source\repos\POE\Laboratorio2\Tarea1\LibraryManagement\CommonLayer\obj\Debug\net7.0\CommonLayer.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\RabanTRJO\source\repos\POE\Laboratorio2\Tarea1\LibraryManagement\CommonLayer\obj\Debug\net7.0\CommonLayer.AssemblyInfoInputs.cache
-C:\Users\RabanTRJO\source\repos\POE\Laboratorio2\Tarea1\LibraryManagement\CommonLayer\obj\Debug\net7.0\CommonLayer.AssemblyInfo.cs
-C:\Users\RabanTRJO\source\repos\POE\Laboratorio2\Tarea1\LibraryManagement\CommonLayer\obj\Debug\net7.0\CommonLayer.csproj.CoreCompileInputs.cache
-C:\Users\RabanTRJO\source\repos\POE\Laboratorio2\Tarea1\LibraryManagement\CommonLayer\obj\Debug\net7.0\CommonLayer.dll
-C:\Users\RabanTRJO\source\repos\POE\Laboratorio2\Tarea1\LibraryManagement\CommonLayer\obj\Debug\net7.0\refint\CommonLayer.dll
-C:\Users\RabanTRJO\source\repos\POE\Laboratorio2\Tarea1\LibraryManagement\CommonLayer\obj\Debug\net7.0\CommonLayer.pdb
-C:\Users\RabanTRJO\source\repos\POE\Laboratorio2\Tarea1\LibraryManagement\CommonLayer\obj\Debug\net7.0\ref\CommonLayer.dll

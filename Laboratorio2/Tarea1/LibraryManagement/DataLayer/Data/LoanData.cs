@@ -119,15 +119,25 @@ namespace DataLayer.Data
 
         public void DeleteLoan(Loan loan)
         {
-            _sqlCommand.Connection = _connection.OpenConnection();
-            _sqlCommand.CommandText = "DELETE FROM Prestamos WHERE idPrestamo = @Id";
-            _sqlCommand.CommandType = CommandType.Text;
+            try
+            {
+                _sqlCommand.Connection = _connection.OpenConnection();
+                _sqlCommand.CommandText = "DELETE FROM Prestamos WHERE idPrestamo = @Id";
+                _sqlCommand.CommandType = CommandType.Text;
 
-            _sqlCommand.Parameters.AddWithValue("@Id", loan.IdLoan);
+                _sqlCommand.Parameters.AddWithValue("@Id", loan.IdLoan);
 
-            _sqlCommand.ExecuteNonQuery();
-            _sqlCommand.Parameters.Clear();
-            _connection.CloseConnection();
+                _sqlCommand.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                string message = ex.Message;
+            }
+            finally
+            {
+                _sqlCommand.Parameters.Clear();
+                _connection.CloseConnection();
+            }
         }
     }
 }
