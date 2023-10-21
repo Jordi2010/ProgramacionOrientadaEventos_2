@@ -59,16 +59,27 @@ namespace DataLayer.Data
         }
         public void DeleteAuthor(Author author)
         {
-            _sqlCommand.Connection = _connection.OpenConnection();
-            _sqlCommand.CommandText = "DELETE FROM Autores WHERE idAutor = @IdAutor";
-            _sqlCommand.CommandType = CommandType.Text;
+            try
+            {
+                _sqlCommand.Connection = _connection.OpenConnection();
+                _sqlCommand.CommandText = "DELETE FROM Autores WHERE idAutor = @IdAutor";
+                _sqlCommand.CommandType = CommandType.Text;
 
-            _sqlCommand.Parameters.AddWithValue("@IdAutor", author.IdAuthor);
+                _sqlCommand.Parameters.AddWithValue("@IdAutor", author.IdAuthor);
 
-            _sqlCommand.ExecuteNonQuery();
-            _sqlCommand.Parameters.Clear();
-            _connection.CloseConnection();
+                _sqlCommand.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                string errorMessage = ex.Message;
+            }
+            finally
+            {
+                _sqlCommand.Parameters.Clear();
+                _connection.CloseConnection();
+            }
         }
+
 
 
     }

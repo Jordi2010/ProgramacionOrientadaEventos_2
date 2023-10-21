@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
@@ -85,11 +86,54 @@ namespace PresentationLayer.Forms
         private void LoadLoanComboBoxData()
         {
             LoanBusiness loanBusiness = new LoanBusiness();
-            LoanComboBox.DataSource = loanBusiness.GetFilterLoan();
-            LoanComboBox.DisplayMember = "clientePrestamo";
-            LoanComboBox.ValueMember = "idPrestamo";
+            Loan loan = new Loan();
+
+            // Obtén los datos
+            var allData = loanBusiness.GetFilterLoan();
+
+            if (allData.Rows.Count == 0)
+            {
+                // No hay datos para mostrar en el ComboBox
+                LoanComboBox.DataSource = null;
+                labelClientName.Text = "No hay datos disponibles.";
+            }
+            else
+            {
+                // Filtra y elimina duplicados si los hay
+                var distinctData = allData.AsEnumerable()
+                    .GroupBy(row => row.Field<int>("idPrestamo"))
+                    .Select(g => g.First())
+                    .CopyToDataTable();
+
+                LoanComboBox.DataSource = distinctData;
+                LoanComboBox.DisplayMember = "nombreLibro";
+                LoanComboBox.ValueMember = "idPrestamo";
+
+                if (LoanComboBox.SelectedItem != null)
+                {
+                    int idPrestamo = (int)LoanComboBox.SelectedValue;
+                    loan.IdLoan = idPrestamo;
+
+                    // Llama al método GetClientNameByLoanID que devuelve un DataTable.
+                    DataTable dataTable = loanBusiness.GetClientNameByLoanID(loan);
+
+                    // Asegúrate de que el DataTable tenga al menos una fila.
+                    if (dataTable.Rows.Count > 0)
+                    {
+                        labelClientName.Text = dataTable.Rows[0]["clientePrestamo"].ToString();
+                    }
+                    else
+                    {
+                        labelClientName.Text = "Nombre del cliente no encontrado.";
+                    }
+                }
+            }
         }
-       
+
+
+
+
+
 
         private void statusLoanCoamboBoxData()
         {
@@ -440,8 +484,36 @@ namespace PresentationLayer.Forms
 
 
 
+
         #endregion
 
-        
+        private void LoanComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Loan loan = new Loan();
+            LoanBusiness loanBusiness = new LoanBusiness();
+            if (LoanComboBox.SelectedItem != null)
+            {
+                // Obtén el valor seleccionado del ComboBox como un DataRowView
+                DataRowView selectedRow = (DataRowView)LoanComboBox.SelectedItem;
+
+                // Accede al valor de idPrestamo dentro del DataRowView y conviértelo a entero
+                int idPrestamo = (int)selectedRow["idPrestamo"];
+
+                loan.IdLoan = idPrestamo;
+
+                // Llama al método GetClientNameByLoanID que devuelve un DataTable.
+                DataTable dataTable = loanBusiness.GetClientNameByLoanID(loan);
+
+                // Asegúrate de que el DataTable tenga al menos una fila.
+                if (dataTable.Rows.Count > 0)
+                {
+                    labelClientName.Text = dataTable.Rows[0]["clientePrestamo"].ToString();
+                }
+                else
+                {
+                    labelClientName.Text = "Nombre del cliente no encontrado.";
+                }
+            }
+        }
     }
 }

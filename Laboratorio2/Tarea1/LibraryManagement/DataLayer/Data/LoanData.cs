@@ -30,6 +30,29 @@ namespace DataLayer.Data
             return booksTable;
         }
 
+        public DataTable GetClientNameByLoan(Loan loan)
+        {
+            _sqlCommand.Connection = _connection.OpenConnection();
+            _sqlCommand.CommandText = "SELECT p.idPrestamo, l.nombreLibro, p.clientePrestamo, ep.estadoPrestamo FROM prestamos AS p " +
+                                    "INNER JOIN estadoPrestamo AS ep ON p.idestadoPrestamo = ep.idestadoPrestamo " +
+                                    "INNER JOIN libros AS l ON p.idLibro = l.idLibro " +
+                                    "WHERE p.idPrestamo = @IdLoan";
+
+            _sqlCommand.CommandType = CommandType.Text;
+
+            // Crea un parámetro para el ID del préstamo
+            SqlParameter idLoanParam = new SqlParameter("@IdLoan", loan.IdLoan);
+            idLoanParam.Value = loan.IdLoan;
+            _sqlCommand.Parameters.Add(idLoanParam);
+
+            _readerRows = _sqlCommand.ExecuteReader();
+            booksTable.Load(_readerRows);
+
+            _connection.CloseConnection();
+
+            return booksTable;
+        }
+
         public DataTable GetFilterLoan()
         {
             _sqlCommand.Connection = _connection.OpenConnection();

@@ -5,8 +5,8 @@
     "\\Laboratorio2\\Tarea1",
     "\\Laboratorio2\\Tarea1\\LibraryManagement",
     "\\Laboratorio2\\Tarea1\\LibraryManagement\\PresentationLayer",
-    "\\Laboratorio2\\Tarea1\\LibraryManagement\\PresentationLayer\\Forms"
+    "\\Laboratorio2\\Tarea1\\LibraryManagement\\PresentationLayer\\Validations"
   ],
-  "SelectedNode": "\\Laboratorio2\\Tarea1\\LibraryManagement\\PresentationLayer\\Forms\\LibraryForm.cs",
+  "SelectedNode": "\\Laboratorio2\\Tarea1\\LibraryManagement\\PresentationLayer\\Validations\\ReturnValidator.cs",
   "PreviewInSolutionExplorer": false
 }

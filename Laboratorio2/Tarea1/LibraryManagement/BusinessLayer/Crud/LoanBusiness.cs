@@ -31,6 +31,15 @@ namespace BusinessLayer.Crud
             return loanTable;
         }
 
+        public DataTable GetClientNameByLoanID(Loan loan)
+        {
+            DataTable loanTable = new DataTable();
+
+            loanTable = loanData.GetClientNameByLoan(loan);
+
+            return loanTable;
+        }
+
         public void AddLoan(Loan loan)
         {
             loanData.AddLoan(loan);

@@ -72,6 +72,8 @@
             this.returnsDataGridView = new System.Windows.Forms.DataGridView();
             this.adminReturnsLabel = new System.Windows.Forms.Label();
             this.returnsGroupBox = new System.Windows.Forms.GroupBox();
+            this.labelClientName = new System.Windows.Forms.Label();
+            this.labelLoanClient = new System.Windows.Forms.Label();
             this.LoanComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.statusLoanComboBox = new System.Windows.Forms.ComboBox();
@@ -569,6 +571,8 @@
             // 
             // returnsGroupBox
             // 
+            this.returnsGroupBox.Controls.Add(this.labelClientName);
+            this.returnsGroupBox.Controls.Add(this.labelLoanClient);
             this.returnsGroupBox.Controls.Add(this.LoanComboBox);
             this.returnsGroupBox.Controls.Add(this.label3);
             this.returnsGroupBox.Controls.Add(this.statusLoanComboBox);
@@ -583,20 +587,38 @@
             this.returnsGroupBox.TabIndex = 8;
             this.returnsGroupBox.TabStop = false;
             // 
+            // labelClientName
+            // 
+            this.labelClientName.AutoSize = true;
+            this.labelClientName.Location = new System.Drawing.Point(140, 85);
+            this.labelClientName.Name = "labelClientName";
+            this.labelClientName.Size = new System.Drawing.Size(0, 17);
+            this.labelClientName.TabIndex = 21;
+            // 
+            // labelLoanClient
+            // 
+            this.labelLoanClient.AutoSize = true;
+            this.labelLoanClient.Location = new System.Drawing.Point(6, 85);
+            this.labelLoanClient.Name = "labelLoanClient";
+            this.labelLoanClient.Size = new System.Drawing.Size(123, 17);
+            this.labelLoanClient.TabIndex = 20;
+            this.labelLoanClient.Text = "Nombre del cliente:";
+            // 
             // LoanComboBox
             // 
             this.LoanComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.LoanComboBox.FormattingEnabled = true;
-            this.LoanComboBox.Location = new System.Drawing.Point(92, 34);
+            this.LoanComboBox.Location = new System.Drawing.Point(7, 57);
             this.LoanComboBox.Name = "LoanComboBox";
             this.LoanComboBox.Size = new System.Drawing.Size(255, 25);
             this.LoanComboBox.TabIndex = 19;
+            this.LoanComboBox.SelectedIndexChanged += new System.EventHandler(this.LoanComboBox_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(6, 175);
+            this.label3.Location = new System.Drawing.Point(6, 257);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(142, 20);
             this.label3.TabIndex = 18;
@@ -606,14 +628,14 @@
             // 
             this.statusLoanComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.statusLoanComboBox.FormattingEnabled = true;
-            this.statusLoanComboBox.Location = new System.Drawing.Point(6, 212);
+            this.statusLoanComboBox.Location = new System.Drawing.Point(6, 294);
             this.statusLoanComboBox.Name = "statusLoanComboBox";
             this.statusLoanComboBox.Size = new System.Drawing.Size(256, 25);
             this.statusLoanComboBox.TabIndex = 17;
             // 
             // actualReturnDateTimePicker
             // 
-            this.actualReturnDateTimePicker.Location = new System.Drawing.Point(6, 125);
+            this.actualReturnDateTimePicker.Location = new System.Drawing.Point(6, 207);
             this.actualReturnDateTimePicker.Name = "actualReturnDateTimePicker";
             this.actualReturnDateTimePicker.Size = new System.Drawing.Size(255, 25);
             this.actualReturnDateTimePicker.TabIndex = 16;
@@ -622,7 +644,7 @@
             // 
             this.actualReturnDateLabel.AutoSize = true;
             this.actualReturnDateLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.actualReturnDateLabel.Location = new System.Drawing.Point(6, 90);
+            this.actualReturnDateLabel.Location = new System.Drawing.Point(6, 172);
             this.actualReturnDateLabel.Name = "actualReturnDateLabel";
             this.actualReturnDateLabel.Size = new System.Drawing.Size(177, 20);
             this.actualReturnDateLabel.TabIndex = 14;
@@ -645,9 +667,9 @@
             this.loanLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.loanLabel.Location = new System.Drawing.Point(6, 34);
             this.loanLabel.Name = "loanLabel";
-            this.loanLabel.Size = new System.Drawing.Size(74, 20);
+            this.loanLabel.Size = new System.Drawing.Size(119, 20);
             this.loanLabel.TabIndex = 0;
-            this.loanLabel.Text = "Préstamo:";
+            this.loanLabel.Text = "Libro a devolver:";
             // 
             // AuthorTabPage
             // 
@@ -880,5 +902,7 @@
         private Label label4;
         private Label label6;
         private Button UpdateAuthorButton;
+        private Label labelClientName;
+        private Label labelLoanClient;
     }
 }
