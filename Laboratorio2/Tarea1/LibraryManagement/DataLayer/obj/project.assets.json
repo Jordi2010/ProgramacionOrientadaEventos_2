@@ -486,24 +486,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\RabanTRJO\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\jordi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\RabanTRJO\\source\\repos\\POE\\Laboratorio2\\Tarea1\\LibraryManagement\\DataLayer\\DataLayer.csproj",
+      "projectUniqueName": "C:\\Users\\jordi\\OneDrive\\Escritorio\\ProgramacionOrientadaEventos\\Laboratorio2\\Tarea1\\LibraryManagement\\DataLayer\\DataLayer.csproj",
       "projectName": "DataLayer",
-      "projectPath": "C:\\Users\\RabanTRJO\\source\\repos\\POE\\Laboratorio2\\Tarea1\\LibraryManagement\\DataLayer\\DataLayer.csproj",
-      "packagesPath": "C:\\Users\\RabanTRJO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\RabanTRJO\\source\\repos\\POE\\Laboratorio2\\Tarea1\\LibraryManagement\\DataLayer\\obj\\",
+      "projectPath": "C:\\Users\\jordi\\OneDrive\\Escritorio\\ProgramacionOrientadaEventos\\Laboratorio2\\Tarea1\\LibraryManagement\\DataLayer\\DataLayer.csproj",
+      "packagesPath": "C:\\Users\\jordi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jordi\\OneDrive\\Escritorio\\ProgramacionOrientadaEventos\\Laboratorio2\\Tarea1\\LibraryManagement\\DataLayer\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\RabanTRJO\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\jordi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -511,15 +506,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\RabanTRJO\\source\\repos\\POE\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj": {
-              "projectPath": "C:\\Users\\RabanTRJO\\source\\repos\\POE\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj"
+            "C:\\Users\\jordi\\OneDrive\\Escritorio\\ProgramacionOrientadaEventos\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj": {
+              "projectPath": "C:\\Users\\jordi\\OneDrive\\Escritorio\\ProgramacionOrientadaEventos\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj"
             }
           }
         }
@@ -555,7 +549,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

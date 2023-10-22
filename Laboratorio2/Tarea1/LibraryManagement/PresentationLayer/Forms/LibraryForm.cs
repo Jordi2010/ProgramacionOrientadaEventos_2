@@ -381,6 +381,20 @@ namespace PresentationLayer.Forms
             }
             else
             {
+                //
+                DateTime fechaVencimiento = loan.ReturnEstimatedDate.AddHours(-48);
+                if (fechaVencimiento <= DateTime.Now)
+                {
+
+                    DialogResult result = MessageBox.Show("Tu préstamo vencerá en menos de 48 horas. ¿Deseas continuar?", "Notificación de Vencimiento", MessageBoxButtons.YesNo);
+
+                    if (result == DialogResult.No)
+                    {
+
+                        return;
+                    }
+                }
+                //
                 if (isEditMode)
                 {
                     loan.IdBook = int.Parse(loansDataGridView.CurrentRow.Cells["idPrestamo"].Value.ToString());
@@ -405,10 +419,13 @@ namespace PresentationLayer.Forms
                     }
                     customerTextBox.Clear();
                 }
+                //
+                MessageBox.Show("La fecha de vencimiento seleccionada es mayor a 48 horas.", "Notificación de Vencimiento", MessageBoxButtons.OK);
+                //
             }
 
 
-          
+
 
 
             LoadLoanData();

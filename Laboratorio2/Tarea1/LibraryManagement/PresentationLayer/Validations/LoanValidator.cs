@@ -12,26 +12,20 @@ namespace PresentationLayer.Validations
     {
         public LoanValidator() 
         {
-            RuleFor(loan => loan.IdLoan)
-               .Cascade(CascadeMode.Stop)
-               .NotEmpty().WithMessage("El ID no puede estar vacío.")
-               .GreaterThan(0).WithMessage("El ID debe ser mayor que cero.");
-
             RuleFor(loan => loan.IdBook)
                .NotEmpty().WithMessage("El ID no puede estar vacío.")
                .GreaterThan(0).WithMessage("El ID debe ser mayor que cero.");
 
             RuleFor(loan => loan.Customer)
-               .NotEmpty().WithMessage("Este campo no puede estar vacío.")
-               .MinimumLength(5).WithMessage("Por favor introduzca mímino 5 carácteres.");
+               .NotEmpty().WithMessage("Este campo no puede estar vacío.");
 
             RuleFor(loan => loan.LoanDate)
                 .NotEmpty().WithMessage("Por favor, ingrese una fecha.")
-                .Must(date => date > DateTime.Now).WithMessage("Ingrese una fecha válida y posterior a la actual.");
+                .Must(date => date >= DateTime.Today).WithMessage("Ingrese una fecha válida y no anterior a la actual.");
 
             RuleFor(loan => loan.ReturnEstimatedDate)
                 .NotEmpty().WithMessage("Por favor, ingrese una fecha.")
-                .Must(date => date.Date > DateTime.Today).WithMessage("Ingrese una fecha válida y posterior a la actual.");
+                .Must(date => date.Date >= DateTime.Today).WithMessage("Ingrese una fecha válida y no anterior a la actual.");
         }
     }
 }
