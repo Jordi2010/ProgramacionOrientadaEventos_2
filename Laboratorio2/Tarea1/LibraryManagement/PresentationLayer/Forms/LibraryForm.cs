@@ -144,7 +144,6 @@ namespace PresentationLayer.Forms
         }
 
 
-
         #region Book Manager
         private void LoadBookData()
         {
@@ -280,7 +279,7 @@ namespace PresentationLayer.Forms
                 ClearAuthorForm();
             }
 
-           
+
         }
         private void UpdateAuthorButton_Click(object sender, EventArgs e)
         {
@@ -362,7 +361,7 @@ namespace PresentationLayer.Forms
 
             BookBusiness bookBusiness = new BookBusiness();
             Book book = new Book();
-            
+
             loan.IdBook = Convert.ToInt32(bookComboBox.SelectedValue);
             loan.Customer = customerTextBox.Text;
             loan.LoanDate = loanDateTimePicker.Value;
@@ -486,7 +485,7 @@ namespace PresentationLayer.Forms
             LoanBusiness loanBussines = new LoanBusiness();
             Loan loan = new Loan();
 
-           
+
             Return.IdLoan = Convert.ToInt32(LoanComboBox.SelectedValue);
             Return.ActualReturnDate = actualReturnDateTimePicker.Value;
 
@@ -521,7 +520,7 @@ namespace PresentationLayer.Forms
 
 
 
-           
+
 
             LoadAllData();
         }
@@ -568,6 +567,12 @@ namespace PresentationLayer.Forms
 
         #endregion
 
-    
+
+
+        private void searchBookTextBox_TextChanged(object sender, EventArgs e)
+        {
+            BookBusiness bookBusiness = new BookBusiness();
+            booksDataGridView.DataSource = bookBusiness.SearchBook(searchBookTextBox.Text);
+        }
     }
 }

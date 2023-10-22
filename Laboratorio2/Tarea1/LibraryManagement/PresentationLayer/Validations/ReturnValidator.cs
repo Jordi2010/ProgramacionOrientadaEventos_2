@@ -12,11 +12,9 @@ namespace PresentationLayer.Validations
     {
         public ReturnValidator() 
         {
-            
-            RuleFor(reeturn => reeturn.IdLoan)
-               .NotEmpty().WithMessage("El ID no puede estar vacío.")
-               .GreaterThan(0).WithMessage("El ID debe ser mayor que cero.");
 
+            RuleFor(reeturn => reeturn.IdLoan)
+                .NotEmpty().WithMessage("Por favor llene los campos necesarios.");
 
             RuleFor(reeturn => reeturn.ActualReturnDate)
             .NotEmpty().WithMessage("Por favor ingrese la fecha de devolución.")

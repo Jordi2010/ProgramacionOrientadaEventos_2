@@ -31,6 +31,19 @@ namespace DataLayer.Data
 
             return booksTable;
         }
+        public DataTable SearchBook(string search)
+        {
+            _sqlCommand.Connection = _connection.OpenConnection();
+            _sqlCommand.CommandText = "SELECT * FROM libros WHERE nombreLibro LIKE '%' + @search + '%'";
+            _sqlCommand.CommandType = CommandType.Text;
+            _sqlCommand.Parameters.AddWithValue("@search", search);
+            _readerRows = _sqlCommand.ExecuteReader();
+            booksTable.Load(_readerRows);
+
+            _connection.CloseConnection();
+
+            return booksTable;
+        }
 
         public DataTable getFilterBook() {
             DataTable bookFilterTable = new DataTable();

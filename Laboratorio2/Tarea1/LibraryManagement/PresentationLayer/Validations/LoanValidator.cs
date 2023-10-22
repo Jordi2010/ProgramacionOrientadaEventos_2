@@ -13,19 +13,18 @@ namespace PresentationLayer.Validations
         public LoanValidator() 
         {
             RuleFor(loan => loan.IdBook)
-               .NotEmpty().WithMessage("El ID no puede estar vacío.")
-               .GreaterThan(0).WithMessage("El ID debe ser mayor que cero.");
+               .NotEmpty().WithMessage("No hay libros disponibles o no ha escogido ninguno.");
 
             RuleFor(loan => loan.Customer)
-               .NotEmpty().WithMessage("Este campo no puede estar vacío.");
+               .NotEmpty().WithMessage("No puede dejar campo vacío, por favor completar el nombre del cliente.");
 
             RuleFor(loan => loan.LoanDate)
                 .NotEmpty().WithMessage("Por favor, ingrese una fecha.")
-                .Must(date => date >= DateTime.Today).WithMessage("Ingrese una fecha válida y no anterior a la actual.");
+                .Must(date => date > DateTime.Now).WithMessage("Ingrese una fecha válida y no anterior a la actual.");
 
             RuleFor(loan => loan.ReturnEstimatedDate)
                 .NotEmpty().WithMessage("Por favor, ingrese una fecha.")
-                .Must(date => date.Date >= DateTime.Today).WithMessage("Ingrese una fecha válida y no anterior a la actual.");
+                .Must(date => date.Date > DateTime.Today).WithMessage("Ingrese una fecha válida y no anterior a la actual.");
         }
     }
 }

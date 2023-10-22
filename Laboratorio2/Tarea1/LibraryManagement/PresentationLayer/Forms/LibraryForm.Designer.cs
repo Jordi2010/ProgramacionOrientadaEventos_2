@@ -28,786 +28,863 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.libraryTabControl = new System.Windows.Forms.TabControl();
-            this.booksTabPage = new System.Windows.Forms.TabPage();
-            this.booksButtonsGroupBox = new System.Windows.Forms.GroupBox();
-            this.deleteBookButton = new System.Windows.Forms.Button();
-            this.editBookButton = new System.Windows.Forms.Button();
-            this.booksDataGridView = new System.Windows.Forms.DataGridView();
-            this.adminBooksLabel = new System.Windows.Forms.Label();
-            this.booksGroupBox = new System.Windows.Forms.GroupBox();
-            this.statusBookComboBox = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.authorBookComboBox = new System.Windows.Forms.ComboBox();
-            this.saveBookButton = new System.Windows.Forms.Button();
-            this.statusBookLabel = new System.Windows.Forms.Label();
-            this.genreBookTextBox = new System.Windows.Forms.TextBox();
-            this.genreLabel = new System.Windows.Forms.Label();
-            this.isbnBookTextBox = new System.Windows.Forms.TextBox();
-            this.isbnBookLabel = new System.Windows.Forms.Label();
-            this.publisherBookTextBox = new System.Windows.Forms.TextBox();
-            this.publisherBookLabel = new System.Windows.Forms.Label();
-            this.titleBookTextBox = new System.Windows.Forms.TextBox();
-            this.titleBookLabel = new System.Windows.Forms.Label();
-            this.loansTabPage = new System.Windows.Forms.TabPage();
-            this.loansButtonsGroupBox = new System.Windows.Forms.GroupBox();
-            this.deleteLoanButton = new System.Windows.Forms.Button();
-            this.loansDataGridView = new System.Windows.Forms.DataGridView();
-            this.adminLoansLabel = new System.Windows.Forms.Label();
-            this.loansGroupBox = new System.Windows.Forms.GroupBox();
-            this.estimatedReturnDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.loanDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.bookComboBox = new System.Windows.Forms.ComboBox();
-            this.loanDateLabel = new System.Windows.Forms.Label();
-            this.saveLoanButton = new System.Windows.Forms.Button();
-            this.customerTextBox = new System.Windows.Forms.TextBox();
-            this.customerLabel = new System.Windows.Forms.Label();
-            this.bookLoanLabel = new System.Windows.Forms.Label();
-            this.returnsTabPage = new System.Windows.Forms.TabPage();
-            this.returnsButtonsGroupBox = new System.Windows.Forms.GroupBox();
-            this.deleteReturnButton = new System.Windows.Forms.Button();
-            this.returnsDataGridView = new System.Windows.Forms.DataGridView();
-            this.adminReturnsLabel = new System.Windows.Forms.Label();
-            this.returnsGroupBox = new System.Windows.Forms.GroupBox();
-            this.labelClientName = new System.Windows.Forms.Label();
-            this.labelLoanClient = new System.Windows.Forms.Label();
-            this.LoanComboBox = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.statusLoanComboBox = new System.Windows.Forms.ComboBox();
-            this.actualReturnDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.actualReturnDateLabel = new System.Windows.Forms.Label();
-            this.saveReturnButton = new System.Windows.Forms.Button();
-            this.loanLabel = new System.Windows.Forms.Label();
-            this.AuthorTabPage = new System.Windows.Forms.TabPage();
-            this.label6 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.UpdateAuthorButton = new System.Windows.Forms.Button();
-            this.DeleteAuthor = new System.Windows.Forms.Button();
-            this.AutoresDataGridView = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.authorLastNameTextBox = new System.Windows.Forms.TextBox();
-            this.SaveAuthorButton = new System.Windows.Forms.Button();
-            this.authorFirstNameTextBox = new System.Windows.Forms.TextBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.libraryTabControl.SuspendLayout();
-            this.booksTabPage.SuspendLayout();
-            this.booksButtonsGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.booksDataGridView)).BeginInit();
-            this.booksGroupBox.SuspendLayout();
-            this.loansTabPage.SuspendLayout();
-            this.loansButtonsGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.loansDataGridView)).BeginInit();
-            this.loansGroupBox.SuspendLayout();
-            this.returnsTabPage.SuspendLayout();
-            this.returnsButtonsGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.returnsDataGridView)).BeginInit();
-            this.returnsGroupBox.SuspendLayout();
-            this.AuthorTabPage.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AutoresDataGridView)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.SuspendLayout();
+            libraryTabControl = new TabControl();
+            booksTabPage = new TabPage();
+            searchBookTextBox = new TextBox();
+            label7 = new Label();
+            booksButtonsGroupBox = new GroupBox();
+            deleteBookButton = new Button();
+            editBookButton = new Button();
+            booksDataGridView = new DataGridView();
+            adminBooksLabel = new Label();
+            booksGroupBox = new GroupBox();
+            statusBookComboBox = new ComboBox();
+            label1 = new Label();
+            authorBookComboBox = new ComboBox();
+            saveBookButton = new Button();
+            statusBookLabel = new Label();
+            genreBookTextBox = new TextBox();
+            genreLabel = new Label();
+            isbnBookTextBox = new TextBox();
+            isbnBookLabel = new Label();
+            publisherBookTextBox = new TextBox();
+            publisherBookLabel = new Label();
+            titleBookTextBox = new TextBox();
+            titleBookLabel = new Label();
+            loansTabPage = new TabPage();
+            loansButtonsGroupBox = new GroupBox();
+            deleteLoanButton = new Button();
+            loansDataGridView = new DataGridView();
+            adminLoansLabel = new Label();
+            loansGroupBox = new GroupBox();
+            estimatedReturnDateTimePicker = new DateTimePicker();
+            loanDateTimePicker = new DateTimePicker();
+            label2 = new Label();
+            bookComboBox = new ComboBox();
+            loanDateLabel = new Label();
+            saveLoanButton = new Button();
+            customerTextBox = new TextBox();
+            customerLabel = new Label();
+            bookLoanLabel = new Label();
+            returnsTabPage = new TabPage();
+            returnsButtonsGroupBox = new GroupBox();
+            deleteReturnButton = new Button();
+            returnsDataGridView = new DataGridView();
+            adminReturnsLabel = new Label();
+            returnsGroupBox = new GroupBox();
+            labelClientName = new Label();
+            labelLoanClient = new Label();
+            LoanComboBox = new ComboBox();
+            label3 = new Label();
+            statusLoanComboBox = new ComboBox();
+            actualReturnDateTimePicker = new DateTimePicker();
+            actualReturnDateLabel = new Label();
+            saveReturnButton = new Button();
+            loanLabel = new Label();
+            AuthorTabPage = new TabPage();
+            label6 = new Label();
+            groupBox2 = new GroupBox();
+            UpdateAuthorButton = new Button();
+            DeleteAuthor = new Button();
+            AutoresDataGridView = new DataGridView();
+            groupBox1 = new GroupBox();
+            label5 = new Label();
+            label4 = new Label();
+            authorLastNameTextBox = new TextBox();
+            SaveAuthorButton = new Button();
+            authorFirstNameTextBox = new TextBox();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            libraryTabControl.SuspendLayout();
+            booksTabPage.SuspendLayout();
+            booksButtonsGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)booksDataGridView).BeginInit();
+            booksGroupBox.SuspendLayout();
+            loansTabPage.SuspendLayout();
+            loansButtonsGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)loansDataGridView).BeginInit();
+            loansGroupBox.SuspendLayout();
+            returnsTabPage.SuspendLayout();
+            returnsButtonsGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)returnsDataGridView).BeginInit();
+            returnsGroupBox.SuspendLayout();
+            AuthorTabPage.SuspendLayout();
+            groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)AutoresDataGridView).BeginInit();
+            groupBox1.SuspendLayout();
+            SuspendLayout();
             // 
             // libraryTabControl
             // 
-            this.libraryTabControl.Controls.Add(this.booksTabPage);
-            this.libraryTabControl.Controls.Add(this.loansTabPage);
-            this.libraryTabControl.Controls.Add(this.returnsTabPage);
-            this.libraryTabControl.Controls.Add(this.AuthorTabPage);
-            this.libraryTabControl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.libraryTabControl.Location = new System.Drawing.Point(12, 12);
-            this.libraryTabControl.Name = "libraryTabControl";
-            this.libraryTabControl.SelectedIndex = 0;
-            this.libraryTabControl.Size = new System.Drawing.Size(839, 527);
-            this.libraryTabControl.TabIndex = 0;
+            libraryTabControl.Controls.Add(booksTabPage);
+            libraryTabControl.Controls.Add(loansTabPage);
+            libraryTabControl.Controls.Add(returnsTabPage);
+            libraryTabControl.Controls.Add(AuthorTabPage);
+            libraryTabControl.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            libraryTabControl.Location = new Point(14, 16);
+            libraryTabControl.Margin = new Padding(3, 4, 3, 4);
+            libraryTabControl.Name = "libraryTabControl";
+            libraryTabControl.SelectedIndex = 0;
+            libraryTabControl.Size = new Size(959, 703);
+            libraryTabControl.TabIndex = 0;
             // 
             // booksTabPage
             // 
-            this.booksTabPage.Controls.Add(this.booksButtonsGroupBox);
-            this.booksTabPage.Controls.Add(this.booksDataGridView);
-            this.booksTabPage.Controls.Add(this.adminBooksLabel);
-            this.booksTabPage.Controls.Add(this.booksGroupBox);
-            this.booksTabPage.Location = new System.Drawing.Point(4, 30);
-            this.booksTabPage.Name = "booksTabPage";
-            this.booksTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.booksTabPage.Size = new System.Drawing.Size(831, 493);
-            this.booksTabPage.TabIndex = 0;
-            this.booksTabPage.Text = "Libros";
-            this.booksTabPage.UseVisualStyleBackColor = true;
+            booksTabPage.Controls.Add(searchBookTextBox);
+            booksTabPage.Controls.Add(label7);
+            booksTabPage.Controls.Add(booksButtonsGroupBox);
+            booksTabPage.Controls.Add(booksDataGridView);
+            booksTabPage.Controls.Add(adminBooksLabel);
+            booksTabPage.Controls.Add(booksGroupBox);
+            booksTabPage.Location = new Point(4, 37);
+            booksTabPage.Margin = new Padding(3, 4, 3, 4);
+            booksTabPage.Name = "booksTabPage";
+            booksTabPage.Padding = new Padding(3, 4, 3, 4);
+            booksTabPage.Size = new Size(951, 662);
+            booksTabPage.TabIndex = 0;
+            booksTabPage.Text = "Libros";
+            booksTabPage.UseVisualStyleBackColor = true;
+            // 
+            // searchBookTextBox
+            // 
+            searchBookTextBox.BorderStyle = BorderStyle.FixedSingle;
+            searchBookTextBox.Location = new Point(17, 44);
+            searchBookTextBox.Name = "searchBookTextBox";
+            searchBookTextBox.Size = new Size(335, 34);
+            searchBookTextBox.TabIndex = 5;
+            searchBookTextBox.TextChanged += searchBookTextBox_TextChanged;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(17, 13);
+            label7.Name = "label7";
+            label7.Size = new Size(75, 28);
+            label7.TabIndex = 4;
+            label7.Text = "Buscar";
             // 
             // booksButtonsGroupBox
             // 
-            this.booksButtonsGroupBox.Controls.Add(this.deleteBookButton);
-            this.booksButtonsGroupBox.Controls.Add(this.editBookButton);
-            this.booksButtonsGroupBox.Location = new System.Drawing.Point(15, 383);
-            this.booksButtonsGroupBox.Name = "booksButtonsGroupBox";
-            this.booksButtonsGroupBox.Size = new System.Drawing.Size(424, 93);
-            this.booksButtonsGroupBox.TabIndex = 3;
-            this.booksButtonsGroupBox.TabStop = false;
+            booksButtonsGroupBox.Controls.Add(deleteBookButton);
+            booksButtonsGroupBox.Controls.Add(editBookButton);
+            booksButtonsGroupBox.Location = new Point(17, 511);
+            booksButtonsGroupBox.Margin = new Padding(3, 4, 3, 4);
+            booksButtonsGroupBox.Name = "booksButtonsGroupBox";
+            booksButtonsGroupBox.Padding = new Padding(3, 4, 3, 4);
+            booksButtonsGroupBox.Size = new Size(485, 124);
+            booksButtonsGroupBox.TabIndex = 3;
+            booksButtonsGroupBox.TabStop = false;
             // 
             // deleteBookButton
             // 
-            this.deleteBookButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.deleteBookButton.Location = new System.Drawing.Point(246, 39);
-            this.deleteBookButton.Name = "deleteBookButton";
-            this.deleteBookButton.Size = new System.Drawing.Size(85, 32);
-            this.deleteBookButton.TabIndex = 15;
-            this.deleteBookButton.Text = "Eliminar";
-            this.deleteBookButton.UseVisualStyleBackColor = true;
-            this.deleteBookButton.Click += new System.EventHandler(this.deleteBookButton_Click);
+            deleteBookButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            deleteBookButton.Location = new Point(281, 52);
+            deleteBookButton.Margin = new Padding(3, 4, 3, 4);
+            deleteBookButton.Name = "deleteBookButton";
+            deleteBookButton.Size = new Size(106, 43);
+            deleteBookButton.TabIndex = 15;
+            deleteBookButton.Text = "Eliminar";
+            deleteBookButton.UseVisualStyleBackColor = true;
+            deleteBookButton.Click += deleteBookButton_Click;
             // 
             // editBookButton
             // 
-            this.editBookButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.editBookButton.Location = new System.Drawing.Point(60, 39);
-            this.editBookButton.Name = "editBookButton";
-            this.editBookButton.Size = new System.Drawing.Size(85, 32);
-            this.editBookButton.TabIndex = 14;
-            this.editBookButton.Text = "Editar";
-            this.editBookButton.UseVisualStyleBackColor = true;
-            this.editBookButton.Click += new System.EventHandler(this.editBookButton_Click);
+            editBookButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            editBookButton.Location = new Point(69, 52);
+            editBookButton.Margin = new Padding(3, 4, 3, 4);
+            editBookButton.Name = "editBookButton";
+            editBookButton.Size = new Size(97, 43);
+            editBookButton.TabIndex = 14;
+            editBookButton.Text = "Editar";
+            editBookButton.UseVisualStyleBackColor = true;
+            editBookButton.Click += editBookButton_Click;
             // 
             // booksDataGridView
             // 
-            this.booksDataGridView.AllowUserToAddRows = false;
-            this.booksDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.booksDataGridView.Location = new System.Drawing.Point(15, 48);
-            this.booksDataGridView.Name = "booksDataGridView";
-            this.booksDataGridView.RowTemplate.Height = 25;
-            this.booksDataGridView.Size = new System.Drawing.Size(424, 329);
-            this.booksDataGridView.TabIndex = 2;
+            booksDataGridView.AllowUserToAddRows = false;
+            booksDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            booksDataGridView.Location = new Point(17, 85);
+            booksDataGridView.Margin = new Padding(3, 4, 3, 4);
+            booksDataGridView.Name = "booksDataGridView";
+            booksDataGridView.RowHeadersWidth = 51;
+            booksDataGridView.RowTemplate.Height = 25;
+            booksDataGridView.Size = new Size(485, 439);
+            booksDataGridView.TabIndex = 2;
             // 
             // adminBooksLabel
             // 
-            this.adminBooksLabel.AutoSize = true;
-            this.adminBooksLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.adminBooksLabel.Location = new System.Drawing.Point(299, 17);
-            this.adminBooksLabel.Name = "adminBooksLabel";
-            this.adminBooksLabel.Size = new System.Drawing.Size(197, 21);
-            this.adminBooksLabel.TabIndex = 1;
-            this.adminBooksLabel.Text = "Administración de libros";
+            adminBooksLabel.AutoSize = true;
+            adminBooksLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            adminBooksLabel.Location = new Point(345, 4);
+            adminBooksLabel.Name = "adminBooksLabel";
+            adminBooksLabel.Size = new Size(244, 28);
+            adminBooksLabel.TabIndex = 1;
+            adminBooksLabel.Text = "Administración de libros";
             // 
             // booksGroupBox
             // 
-            this.booksGroupBox.Controls.Add(this.statusBookComboBox);
-            this.booksGroupBox.Controls.Add(this.label1);
-            this.booksGroupBox.Controls.Add(this.authorBookComboBox);
-            this.booksGroupBox.Controls.Add(this.saveBookButton);
-            this.booksGroupBox.Controls.Add(this.statusBookLabel);
-            this.booksGroupBox.Controls.Add(this.genreBookTextBox);
-            this.booksGroupBox.Controls.Add(this.genreLabel);
-            this.booksGroupBox.Controls.Add(this.isbnBookTextBox);
-            this.booksGroupBox.Controls.Add(this.isbnBookLabel);
-            this.booksGroupBox.Controls.Add(this.publisherBookTextBox);
-            this.booksGroupBox.Controls.Add(this.publisherBookLabel);
-            this.booksGroupBox.Controls.Add(this.titleBookTextBox);
-            this.booksGroupBox.Controls.Add(this.titleBookLabel);
-            this.booksGroupBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.booksGroupBox.Location = new System.Drawing.Point(456, 48);
-            this.booksGroupBox.Name = "booksGroupBox";
-            this.booksGroupBox.Size = new System.Drawing.Size(360, 428);
-            this.booksGroupBox.TabIndex = 0;
-            this.booksGroupBox.TabStop = false;
+            booksGroupBox.Controls.Add(statusBookComboBox);
+            booksGroupBox.Controls.Add(label1);
+            booksGroupBox.Controls.Add(authorBookComboBox);
+            booksGroupBox.Controls.Add(saveBookButton);
+            booksGroupBox.Controls.Add(statusBookLabel);
+            booksGroupBox.Controls.Add(genreBookTextBox);
+            booksGroupBox.Controls.Add(genreLabel);
+            booksGroupBox.Controls.Add(isbnBookTextBox);
+            booksGroupBox.Controls.Add(isbnBookLabel);
+            booksGroupBox.Controls.Add(publisherBookTextBox);
+            booksGroupBox.Controls.Add(publisherBookLabel);
+            booksGroupBox.Controls.Add(titleBookTextBox);
+            booksGroupBox.Controls.Add(titleBookLabel);
+            booksGroupBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            booksGroupBox.Location = new Point(521, 64);
+            booksGroupBox.Margin = new Padding(3, 4, 3, 4);
+            booksGroupBox.Name = "booksGroupBox";
+            booksGroupBox.Padding = new Padding(3, 4, 3, 4);
+            booksGroupBox.Size = new Size(411, 571);
+            booksGroupBox.TabIndex = 0;
+            booksGroupBox.TabStop = false;
             // 
             // statusBookComboBox
             // 
-            this.statusBookComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.statusBookComboBox.FormattingEnabled = true;
-            this.statusBookComboBox.Location = new System.Drawing.Point(86, 232);
-            this.statusBookComboBox.Name = "statusBookComboBox";
-            this.statusBookComboBox.Size = new System.Drawing.Size(256, 25);
-            this.statusBookComboBox.TabIndex = 16;
+            statusBookComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            statusBookComboBox.FormattingEnabled = true;
+            statusBookComboBox.Location = new Point(98, 309);
+            statusBookComboBox.Margin = new Padding(3, 4, 3, 4);
+            statusBookComboBox.Name = "statusBookComboBox";
+            statusBookComboBox.Size = new Size(292, 29);
+            statusBookComboBox.TabIndex = 16;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 73);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 17);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Autor:";
+            label1.AutoSize = true;
+            label1.Location = new Point(17, 97);
+            label1.Name = "label1";
+            label1.Size = new Size(57, 23);
+            label1.TabIndex = 15;
+            label1.Text = "Autor:";
             // 
             // authorBookComboBox
             // 
-            this.authorBookComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.authorBookComboBox.FormattingEnabled = true;
-            this.authorBookComboBox.Location = new System.Drawing.Point(86, 65);
-            this.authorBookComboBox.Name = "authorBookComboBox";
-            this.authorBookComboBox.Size = new System.Drawing.Size(256, 25);
-            this.authorBookComboBox.TabIndex = 14;
+            authorBookComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            authorBookComboBox.FormattingEnabled = true;
+            authorBookComboBox.Location = new Point(98, 87);
+            authorBookComboBox.Margin = new Padding(3, 4, 3, 4);
+            authorBookComboBox.Name = "authorBookComboBox";
+            authorBookComboBox.Size = new Size(292, 29);
+            authorBookComboBox.TabIndex = 14;
             // 
             // saveBookButton
             // 
-            this.saveBookButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.saveBookButton.Location = new System.Drawing.Point(152, 348);
-            this.saveBookButton.Name = "saveBookButton";
-            this.saveBookButton.Size = new System.Drawing.Size(85, 32);
-            this.saveBookButton.TabIndex = 13;
-            this.saveBookButton.Text = "Guardar";
-            this.saveBookButton.UseVisualStyleBackColor = true;
-            this.saveBookButton.Click += new System.EventHandler(this.saveBookButton_Click);
+            saveBookButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            saveBookButton.Location = new Point(174, 464);
+            saveBookButton.Margin = new Padding(3, 4, 3, 4);
+            saveBookButton.Name = "saveBookButton";
+            saveBookButton.Size = new Size(97, 43);
+            saveBookButton.TabIndex = 13;
+            saveBookButton.Text = "Guardar";
+            saveBookButton.UseVisualStyleBackColor = true;
+            saveBookButton.Click += saveBookButton_Click;
             // 
             // statusBookLabel
             // 
-            this.statusBookLabel.AutoSize = true;
-            this.statusBookLabel.Location = new System.Drawing.Point(15, 235);
-            this.statusBookLabel.Name = "statusBookLabel";
-            this.statusBookLabel.Size = new System.Drawing.Size(51, 17);
-            this.statusBookLabel.TabIndex = 10;
-            this.statusBookLabel.Text = "Estado:";
+            statusBookLabel.AutoSize = true;
+            statusBookLabel.Location = new Point(17, 313);
+            statusBookLabel.Name = "statusBookLabel";
+            statusBookLabel.Size = new Size(65, 23);
+            statusBookLabel.TabIndex = 10;
+            statusBookLabel.Text = "Estado:";
             // 
             // genreBookTextBox
             // 
-            this.genreBookTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.genreBookTextBox.Location = new System.Drawing.Point(86, 189);
-            this.genreBookTextBox.Name = "genreBookTextBox";
-            this.genreBookTextBox.PlaceholderText = "ciencia ficción postapocalíptica";
-            this.genreBookTextBox.Size = new System.Drawing.Size(256, 25);
-            this.genreBookTextBox.TabIndex = 9;
+            genreBookTextBox.BorderStyle = BorderStyle.FixedSingle;
+            genreBookTextBox.Location = new Point(98, 252);
+            genreBookTextBox.Margin = new Padding(3, 4, 3, 4);
+            genreBookTextBox.Name = "genreBookTextBox";
+            genreBookTextBox.PlaceholderText = "ciencia ficción postapocalíptica";
+            genreBookTextBox.Size = new Size(292, 29);
+            genreBookTextBox.TabIndex = 9;
             // 
             // genreLabel
             // 
-            this.genreLabel.AutoSize = true;
-            this.genreLabel.Location = new System.Drawing.Point(15, 193);
-            this.genreLabel.Name = "genreLabel";
-            this.genreLabel.Size = new System.Drawing.Size(54, 17);
-            this.genreLabel.TabIndex = 8;
-            this.genreLabel.Text = "Género:";
+            genreLabel.AutoSize = true;
+            genreLabel.Location = new Point(17, 257);
+            genreLabel.Name = "genreLabel";
+            genreLabel.Size = new Size(70, 23);
+            genreLabel.TabIndex = 8;
+            genreLabel.Text = "Género:";
             // 
             // isbnBookTextBox
             // 
-            this.isbnBookTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.isbnBookTextBox.Location = new System.Drawing.Point(86, 149);
-            this.isbnBookTextBox.Name = "isbnBookTextBox";
-            this.isbnBookTextBox.PlaceholderText = "978-0-306-40615-7";
-            this.isbnBookTextBox.Size = new System.Drawing.Size(256, 25);
-            this.isbnBookTextBox.TabIndex = 7;
+            isbnBookTextBox.BorderStyle = BorderStyle.FixedSingle;
+            isbnBookTextBox.Location = new Point(98, 199);
+            isbnBookTextBox.Margin = new Padding(3, 4, 3, 4);
+            isbnBookTextBox.Name = "isbnBookTextBox";
+            isbnBookTextBox.PlaceholderText = "978-0-306-40615-7";
+            isbnBookTextBox.Size = new Size(292, 29);
+            isbnBookTextBox.TabIndex = 7;
             // 
             // isbnBookLabel
             // 
-            this.isbnBookLabel.AutoSize = true;
-            this.isbnBookLabel.Location = new System.Drawing.Point(15, 153);
-            this.isbnBookLabel.Name = "isbnBookLabel";
-            this.isbnBookLabel.Size = new System.Drawing.Size(38, 17);
-            this.isbnBookLabel.TabIndex = 6;
-            this.isbnBookLabel.Text = "ISBN:";
+            isbnBookLabel.AutoSize = true;
+            isbnBookLabel.Location = new Point(17, 204);
+            isbnBookLabel.Name = "isbnBookLabel";
+            isbnBookLabel.Size = new Size(51, 23);
+            isbnBookLabel.TabIndex = 6;
+            isbnBookLabel.Text = "ISBN:";
             // 
             // publisherBookTextBox
             // 
-            this.publisherBookTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.publisherBookTextBox.Location = new System.Drawing.Point(86, 109);
-            this.publisherBookTextBox.Name = "publisherBookTextBox";
-            this.publisherBookTextBox.PlaceholderText = "Eksmo";
-            this.publisherBookTextBox.Size = new System.Drawing.Size(256, 25);
-            this.publisherBookTextBox.TabIndex = 5;
+            publisherBookTextBox.BorderStyle = BorderStyle.FixedSingle;
+            publisherBookTextBox.Location = new Point(98, 145);
+            publisherBookTextBox.Margin = new Padding(3, 4, 3, 4);
+            publisherBookTextBox.Name = "publisherBookTextBox";
+            publisherBookTextBox.PlaceholderText = "Eksmo";
+            publisherBookTextBox.Size = new Size(292, 29);
+            publisherBookTextBox.TabIndex = 5;
             // 
             // publisherBookLabel
             // 
-            this.publisherBookLabel.AutoSize = true;
-            this.publisherBookLabel.Location = new System.Drawing.Point(15, 114);
-            this.publisherBookLabel.Name = "publisherBookLabel";
-            this.publisherBookLabel.Size = new System.Drawing.Size(59, 17);
-            this.publisherBookLabel.TabIndex = 4;
-            this.publisherBookLabel.Text = "Editorial:";
+            publisherBookLabel.AutoSize = true;
+            publisherBookLabel.Location = new Point(17, 152);
+            publisherBookLabel.Name = "publisherBookLabel";
+            publisherBookLabel.Size = new Size(76, 23);
+            publisherBookLabel.TabIndex = 4;
+            publisherBookLabel.Text = "Editorial:";
             // 
             // titleBookTextBox
             // 
-            this.titleBookTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.titleBookTextBox.Location = new System.Drawing.Point(86, 23);
-            this.titleBookTextBox.Name = "titleBookTextBox";
-            this.titleBookTextBox.PlaceholderText = "Metro 2033";
-            this.titleBookTextBox.Size = new System.Drawing.Size(256, 25);
-            this.titleBookTextBox.TabIndex = 1;
+            titleBookTextBox.BorderStyle = BorderStyle.FixedSingle;
+            titleBookTextBox.Location = new Point(98, 31);
+            titleBookTextBox.Margin = new Padding(3, 4, 3, 4);
+            titleBookTextBox.Name = "titleBookTextBox";
+            titleBookTextBox.PlaceholderText = "Metro 2033";
+            titleBookTextBox.Size = new Size(292, 29);
+            titleBookTextBox.TabIndex = 1;
             // 
             // titleBookLabel
             // 
-            this.titleBookLabel.AutoSize = true;
-            this.titleBookLabel.Location = new System.Drawing.Point(15, 28);
-            this.titleBookLabel.Name = "titleBookLabel";
-            this.titleBookLabel.Size = new System.Drawing.Size(43, 17);
-            this.titleBookLabel.TabIndex = 0;
-            this.titleBookLabel.Text = "Título:";
+            titleBookLabel.AutoSize = true;
+            titleBookLabel.Location = new Point(17, 37);
+            titleBookLabel.Name = "titleBookLabel";
+            titleBookLabel.Size = new Size(57, 23);
+            titleBookLabel.TabIndex = 0;
+            titleBookLabel.Text = "Título:";
             // 
             // loansTabPage
             // 
-            this.loansTabPage.Controls.Add(this.loansButtonsGroupBox);
-            this.loansTabPage.Controls.Add(this.loansDataGridView);
-            this.loansTabPage.Controls.Add(this.adminLoansLabel);
-            this.loansTabPage.Controls.Add(this.loansGroupBox);
-            this.loansTabPage.Location = new System.Drawing.Point(4, 30);
-            this.loansTabPage.Name = "loansTabPage";
-            this.loansTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.loansTabPage.Size = new System.Drawing.Size(831, 493);
-            this.loansTabPage.TabIndex = 1;
-            this.loansTabPage.Text = "Préstamos";
-            this.loansTabPage.UseVisualStyleBackColor = true;
+            loansTabPage.Controls.Add(loansButtonsGroupBox);
+            loansTabPage.Controls.Add(loansDataGridView);
+            loansTabPage.Controls.Add(adminLoansLabel);
+            loansTabPage.Controls.Add(loansGroupBox);
+            loansTabPage.Location = new Point(4, 37);
+            loansTabPage.Margin = new Padding(3, 4, 3, 4);
+            loansTabPage.Name = "loansTabPage";
+            loansTabPage.Padding = new Padding(3, 4, 3, 4);
+            loansTabPage.Size = new Size(951, 662);
+            loansTabPage.TabIndex = 1;
+            loansTabPage.Text = "Préstamos";
+            loansTabPage.UseVisualStyleBackColor = true;
             // 
             // loansButtonsGroupBox
             // 
-            this.loansButtonsGroupBox.Controls.Add(this.deleteLoanButton);
-            this.loansButtonsGroupBox.Location = new System.Drawing.Point(15, 383);
-            this.loansButtonsGroupBox.Name = "loansButtonsGroupBox";
-            this.loansButtonsGroupBox.Size = new System.Drawing.Size(424, 93);
-            this.loansButtonsGroupBox.TabIndex = 7;
-            this.loansButtonsGroupBox.TabStop = false;
+            loansButtonsGroupBox.Controls.Add(deleteLoanButton);
+            loansButtonsGroupBox.Location = new Point(17, 511);
+            loansButtonsGroupBox.Margin = new Padding(3, 4, 3, 4);
+            loansButtonsGroupBox.Name = "loansButtonsGroupBox";
+            loansButtonsGroupBox.Padding = new Padding(3, 4, 3, 4);
+            loansButtonsGroupBox.Size = new Size(485, 124);
+            loansButtonsGroupBox.TabIndex = 7;
+            loansButtonsGroupBox.TabStop = false;
             // 
             // deleteLoanButton
             // 
-            this.deleteLoanButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.deleteLoanButton.Location = new System.Drawing.Point(246, 39);
-            this.deleteLoanButton.Name = "deleteLoanButton";
-            this.deleteLoanButton.Size = new System.Drawing.Size(85, 32);
-            this.deleteLoanButton.TabIndex = 15;
-            this.deleteLoanButton.Text = "Eliminar";
-            this.deleteLoanButton.UseVisualStyleBackColor = true;
-            this.deleteLoanButton.Click += new System.EventHandler(this.deleteLoanButton_Click);
+            deleteLoanButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            deleteLoanButton.Location = new Point(281, 52);
+            deleteLoanButton.Margin = new Padding(3, 4, 3, 4);
+            deleteLoanButton.Name = "deleteLoanButton";
+            deleteLoanButton.Size = new Size(104, 43);
+            deleteLoanButton.TabIndex = 15;
+            deleteLoanButton.Text = "Eliminar";
+            deleteLoanButton.UseVisualStyleBackColor = true;
+            deleteLoanButton.Click += deleteLoanButton_Click;
             // 
             // loansDataGridView
             // 
-            this.loansDataGridView.AllowUserToAddRows = false;
-            this.loansDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.loansDataGridView.Location = new System.Drawing.Point(15, 48);
-            this.loansDataGridView.Name = "loansDataGridView";
-            this.loansDataGridView.RowTemplate.Height = 25;
-            this.loansDataGridView.Size = new System.Drawing.Size(424, 329);
-            this.loansDataGridView.TabIndex = 6;
+            loansDataGridView.AllowUserToAddRows = false;
+            loansDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            loansDataGridView.Location = new Point(17, 64);
+            loansDataGridView.Margin = new Padding(3, 4, 3, 4);
+            loansDataGridView.Name = "loansDataGridView";
+            loansDataGridView.RowHeadersWidth = 51;
+            loansDataGridView.RowTemplate.Height = 25;
+            loansDataGridView.Size = new Size(485, 439);
+            loansDataGridView.TabIndex = 6;
             // 
             // adminLoansLabel
             // 
-            this.adminLoansLabel.AutoSize = true;
-            this.adminLoansLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.adminLoansLabel.Location = new System.Drawing.Point(299, 17);
-            this.adminLoansLabel.Name = "adminLoansLabel";
-            this.adminLoansLabel.Size = new System.Drawing.Size(233, 21);
-            this.adminLoansLabel.TabIndex = 5;
-            this.adminLoansLabel.Text = "Administración de préstamos";
+            adminLoansLabel.AutoSize = true;
+            adminLoansLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            adminLoansLabel.Location = new Point(342, 23);
+            adminLoansLabel.Name = "adminLoansLabel";
+            adminLoansLabel.Size = new Size(289, 28);
+            adminLoansLabel.TabIndex = 5;
+            adminLoansLabel.Text = "Administración de préstamos";
             // 
             // loansGroupBox
             // 
-            this.loansGroupBox.Controls.Add(this.estimatedReturnDateTimePicker);
-            this.loansGroupBox.Controls.Add(this.loanDateTimePicker);
-            this.loansGroupBox.Controls.Add(this.label2);
-            this.loansGroupBox.Controls.Add(this.bookComboBox);
-            this.loansGroupBox.Controls.Add(this.loanDateLabel);
-            this.loansGroupBox.Controls.Add(this.saveLoanButton);
-            this.loansGroupBox.Controls.Add(this.customerTextBox);
-            this.loansGroupBox.Controls.Add(this.customerLabel);
-            this.loansGroupBox.Controls.Add(this.bookLoanLabel);
-            this.loansGroupBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.loansGroupBox.Location = new System.Drawing.Point(456, 48);
-            this.loansGroupBox.Name = "loansGroupBox";
-            this.loansGroupBox.Size = new System.Drawing.Size(360, 428);
-            this.loansGroupBox.TabIndex = 4;
-            this.loansGroupBox.TabStop = false;
+            loansGroupBox.Controls.Add(estimatedReturnDateTimePicker);
+            loansGroupBox.Controls.Add(loanDateTimePicker);
+            loansGroupBox.Controls.Add(label2);
+            loansGroupBox.Controls.Add(bookComboBox);
+            loansGroupBox.Controls.Add(loanDateLabel);
+            loansGroupBox.Controls.Add(saveLoanButton);
+            loansGroupBox.Controls.Add(customerTextBox);
+            loansGroupBox.Controls.Add(customerLabel);
+            loansGroupBox.Controls.Add(bookLoanLabel);
+            loansGroupBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            loansGroupBox.Location = new Point(521, 64);
+            loansGroupBox.Margin = new Padding(3, 4, 3, 4);
+            loansGroupBox.Name = "loansGroupBox";
+            loansGroupBox.Padding = new Padding(3, 4, 3, 4);
+            loansGroupBox.Size = new Size(411, 571);
+            loansGroupBox.TabIndex = 4;
+            loansGroupBox.TabStop = false;
             // 
             // estimatedReturnDateTimePicker
             // 
-            this.estimatedReturnDateTimePicker.Location = new System.Drawing.Point(6, 264);
-            this.estimatedReturnDateTimePicker.Name = "estimatedReturnDateTimePicker";
-            this.estimatedReturnDateTimePicker.Size = new System.Drawing.Size(256, 25);
-            this.estimatedReturnDateTimePicker.TabIndex = 20;
-            this.estimatedReturnDateTimePicker.Value = new System.DateTime(2023, 10, 15, 0, 0, 0, 0);
+            estimatedReturnDateTimePicker.Location = new Point(7, 352);
+            estimatedReturnDateTimePicker.Margin = new Padding(3, 4, 3, 4);
+            estimatedReturnDateTimePicker.Name = "estimatedReturnDateTimePicker";
+            estimatedReturnDateTimePicker.Size = new Size(292, 29);
+            estimatedReturnDateTimePicker.TabIndex = 20;
+            estimatedReturnDateTimePicker.Value = new DateTime(2023, 10, 15, 0, 0, 0, 0);
             // 
             // loanDateTimePicker
             // 
-            this.loanDateTimePicker.Location = new System.Drawing.Point(6, 182);
-            this.loanDateTimePicker.Name = "loanDateTimePicker";
-            this.loanDateTimePicker.Size = new System.Drawing.Size(256, 25);
-            this.loanDateTimePicker.TabIndex = 19;
-            this.loanDateTimePicker.Value = new System.DateTime(2023, 9, 15, 0, 0, 0, 0);
+            loanDateTimePicker.Location = new Point(7, 243);
+            loanDateTimePicker.Margin = new Padding(3, 4, 3, 4);
+            loanDateTimePicker.Name = "loanDateTimePicker";
+            loanDateTimePicker.Size = new Size(292, 29);
+            loanDateTimePicker.TabIndex = 19;
+            loanDateTimePicker.Value = new DateTime(2023, 9, 15, 0, 0, 0, 0);
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(6, 231);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(213, 20);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Fecha de devolucion esperada:";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(7, 308);
+            label2.Name = "label2";
+            label2.Size = new Size(271, 25);
+            label2.TabIndex = 17;
+            label2.Text = "Fecha de devolucion esperada:";
             // 
             // bookComboBox
             // 
-            this.bookComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.bookComboBox.FormattingEnabled = true;
-            this.bookComboBox.Location = new System.Drawing.Point(80, 38);
-            this.bookComboBox.Name = "bookComboBox";
-            this.bookComboBox.Size = new System.Drawing.Size(256, 25);
-            this.bookComboBox.TabIndex = 16;
+            bookComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            bookComboBox.FormattingEnabled = true;
+            bookComboBox.Location = new Point(91, 51);
+            bookComboBox.Margin = new Padding(3, 4, 3, 4);
+            bookComboBox.Name = "bookComboBox";
+            bookComboBox.Size = new Size(292, 29);
+            bookComboBox.TabIndex = 16;
             // 
             // loanDateLabel
             // 
-            this.loanDateLabel.AutoSize = true;
-            this.loanDateLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.loanDateLabel.Location = new System.Drawing.Point(6, 150);
-            this.loanDateLabel.Name = "loanDateLabel";
-            this.loanDateLabel.Size = new System.Drawing.Size(138, 20);
-            this.loanDateLabel.TabIndex = 14;
-            this.loanDateLabel.Text = "Fecha de préstamo:";
+            loanDateLabel.AutoSize = true;
+            loanDateLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            loanDateLabel.Location = new Point(7, 200);
+            loanDateLabel.Name = "loanDateLabel";
+            loanDateLabel.Size = new Size(175, 25);
+            loanDateLabel.TabIndex = 14;
+            loanDateLabel.Text = "Fecha de préstamo:";
             // 
             // saveLoanButton
             // 
-            this.saveLoanButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.saveLoanButton.Location = new System.Drawing.Point(141, 354);
-            this.saveLoanButton.Name = "saveLoanButton";
-            this.saveLoanButton.Size = new System.Drawing.Size(85, 32);
-            this.saveLoanButton.TabIndex = 13;
-            this.saveLoanButton.Text = "Guardar";
-            this.saveLoanButton.UseVisualStyleBackColor = true;
-            this.saveLoanButton.Click += new System.EventHandler(this.saveLoanButton_Click);
+            saveLoanButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            saveLoanButton.Location = new Point(161, 472);
+            saveLoanButton.Margin = new Padding(3, 4, 3, 4);
+            saveLoanButton.Name = "saveLoanButton";
+            saveLoanButton.Size = new Size(97, 43);
+            saveLoanButton.TabIndex = 13;
+            saveLoanButton.Text = "Guardar";
+            saveLoanButton.UseVisualStyleBackColor = true;
+            saveLoanButton.Click += saveLoanButton_Click;
             // 
             // customerTextBox
             // 
-            this.customerTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customerTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerTextBox.Location = new System.Drawing.Point(80, 92);
-            this.customerTextBox.Name = "customerTextBox";
-            this.customerTextBox.PlaceholderText = "Andrew lauttner";
-            this.customerTextBox.Size = new System.Drawing.Size(256, 27);
-            this.customerTextBox.TabIndex = 3;
+            customerTextBox.BorderStyle = BorderStyle.FixedSingle;
+            customerTextBox.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            customerTextBox.Location = new Point(91, 123);
+            customerTextBox.Margin = new Padding(3, 4, 3, 4);
+            customerTextBox.Name = "customerTextBox";
+            customerTextBox.PlaceholderText = "Andrew lauttner";
+            customerTextBox.Size = new Size(292, 32);
+            customerTextBox.TabIndex = 3;
             // 
             // customerLabel
             // 
-            this.customerLabel.AutoSize = true;
-            this.customerLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerLabel.Location = new System.Drawing.Point(6, 94);
-            this.customerLabel.Name = "customerLabel";
-            this.customerLabel.Size = new System.Drawing.Size(58, 20);
-            this.customerLabel.TabIndex = 2;
-            this.customerLabel.Text = "Cliente:";
+            customerLabel.AutoSize = true;
+            customerLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            customerLabel.Location = new Point(7, 125);
+            customerLabel.Name = "customerLabel";
+            customerLabel.Size = new Size(75, 25);
+            customerLabel.TabIndex = 2;
+            customerLabel.Text = "Cliente:";
             // 
             // bookLoanLabel
             // 
-            this.bookLoanLabel.AutoSize = true;
-            this.bookLoanLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.bookLoanLabel.Location = new System.Drawing.Point(6, 38);
-            this.bookLoanLabel.Name = "bookLoanLabel";
-            this.bookLoanLabel.Size = new System.Drawing.Size(46, 20);
-            this.bookLoanLabel.TabIndex = 0;
-            this.bookLoanLabel.Text = "Libro:";
+            bookLoanLabel.AutoSize = true;
+            bookLoanLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            bookLoanLabel.Location = new Point(7, 51);
+            bookLoanLabel.Name = "bookLoanLabel";
+            bookLoanLabel.Size = new Size(59, 25);
+            bookLoanLabel.TabIndex = 0;
+            bookLoanLabel.Text = "Libro:";
             // 
             // returnsTabPage
             // 
-            this.returnsTabPage.Controls.Add(this.returnsButtonsGroupBox);
-            this.returnsTabPage.Controls.Add(this.returnsDataGridView);
-            this.returnsTabPage.Controls.Add(this.adminReturnsLabel);
-            this.returnsTabPage.Controls.Add(this.returnsGroupBox);
-            this.returnsTabPage.Location = new System.Drawing.Point(4, 30);
-            this.returnsTabPage.Name = "returnsTabPage";
-            this.returnsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.returnsTabPage.Size = new System.Drawing.Size(831, 493);
-            this.returnsTabPage.TabIndex = 2;
-            this.returnsTabPage.Text = "Devoluciones";
-            this.returnsTabPage.UseVisualStyleBackColor = true;
+            returnsTabPage.Controls.Add(returnsButtonsGroupBox);
+            returnsTabPage.Controls.Add(returnsDataGridView);
+            returnsTabPage.Controls.Add(adminReturnsLabel);
+            returnsTabPage.Controls.Add(returnsGroupBox);
+            returnsTabPage.Location = new Point(4, 37);
+            returnsTabPage.Margin = new Padding(3, 4, 3, 4);
+            returnsTabPage.Name = "returnsTabPage";
+            returnsTabPage.Padding = new Padding(3, 4, 3, 4);
+            returnsTabPage.Size = new Size(951, 662);
+            returnsTabPage.TabIndex = 2;
+            returnsTabPage.Text = "Devoluciones";
+            returnsTabPage.UseVisualStyleBackColor = true;
             // 
             // returnsButtonsGroupBox
             // 
-            this.returnsButtonsGroupBox.Controls.Add(this.deleteReturnButton);
-            this.returnsButtonsGroupBox.Location = new System.Drawing.Point(15, 383);
-            this.returnsButtonsGroupBox.Name = "returnsButtonsGroupBox";
-            this.returnsButtonsGroupBox.Size = new System.Drawing.Size(424, 93);
-            this.returnsButtonsGroupBox.TabIndex = 11;
-            this.returnsButtonsGroupBox.TabStop = false;
+            returnsButtonsGroupBox.Controls.Add(deleteReturnButton);
+            returnsButtonsGroupBox.Location = new Point(17, 511);
+            returnsButtonsGroupBox.Margin = new Padding(3, 4, 3, 4);
+            returnsButtonsGroupBox.Name = "returnsButtonsGroupBox";
+            returnsButtonsGroupBox.Padding = new Padding(3, 4, 3, 4);
+            returnsButtonsGroupBox.Size = new Size(485, 124);
+            returnsButtonsGroupBox.TabIndex = 11;
+            returnsButtonsGroupBox.TabStop = false;
             // 
             // deleteReturnButton
             // 
-            this.deleteReturnButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.deleteReturnButton.Location = new System.Drawing.Point(246, 39);
-            this.deleteReturnButton.Name = "deleteReturnButton";
-            this.deleteReturnButton.Size = new System.Drawing.Size(85, 32);
-            this.deleteReturnButton.TabIndex = 15;
-            this.deleteReturnButton.Text = "Eliminar";
-            this.deleteReturnButton.UseVisualStyleBackColor = true;
-            this.deleteReturnButton.Click += new System.EventHandler(this.deleteReturnButton_Click);
+            deleteReturnButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            deleteReturnButton.Location = new Point(281, 52);
+            deleteReturnButton.Margin = new Padding(3, 4, 3, 4);
+            deleteReturnButton.Name = "deleteReturnButton";
+            deleteReturnButton.Size = new Size(100, 43);
+            deleteReturnButton.TabIndex = 15;
+            deleteReturnButton.Text = "Eliminar";
+            deleteReturnButton.UseVisualStyleBackColor = true;
+            deleteReturnButton.Click += deleteReturnButton_Click;
             // 
             // returnsDataGridView
             // 
-            this.returnsDataGridView.AllowUserToAddRows = false;
-            this.returnsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.returnsDataGridView.Location = new System.Drawing.Point(15, 48);
-            this.returnsDataGridView.Name = "returnsDataGridView";
-            this.returnsDataGridView.RowTemplate.Height = 25;
-            this.returnsDataGridView.Size = new System.Drawing.Size(424, 329);
-            this.returnsDataGridView.TabIndex = 10;
+            returnsDataGridView.AllowUserToAddRows = false;
+            returnsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            returnsDataGridView.Location = new Point(17, 64);
+            returnsDataGridView.Margin = new Padding(3, 4, 3, 4);
+            returnsDataGridView.Name = "returnsDataGridView";
+            returnsDataGridView.RowHeadersWidth = 51;
+            returnsDataGridView.RowTemplate.Height = 25;
+            returnsDataGridView.Size = new Size(485, 439);
+            returnsDataGridView.TabIndex = 10;
             // 
             // adminReturnsLabel
             // 
-            this.adminReturnsLabel.AutoSize = true;
-            this.adminReturnsLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.adminReturnsLabel.Location = new System.Drawing.Point(299, 17);
-            this.adminReturnsLabel.Name = "adminReturnsLabel";
-            this.adminReturnsLabel.Size = new System.Drawing.Size(256, 21);
-            this.adminReturnsLabel.TabIndex = 9;
-            this.adminReturnsLabel.Text = "Administración de devoluciones";
+            adminReturnsLabel.AutoSize = true;
+            adminReturnsLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            adminReturnsLabel.Location = new Point(342, 23);
+            adminReturnsLabel.Name = "adminReturnsLabel";
+            adminReturnsLabel.Size = new Size(315, 28);
+            adminReturnsLabel.TabIndex = 9;
+            adminReturnsLabel.Text = "Administración de devoluciones";
             // 
             // returnsGroupBox
             // 
-            this.returnsGroupBox.Controls.Add(this.labelClientName);
-            this.returnsGroupBox.Controls.Add(this.labelLoanClient);
-            this.returnsGroupBox.Controls.Add(this.LoanComboBox);
-            this.returnsGroupBox.Controls.Add(this.label3);
-            this.returnsGroupBox.Controls.Add(this.statusLoanComboBox);
-            this.returnsGroupBox.Controls.Add(this.actualReturnDateTimePicker);
-            this.returnsGroupBox.Controls.Add(this.actualReturnDateLabel);
-            this.returnsGroupBox.Controls.Add(this.saveReturnButton);
-            this.returnsGroupBox.Controls.Add(this.loanLabel);
-            this.returnsGroupBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.returnsGroupBox.Location = new System.Drawing.Point(456, 48);
-            this.returnsGroupBox.Name = "returnsGroupBox";
-            this.returnsGroupBox.Size = new System.Drawing.Size(360, 428);
-            this.returnsGroupBox.TabIndex = 8;
-            this.returnsGroupBox.TabStop = false;
+            returnsGroupBox.Controls.Add(labelClientName);
+            returnsGroupBox.Controls.Add(labelLoanClient);
+            returnsGroupBox.Controls.Add(LoanComboBox);
+            returnsGroupBox.Controls.Add(label3);
+            returnsGroupBox.Controls.Add(statusLoanComboBox);
+            returnsGroupBox.Controls.Add(actualReturnDateTimePicker);
+            returnsGroupBox.Controls.Add(actualReturnDateLabel);
+            returnsGroupBox.Controls.Add(saveReturnButton);
+            returnsGroupBox.Controls.Add(loanLabel);
+            returnsGroupBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            returnsGroupBox.Location = new Point(521, 64);
+            returnsGroupBox.Margin = new Padding(3, 4, 3, 4);
+            returnsGroupBox.Name = "returnsGroupBox";
+            returnsGroupBox.Padding = new Padding(3, 4, 3, 4);
+            returnsGroupBox.Size = new Size(411, 571);
+            returnsGroupBox.TabIndex = 8;
+            returnsGroupBox.TabStop = false;
             // 
             // labelClientName
             // 
-            this.labelClientName.AutoSize = true;
-            this.labelClientName.Location = new System.Drawing.Point(140, 85);
-            this.labelClientName.Name = "labelClientName";
-            this.labelClientName.Size = new System.Drawing.Size(0, 17);
-            this.labelClientName.TabIndex = 21;
+            labelClientName.AutoSize = true;
+            labelClientName.Location = new Point(160, 113);
+            labelClientName.Name = "labelClientName";
+            labelClientName.Size = new Size(0, 23);
+            labelClientName.TabIndex = 21;
             // 
             // labelLoanClient
             // 
-            this.labelLoanClient.AutoSize = true;
-            this.labelLoanClient.Location = new System.Drawing.Point(6, 85);
-            this.labelLoanClient.Name = "labelLoanClient";
-            this.labelLoanClient.Size = new System.Drawing.Size(123, 17);
-            this.labelLoanClient.TabIndex = 20;
-            this.labelLoanClient.Text = "Nombre del cliente:";
+            labelLoanClient.AutoSize = true;
+            labelLoanClient.Location = new Point(7, 113);
+            labelLoanClient.Name = "labelLoanClient";
+            labelLoanClient.Size = new Size(160, 23);
+            labelLoanClient.TabIndex = 20;
+            labelLoanClient.Text = "Nombre del cliente:";
             // 
             // LoanComboBox
             // 
-            this.LoanComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.LoanComboBox.FormattingEnabled = true;
-            this.LoanComboBox.Location = new System.Drawing.Point(7, 57);
-            this.LoanComboBox.Name = "LoanComboBox";
-            this.LoanComboBox.Size = new System.Drawing.Size(255, 25);
-            this.LoanComboBox.TabIndex = 19;
-            this.LoanComboBox.SelectedIndexChanged += new System.EventHandler(this.LoanComboBox_SelectedIndexChanged);
+            LoanComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            LoanComboBox.FormattingEnabled = true;
+            LoanComboBox.Location = new Point(8, 76);
+            LoanComboBox.Margin = new Padding(3, 4, 3, 4);
+            LoanComboBox.Name = "LoanComboBox";
+            LoanComboBox.Size = new Size(291, 29);
+            LoanComboBox.TabIndex = 19;
+            LoanComboBox.SelectedIndexChanged += LoanComboBox_SelectedIndexChanged;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(6, 257);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 20);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Estado de prestamo";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(7, 343);
+            label3.Name = "label3";
+            label3.Size = new Size(178, 25);
+            label3.TabIndex = 18;
+            label3.Text = "Estado de prestamo";
             // 
             // statusLoanComboBox
             // 
-            this.statusLoanComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.statusLoanComboBox.FormattingEnabled = true;
-            this.statusLoanComboBox.Location = new System.Drawing.Point(6, 294);
-            this.statusLoanComboBox.Name = "statusLoanComboBox";
-            this.statusLoanComboBox.Size = new System.Drawing.Size(256, 25);
-            this.statusLoanComboBox.TabIndex = 17;
+            statusLoanComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            statusLoanComboBox.FormattingEnabled = true;
+            statusLoanComboBox.Location = new Point(7, 392);
+            statusLoanComboBox.Margin = new Padding(3, 4, 3, 4);
+            statusLoanComboBox.Name = "statusLoanComboBox";
+            statusLoanComboBox.Size = new Size(292, 29);
+            statusLoanComboBox.TabIndex = 17;
             // 
             // actualReturnDateTimePicker
             // 
-            this.actualReturnDateTimePicker.Location = new System.Drawing.Point(6, 207);
-            this.actualReturnDateTimePicker.Name = "actualReturnDateTimePicker";
-            this.actualReturnDateTimePicker.Size = new System.Drawing.Size(255, 25);
-            this.actualReturnDateTimePicker.TabIndex = 16;
+            actualReturnDateTimePicker.Location = new Point(7, 276);
+            actualReturnDateTimePicker.Margin = new Padding(3, 4, 3, 4);
+            actualReturnDateTimePicker.Name = "actualReturnDateTimePicker";
+            actualReturnDateTimePicker.Size = new Size(291, 29);
+            actualReturnDateTimePicker.TabIndex = 16;
             // 
             // actualReturnDateLabel
             // 
-            this.actualReturnDateLabel.AutoSize = true;
-            this.actualReturnDateLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.actualReturnDateLabel.Location = new System.Drawing.Point(6, 172);
-            this.actualReturnDateLabel.Name = "actualReturnDateLabel";
-            this.actualReturnDateLabel.Size = new System.Drawing.Size(177, 20);
-            this.actualReturnDateLabel.TabIndex = 14;
-            this.actualReturnDateLabel.Text = "Fecha de devolución real:";
+            actualReturnDateLabel.AutoSize = true;
+            actualReturnDateLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            actualReturnDateLabel.Location = new Point(7, 229);
+            actualReturnDateLabel.Name = "actualReturnDateLabel";
+            actualReturnDateLabel.Size = new Size(226, 25);
+            actualReturnDateLabel.TabIndex = 14;
+            actualReturnDateLabel.Text = "Fecha de devolución real:";
             // 
             // saveReturnButton
             // 
-            this.saveReturnButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.saveReturnButton.Location = new System.Drawing.Point(141, 354);
-            this.saveReturnButton.Name = "saveReturnButton";
-            this.saveReturnButton.Size = new System.Drawing.Size(85, 32);
-            this.saveReturnButton.TabIndex = 13;
-            this.saveReturnButton.Text = "Guardar";
-            this.saveReturnButton.UseVisualStyleBackColor = true;
-            this.saveReturnButton.Click += new System.EventHandler(this.saveReturnButton_Click);
+            saveReturnButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            saveReturnButton.Location = new Point(161, 472);
+            saveReturnButton.Margin = new Padding(3, 4, 3, 4);
+            saveReturnButton.Name = "saveReturnButton";
+            saveReturnButton.Size = new Size(97, 43);
+            saveReturnButton.TabIndex = 13;
+            saveReturnButton.Text = "Guardar";
+            saveReturnButton.UseVisualStyleBackColor = true;
+            saveReturnButton.Click += saveReturnButton_Click;
             // 
             // loanLabel
             // 
-            this.loanLabel.AutoSize = true;
-            this.loanLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.loanLabel.Location = new System.Drawing.Point(6, 34);
-            this.loanLabel.Name = "loanLabel";
-            this.loanLabel.Size = new System.Drawing.Size(119, 20);
-            this.loanLabel.TabIndex = 0;
-            this.loanLabel.Text = "Libro a devolver:";
+            loanLabel.AutoSize = true;
+            loanLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            loanLabel.Location = new Point(7, 45);
+            loanLabel.Name = "loanLabel";
+            loanLabel.Size = new Size(151, 25);
+            loanLabel.TabIndex = 0;
+            loanLabel.Text = "Libro a devolver:";
             // 
             // AuthorTabPage
             // 
-            this.AuthorTabPage.Controls.Add(this.label6);
-            this.AuthorTabPage.Controls.Add(this.groupBox2);
-            this.AuthorTabPage.Controls.Add(this.AutoresDataGridView);
-            this.AuthorTabPage.Controls.Add(this.groupBox1);
-            this.AuthorTabPage.Location = new System.Drawing.Point(4, 30);
-            this.AuthorTabPage.Name = "AuthorTabPage";
-            this.AuthorTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.AuthorTabPage.Size = new System.Drawing.Size(831, 493);
-            this.AuthorTabPage.TabIndex = 3;
-            this.AuthorTabPage.Text = "Autores";
-            this.AuthorTabPage.UseVisualStyleBackColor = true;
+            AuthorTabPage.Controls.Add(label6);
+            AuthorTabPage.Controls.Add(groupBox2);
+            AuthorTabPage.Controls.Add(AutoresDataGridView);
+            AuthorTabPage.Controls.Add(groupBox1);
+            AuthorTabPage.Location = new Point(4, 37);
+            AuthorTabPage.Margin = new Padding(3, 4, 3, 4);
+            AuthorTabPage.Name = "AuthorTabPage";
+            AuthorTabPage.Padding = new Padding(3, 4, 3, 4);
+            AuthorTabPage.Size = new Size(951, 662);
+            AuthorTabPage.TabIndex = 3;
+            AuthorTabPage.Text = "Autores";
+            AuthorTabPage.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(286, 17);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(211, 21);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Administración de autores";
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(327, 23);
+            label6.Name = "label6";
+            label6.Size = new Size(262, 28);
+            label6.TabIndex = 10;
+            label6.Text = "Administración de autores";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.UpdateAuthorButton);
-            this.groupBox2.Controls.Add(this.DeleteAuthor);
-            this.groupBox2.Location = new System.Drawing.Point(6, 385);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(424, 93);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
+            groupBox2.Controls.Add(UpdateAuthorButton);
+            groupBox2.Controls.Add(DeleteAuthor);
+            groupBox2.Location = new Point(7, 513);
+            groupBox2.Margin = new Padding(3, 4, 3, 4);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Padding = new Padding(3, 4, 3, 4);
+            groupBox2.Size = new Size(485, 124);
+            groupBox2.TabIndex = 5;
+            groupBox2.TabStop = false;
             // 
             // UpdateAuthorButton
             // 
-            this.UpdateAuthorButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.UpdateAuthorButton.Location = new System.Drawing.Point(32, 39);
-            this.UpdateAuthorButton.Name = "UpdateAuthorButton";
-            this.UpdateAuthorButton.Size = new System.Drawing.Size(85, 32);
-            this.UpdateAuthorButton.TabIndex = 16;
-            this.UpdateAuthorButton.Text = "Editar";
-            this.UpdateAuthorButton.UseVisualStyleBackColor = true;
-            this.UpdateAuthorButton.Click += new System.EventHandler(this.UpdateAuthorButton_Click);
+            UpdateAuthorButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            UpdateAuthorButton.Location = new Point(37, 52);
+            UpdateAuthorButton.Margin = new Padding(3, 4, 3, 4);
+            UpdateAuthorButton.Name = "UpdateAuthorButton";
+            UpdateAuthorButton.Size = new Size(97, 43);
+            UpdateAuthorButton.TabIndex = 16;
+            UpdateAuthorButton.Text = "Editar";
+            UpdateAuthorButton.UseVisualStyleBackColor = true;
+            UpdateAuthorButton.Click += UpdateAuthorButton_Click;
             // 
             // DeleteAuthor
             // 
-            this.DeleteAuthor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DeleteAuthor.Location = new System.Drawing.Point(246, 39);
-            this.DeleteAuthor.Name = "DeleteAuthor";
-            this.DeleteAuthor.Size = new System.Drawing.Size(85, 32);
-            this.DeleteAuthor.TabIndex = 15;
-            this.DeleteAuthor.Text = "Eliminar";
-            this.DeleteAuthor.UseVisualStyleBackColor = true;
-            this.DeleteAuthor.Click += new System.EventHandler(this.DeleteAuthor_Click);
+            DeleteAuthor.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            DeleteAuthor.Location = new Point(281, 52);
+            DeleteAuthor.Margin = new Padding(3, 4, 3, 4);
+            DeleteAuthor.Name = "DeleteAuthor";
+            DeleteAuthor.Size = new Size(97, 43);
+            DeleteAuthor.TabIndex = 15;
+            DeleteAuthor.Text = "Eliminar";
+            DeleteAuthor.UseVisualStyleBackColor = true;
+            DeleteAuthor.Click += DeleteAuthor_Click;
             // 
             // AutoresDataGridView
             // 
-            this.AutoresDataGridView.AllowUserToAddRows = false;
-            this.AutoresDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AutoresDataGridView.Location = new System.Drawing.Point(6, 50);
-            this.AutoresDataGridView.Name = "AutoresDataGridView";
-            this.AutoresDataGridView.RowTemplate.Height = 25;
-            this.AutoresDataGridView.Size = new System.Drawing.Size(424, 329);
-            this.AutoresDataGridView.TabIndex = 4;
+            AutoresDataGridView.AllowUserToAddRows = false;
+            AutoresDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            AutoresDataGridView.Location = new Point(7, 67);
+            AutoresDataGridView.Margin = new Padding(3, 4, 3, 4);
+            AutoresDataGridView.Name = "AutoresDataGridView";
+            AutoresDataGridView.RowHeadersWidth = 51;
+            AutoresDataGridView.RowTemplate.Height = 25;
+            AutoresDataGridView.Size = new Size(485, 439);
+            AutoresDataGridView.TabIndex = 4;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.authorLastNameTextBox);
-            this.groupBox1.Controls.Add(this.SaveAuthorButton);
-            this.groupBox1.Controls.Add(this.authorFirstNameTextBox);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(465, 50);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(360, 329);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
+            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(authorLastNameTextBox);
+            groupBox1.Controls.Add(SaveAuthorButton);
+            groupBox1.Controls.Add(authorFirstNameTextBox);
+            groupBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox1.Location = new Point(531, 67);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(411, 439);
+            groupBox1.TabIndex = 1;
+            groupBox1.TabStop = false;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 93);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 17);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Apellido";
+            label5.AutoSize = true;
+            label5.Location = new Point(7, 124);
+            label5.Name = "label5";
+            label5.Size = new Size(72, 23);
+            label5.TabIndex = 17;
+            label5.Text = "Apellido";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(5, 37);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 17);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Nombre";
+            label4.AutoSize = true;
+            label4.Location = new Point(6, 49);
+            label4.Name = "label4";
+            label4.Size = new Size(73, 23);
+            label4.TabIndex = 16;
+            label4.Text = "Nombre";
             // 
             // authorLastNameTextBox
             // 
-            this.authorLastNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.authorLastNameTextBox.Location = new System.Drawing.Point(77, 93);
-            this.authorLastNameTextBox.Name = "authorLastNameTextBox";
-            this.authorLastNameTextBox.PlaceholderText = "Glukhovsky";
-            this.authorLastNameTextBox.Size = new System.Drawing.Size(256, 25);
-            this.authorLastNameTextBox.TabIndex = 15;
+            authorLastNameTextBox.BorderStyle = BorderStyle.FixedSingle;
+            authorLastNameTextBox.Location = new Point(88, 124);
+            authorLastNameTextBox.Margin = new Padding(3, 4, 3, 4);
+            authorLastNameTextBox.Name = "authorLastNameTextBox";
+            authorLastNameTextBox.PlaceholderText = "Glukhovsky";
+            authorLastNameTextBox.Size = new Size(292, 29);
+            authorLastNameTextBox.TabIndex = 15;
             // 
             // SaveAuthorButton
             // 
-            this.SaveAuthorButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SaveAuthorButton.Location = new System.Drawing.Point(132, 278);
-            this.SaveAuthorButton.Name = "SaveAuthorButton";
-            this.SaveAuthorButton.Size = new System.Drawing.Size(85, 32);
-            this.SaveAuthorButton.TabIndex = 13;
-            this.SaveAuthorButton.Text = "Guardar";
-            this.SaveAuthorButton.UseVisualStyleBackColor = true;
-            this.SaveAuthorButton.Click += new System.EventHandler(this.SaveAuthorButton_Click);
+            SaveAuthorButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            SaveAuthorButton.Location = new Point(151, 371);
+            SaveAuthorButton.Margin = new Padding(3, 4, 3, 4);
+            SaveAuthorButton.Name = "SaveAuthorButton";
+            SaveAuthorButton.Size = new Size(97, 43);
+            SaveAuthorButton.TabIndex = 13;
+            SaveAuthorButton.Text = "Guardar";
+            SaveAuthorButton.UseVisualStyleBackColor = true;
+            SaveAuthorButton.Click += SaveAuthorButton_Click;
             // 
             // authorFirstNameTextBox
             // 
-            this.authorFirstNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.authorFirstNameTextBox.Location = new System.Drawing.Point(77, 35);
-            this.authorFirstNameTextBox.Name = "authorFirstNameTextBox";
-            this.authorFirstNameTextBox.PlaceholderText = "Dmitry";
-            this.authorFirstNameTextBox.Size = new System.Drawing.Size(256, 25);
-            this.authorFirstNameTextBox.TabIndex = 14;
+            authorFirstNameTextBox.BorderStyle = BorderStyle.FixedSingle;
+            authorFirstNameTextBox.Location = new Point(88, 47);
+            authorFirstNameTextBox.Margin = new Padding(3, 4, 3, 4);
+            authorFirstNameTextBox.Name = "authorFirstNameTextBox";
+            authorFirstNameTextBox.PlaceholderText = "Dmitry";
+            authorFirstNameTextBox.Size = new Size(292, 29);
+            authorFirstNameTextBox.TabIndex = 14;
             // 
             // LibraryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(863, 551);
-            this.Controls.Add(this.libraryTabControl);
-            this.Name = "LibraryForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LibraryForm";
-            this.libraryTabControl.ResumeLayout(false);
-            this.booksTabPage.ResumeLayout(false);
-            this.booksTabPage.PerformLayout();
-            this.booksButtonsGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.booksDataGridView)).EndInit();
-            this.booksGroupBox.ResumeLayout(false);
-            this.booksGroupBox.PerformLayout();
-            this.loansTabPage.ResumeLayout(false);
-            this.loansTabPage.PerformLayout();
-            this.loansButtonsGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.loansDataGridView)).EndInit();
-            this.loansGroupBox.ResumeLayout(false);
-            this.loansGroupBox.PerformLayout();
-            this.returnsTabPage.ResumeLayout(false);
-            this.returnsTabPage.PerformLayout();
-            this.returnsButtonsGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.returnsDataGridView)).EndInit();
-            this.returnsGroupBox.ResumeLayout(false);
-            this.returnsGroupBox.PerformLayout();
-            this.AuthorTabPage.ResumeLayout(false);
-            this.AuthorTabPage.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.AutoresDataGridView)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(986, 735);
+            Controls.Add(libraryTabControl);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "LibraryForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "LibraryForm";
+            libraryTabControl.ResumeLayout(false);
+            booksTabPage.ResumeLayout(false);
+            booksTabPage.PerformLayout();
+            booksButtonsGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)booksDataGridView).EndInit();
+            booksGroupBox.ResumeLayout(false);
+            booksGroupBox.PerformLayout();
+            loansTabPage.ResumeLayout(false);
+            loansTabPage.PerformLayout();
+            loansButtonsGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)loansDataGridView).EndInit();
+            loansGroupBox.ResumeLayout(false);
+            loansGroupBox.PerformLayout();
+            returnsTabPage.ResumeLayout(false);
+            returnsTabPage.PerformLayout();
+            returnsButtonsGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)returnsDataGridView).EndInit();
+            returnsGroupBox.ResumeLayout(false);
+            returnsGroupBox.PerformLayout();
+            AuthorTabPage.ResumeLayout(false);
+            AuthorTabPage.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)AutoresDataGridView).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -876,5 +953,7 @@
         private Button UpdateAuthorButton;
         private Label labelClientName;
         private Label labelLoanClient;
+        private TextBox searchBookTextBox;
+        private Label label7;
     }
 }

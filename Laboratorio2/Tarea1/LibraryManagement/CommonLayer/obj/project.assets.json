@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\jordi\\.nuget\\packages\\": {}
+    "C:\\Users\\Javie\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jordi\\OneDrive\\Escritorio\\ProgramacionOrientadaEventos\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Javie\\source\\repos\\POEVERSIONFINAL\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj",
       "projectName": "CommonLayer",
-      "projectPath": "C:\\Users\\jordi\\OneDrive\\Escritorio\\ProgramacionOrientadaEventos\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj",
-      "packagesPath": "C:\\Users\\jordi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jordi\\OneDrive\\Escritorio\\ProgramacionOrientadaEventos\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\obj\\",
+      "projectPath": "C:\\Users\\Javie\\source\\repos\\POEVERSIONFINAL\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj",
+      "packagesPath": "C:\\Users\\Javie\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Javie\\source\\repos\\POEVERSIONFINAL\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jordi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Javie\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

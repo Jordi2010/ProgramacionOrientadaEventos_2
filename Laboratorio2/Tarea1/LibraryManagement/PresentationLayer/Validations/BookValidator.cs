@@ -12,22 +12,13 @@ namespace PresentationLayer.Validations
     {
         public BookValidator() 
         {
-            
-            RuleFor(book => book.IdAuthor).NotEmpty()
-                .NotEmpty().WithMessage("El ID no puede estar vacío.")
-                .GreaterThan(0).WithMessage("El ID debe ser mayor que cero.");
-
-            RuleFor(book => book.IdStatus).NotEmpty()
-                .NotEmpty().WithMessage("El ID no puede estar vacío.")
-                .GreaterThan(0).WithMessage("El ID debe ser mayor que cero.");
-
-            RuleFor(book => book.Publisher)
-               .NotEmpty().WithMessage("Este campo no puede estar vacío.")
-               .MinimumLength(2).WithMessage("Por favor introduzca mímino 2 carácteres.");
 
             RuleFor(book => book.Title)
               .NotEmpty().WithMessage("Este campo no puede estar vacío.")
               .MinimumLength(2).WithMessage("Por favor introduzca mímino 2 carácteres.");
+
+            RuleFor(book => book.Publisher)
+               .NotEmpty().WithMessage("Este campo no puede estar vacío.");
 
             RuleFor(book => book.Isbn)
               .NotEmpty().WithMessage("Este campo no puede estar vacío.")

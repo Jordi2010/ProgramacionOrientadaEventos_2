@@ -21,6 +21,14 @@ namespace BusinessLayer.Crud
 
             return booksTable;
         }
+        public DataTable SearchBook(string search)
+        {
+            DataTable booksTable = new DataTable();
+
+            booksTable = bookData.SearchBook(search);
+
+            return booksTable;
+        }
 
         public DataTable GetBookFilter()
         {
