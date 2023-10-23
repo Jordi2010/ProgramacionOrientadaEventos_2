@@ -20,11 +20,11 @@ namespace PresentationLayer.Validations
 
             RuleFor(loan => loan.LoanDate)
                 .NotEmpty().WithMessage("Por favor, ingrese una fecha.")
-                .Must(date => date > DateTime.Now).WithMessage("Ingrese una fecha válida y no anterior a la actual.");
+                .Must(date => date >= DateTime.Today).WithMessage("Ingrese una fecha válida y no anterior a la actual.");
 
             RuleFor(loan => loan.ReturnEstimatedDate)
                 .NotEmpty().WithMessage("Por favor, ingrese una fecha.")
-                .Must(date => date.Date > DateTime.Today).WithMessage("Ingrese una fecha válida y no anterior a la actual.");
+                .Must(date => date.Date >= DateTime.Today).WithMessage("Ingrese una fecha válida y no anterior a la actual.");
         }
     }
 }
