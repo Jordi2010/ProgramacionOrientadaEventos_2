@@ -394,6 +394,11 @@ namespace PresentationLayer.Forms
                     }
                 }
                 //
+                else
+                {
+                    MessageBox.Show("La fecha de vencimiento seleccionada es mayor a 48 horas.", "Notificación de Vencimiento", MessageBoxButtons.OK);
+                }
+                //
                 if (isEditMode)
                 {
                     loan.IdBook = int.Parse(loansDataGridView.CurrentRow.Cells["idPrestamo"].Value.ToString());
@@ -418,9 +423,7 @@ namespace PresentationLayer.Forms
                     }
                     customerTextBox.Clear();
                 }
-                //
-                MessageBox.Show("La fecha de vencimiento seleccionada es mayor a 48 horas.", "Notificación de Vencimiento", MessageBoxButtons.OK);
-                //
+              
             }
 
 
