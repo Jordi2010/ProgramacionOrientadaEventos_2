@@ -381,19 +381,26 @@ namespace PresentationLayer.Forms
             else
             {
                 //
-                DateTime fechaVencimiento = loan.ReturnEstimatedDate.AddHours(-48);
-                if (fechaVencimiento <= DateTime.Now)
+                TimeSpan diferencia = loan.ReturnEstimatedDate - loan.LoanDate;
+                if (diferencia <= TimeSpan.FromHours(48))
                 {
-
-                    DialogResult result = MessageBox.Show("Tu préstamo vencerá en menos de 48 horas. ¿Deseas continuar?", "Notificación de Vencimiento", MessageBoxButtons.YesNo);
-
-                    if (result == DialogResult.No)
+                    if (diferencia == TimeSpan.FromHours(48))
                     {
-
-                        return;
+                        DialogResult result = MessageBox.Show("Tu préstamo vencerá en exactamente 48 horas. ¿Deseas continuar?", "Notificación de Vencimiento", MessageBoxButtons.YesNo);
+                        if (result == DialogResult.No)
+                        {
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("Tu préstamo vencerá en menos de 48 horas. ¿Deseas continuar?", "Notificación de Vencimiento", MessageBoxButtons.YesNo);
+                        if (result == DialogResult.No)
+                        {
+                            return;
+                        }
                     }
                 }
-                //
                 else
                 {
                     MessageBox.Show("La fecha de vencimiento seleccionada es mayor a 48 horas.", "Notificación de Vencimiento", MessageBoxButtons.OK);
