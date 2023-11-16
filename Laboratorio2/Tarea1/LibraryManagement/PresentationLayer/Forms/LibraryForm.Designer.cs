@@ -323,6 +323,7 @@
             isbnBookTextBox.PlaceholderText = "978-0-306-40615-7";
             isbnBookTextBox.Size = new Size(292, 29);
             isbnBookTextBox.TabIndex = 7;
+            isbnBookTextBox.KeyPress += isbnBookTextBox_KeyPress;
             // 
             // isbnBookLabel
             // 
@@ -342,6 +343,7 @@
             publisherBookTextBox.PlaceholderText = "Eksmo";
             publisherBookTextBox.Size = new Size(292, 29);
             publisherBookTextBox.TabIndex = 5;
+            publisherBookTextBox.KeyPress += publisherBookTextBox_KeyPress;
             // 
             // publisherBookLabel
             // 
@@ -361,6 +363,7 @@
             titleBookTextBox.PlaceholderText = "Metro 2033";
             titleBookTextBox.Size = new Size(292, 29);
             titleBookTextBox.TabIndex = 1;
+            titleBookTextBox.KeyPress += titleBookTextBox_KeyPress;
             // 
             // titleBookLabel
             // 
@@ -765,7 +768,7 @@
             DeleteAuthor.Location = new Point(281, 52);
             DeleteAuthor.Margin = new Padding(3, 4, 3, 4);
             DeleteAuthor.Name = "DeleteAuthor";
-            DeleteAuthor.Size = new Size(97, 43);
+            DeleteAuthor.Size = new Size(119, 43);
             DeleteAuthor.TabIndex = 15;
             DeleteAuthor.Text = "Eliminar";
             DeleteAuthor.UseVisualStyleBackColor = true;
@@ -823,9 +826,10 @@
             authorLastNameTextBox.Location = new Point(88, 124);
             authorLastNameTextBox.Margin = new Padding(3, 4, 3, 4);
             authorLastNameTextBox.Name = "authorLastNameTextBox";
-            authorLastNameTextBox.PlaceholderText = "Glukhovsky";
+            authorLastNameTextBox.PlaceholderText = "example: Perez";
             authorLastNameTextBox.Size = new Size(292, 29);
             authorLastNameTextBox.TabIndex = 15;
+            authorLastNameTextBox.KeyPress += authorLastNameTextBox_KeyPress;
             // 
             // SaveAuthorButton
             // 
@@ -845,9 +849,10 @@
             authorFirstNameTextBox.Location = new Point(88, 47);
             authorFirstNameTextBox.Margin = new Padding(3, 4, 3, 4);
             authorFirstNameTextBox.Name = "authorFirstNameTextBox";
-            authorFirstNameTextBox.PlaceholderText = "Dmitry";
+            authorFirstNameTextBox.PlaceholderText = "example: Juan";
             authorFirstNameTextBox.Size = new Size(292, 29);
             authorFirstNameTextBox.TabIndex = 14;
+            authorFirstNameTextBox.KeyPress += authorFirstNameTextBox_KeyPress;
             // 
             // LibraryForm
             // 

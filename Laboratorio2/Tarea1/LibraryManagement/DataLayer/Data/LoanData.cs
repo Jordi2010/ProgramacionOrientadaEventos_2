@@ -19,7 +19,7 @@ namespace DataLayer.Data
         public DataTable GetAllLoan()
         {
             _sqlCommand.Connection = _connection.OpenConnection();
-            _sqlCommand.CommandText = "select p.idPrestamo, l.nombreLibro, p.clientePrestamo,ep.estadoPrestamo, p.fechaDevolucionEstimada, p.fechaPrestamo, p.idLibro, p.idestadoPrestamo from prestamos as p\r\ninner join estadoPrestamo as ep on p.idestadoPrestamo = ep.idestadoPrestamo\r\ninner join libros as l on p.idLibro = l.idLibro";
+            _sqlCommand.CommandText = "select p.idPrestamo AS ID, l.nombreLibro AS Nombre, p.clientePrestamo AS Cliente,ep.estadoPrestamo AS Estado, p.fechaDevolucionEstimada AS Devolución, p.fechaPrestamo AS Prestó, p.idLibro AS IDL, p.idestadoPrestamo AS IDP from prestamos as p\r\ninner join estadoPrestamo as ep on p.idestadoPrestamo = ep.idestadoPrestamo\r\ninner join libros as l on p.idLibro = l.idLibro";
             _sqlCommand.CommandType = CommandType.Text;
 
             _readerRows = _sqlCommand.ExecuteReader();
@@ -33,10 +33,11 @@ namespace DataLayer.Data
         public DataTable GetClientNameByLoan(Loan loan)
         {
             _sqlCommand.Connection = _connection.OpenConnection();
-            _sqlCommand.CommandText = "SELECT p.idPrestamo, l.nombreLibro, p.clientePrestamo, ep.estadoPrestamo FROM prestamos AS p " +
-                                    "INNER JOIN estadoPrestamo AS ep ON p.idestadoPrestamo = ep.idestadoPrestamo " +
-                                    "INNER JOIN libros AS l ON p.idLibro = l.idLibro " +
-                                    "WHERE p.idPrestamo = @IdLoan";
+            _sqlCommand.CommandText = "SELECT prestamos.idPrestamo, libros.nombreLibro, prestamos.clientePrestamo, estadoPrestamo.estadoPrestamo " +
+                           "FROM prestamos " +
+                           "INNER JOIN estadoPrestamo ON prestamos.idestadoPrestamo = estadoPrestamo.idestadoPrestamo " +
+                           "INNER JOIN libros ON prestamos.idLibro = libros.idLibro " +
+                           "WHERE prestamos.idPrestamo = @IdLoan";
 
             _sqlCommand.CommandType = CommandType.Text;
 
@@ -116,7 +117,6 @@ namespace DataLayer.Data
             _connection.CloseConnection();
 
         }
-
         public void DeleteLoan(Loan loan)
         {
             try

@@ -12,7 +12,6 @@ namespace PresentationLayer.Validations
     {
         public ReturnValidator() 
         {
-
             RuleFor(reeturn => reeturn.IdLoan)
                 .NotEmpty().WithMessage("Por favor llene los campos necesarios.");
 

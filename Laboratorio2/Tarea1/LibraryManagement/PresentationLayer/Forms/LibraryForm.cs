@@ -11,8 +11,10 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Security.Policy;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PresentationLayer.Forms
 {
@@ -30,24 +32,18 @@ namespace PresentationLayer.Forms
             if (booksDataGridView.Columns.Contains("idAutor"))
                 booksDataGridView.Columns["idAutor"].Visible = false;
         }
-
         public void LoadAllData()
         {
             LoadBookData();
             LoadAutoresData();
             LoadAutoresComboBoxData();
             LoadStatusComboBoxData();
-
             LoadLoanData();
             LoadReturnData();
             LoadBookComboBoxData();
             LoadLoanComboBoxData();
             statusLoanCoamboBoxData();
-
-
         }
-
-
         private void LoadAutoresComboBoxData()
         {
             AuthorBusiness authorBusiness = new AuthorBusiness();
@@ -62,8 +58,6 @@ namespace PresentationLayer.Forms
             statusBookComboBox.DisplayMember = "EstadoLibro";
             statusBookComboBox.ValueMember = "idestadoLibro";
         }
-
-
         private void LoadLoanData()
         {
             LoanBusiness LoanBusiness = new LoanBusiness();
@@ -129,12 +123,6 @@ namespace PresentationLayer.Forms
                 }
             }
         }
-
-
-
-
-
-
         private void statusLoanCoamboBoxData()
         {
             LoanStatusBussines loanStatusBusiness = new LoanStatusBussines();
@@ -142,7 +130,6 @@ namespace PresentationLayer.Forms
             statusLoanComboBox.DisplayMember = "estadoPrestamo";
             statusLoanComboBox.ValueMember = "idestadoPrestamo";
         }
-
 
         #region Book Manager
         private void LoadBookData()
@@ -169,14 +156,15 @@ namespace PresentationLayer.Forms
             {
                 foreach (var failure in bookResults.Errors)
                 {
-                    MessageBox.Show("Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage);
+                    MessageBox.Show("La propiedad " + failure.PropertyName + " no pasó la validación. El error fué el siguiente: " + failure.ErrorMessage);
+
                 }
             }
             else
             {
                 if (isEditMode)
                 {
-                    book.IdBook = int.Parse(booksDataGridView.CurrentRow.Cells["idLibro"].Value.ToString());
+                    book.IdBook = int.Parse(booksDataGridView.CurrentRow.Cells["ID"].Value.ToString());
                     bookBusiness.UpdateBook(book);
                     isEditMode = false;
                 }
@@ -193,10 +181,10 @@ namespace PresentationLayer.Forms
         {
             if (booksDataGridView.SelectedRows.Count > 0)
             {
-                publisherBookTextBox.Text = booksDataGridView.CurrentRow.Cells["editorialLibro"].Value.ToString();
-                titleBookTextBox.Text = booksDataGridView.CurrentRow.Cells["nombreLibro"].Value.ToString();
-                isbnBookTextBox.Text = booksDataGridView.CurrentRow.Cells["isbnLibro"].Value.ToString();
-                genreBookTextBox.Text = booksDataGridView.CurrentRow.Cells["generoLibro"].Value.ToString();
+                publisherBookTextBox.Text = booksDataGridView.CurrentRow.Cells["Editorial"].Value.ToString();
+                titleBookTextBox.Text = booksDataGridView.CurrentRow.Cells["Nombre"].Value.ToString();
+                isbnBookTextBox.Text = booksDataGridView.CurrentRow.Cells["ISBN"].Value.ToString();
+                genreBookTextBox.Text = booksDataGridView.CurrentRow.Cells["Género"].Value.ToString();
                 authorBookComboBox.SelectedValue = booksDataGridView.CurrentRow.Cells["idAutor"].Value;
                 statusBookComboBox.SelectedValue = booksDataGridView.CurrentRow.Cells["idestadoLibro"].Value;
 
@@ -211,7 +199,7 @@ namespace PresentationLayer.Forms
         {
             if (booksDataGridView.SelectedRows.Count > 0)
             {
-                int bookId = int.Parse(booksDataGridView.CurrentRow.Cells["idLibro"].Value.ToString());
+                int bookId = int.Parse(booksDataGridView.CurrentRow.Cells["ID"].Value.ToString());
 
                 BookBusiness bookBusiness = new BookBusiness();
                 Book book = new Book();
@@ -258,7 +246,8 @@ namespace PresentationLayer.Forms
             {
                 foreach (var failure in authorResult.Errors)
                 {
-                    MessageBox.Show("Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage);
+                    MessageBox.Show("La propiedad " + failure.PropertyName + " no pasó la validación. El error fué el siguiente: " + failure.ErrorMessage);
+
                 }
             }
             else
@@ -278,8 +267,6 @@ namespace PresentationLayer.Forms
                 LoadAllData();
                 ClearAuthorForm();
             }
-
-
         }
         private void UpdateAuthorButton_Click(object sender, EventArgs e)
         {
@@ -313,15 +300,11 @@ namespace PresentationLayer.Forms
                 MessageBox.Show("Debe seleccionar una fila antes de eliminar");
             }
         }
-
         private void ClearAuthorForm()
         {
             authorFirstNameTextBox.Clear();
             authorLastNameTextBox.Clear();
         }
-
-
-
         #endregion
 
         #region Loan Manager
@@ -375,12 +358,12 @@ namespace PresentationLayer.Forms
             {
                 foreach (var failure in loanResults.Errors)
                 {
-                    MessageBox.Show("Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage);
+                    MessageBox.Show("La propiedad " + failure.PropertyName + " no pasó la validación. El error fué el siguiente: " + failure.ErrorMessage);
+
                 }
             }
             else
             {
-                //
                 TimeSpan diferencia = loan.ReturnEstimatedDate - loan.LoanDate;
                 if (diferencia <= TimeSpan.FromHours(48))
                 {
@@ -405,7 +388,6 @@ namespace PresentationLayer.Forms
                 {
                     MessageBox.Show("La fecha de vencimiento seleccionada es mayor a 48 horas.", "Notificación de Vencimiento", MessageBoxButtons.OK);
                 }
-                //
                 if (isEditMode)
                 {
                     loan.IdBook = int.Parse(loansDataGridView.CurrentRow.Cells["idPrestamo"].Value.ToString());
@@ -430,12 +412,8 @@ namespace PresentationLayer.Forms
                     }
                     customerTextBox.Clear();
                 }
-              
+
             }
-
-
-
-
 
             LoadLoanData();
         }
@@ -469,7 +447,7 @@ namespace PresentationLayer.Forms
                 loan.IdLoan = loanId;
 
                 loanBusiness.DeleteLoan(loan);
-                int idbook = int.Parse(loansDataGridView.CurrentRow.Cells["idLibro"].Value.ToString());
+                int idbook = int.Parse(loansDataGridView.CurrentRow.Cells["IDL"].Value.ToString());
                 book.IdBook = idbook;
                 book.IdStatus = 1;
                 bookBusiness.UpdateBookStatus(book);
@@ -480,11 +458,7 @@ namespace PresentationLayer.Forms
                 MessageBox.Show("Debe seleccionar una fila antes de eliminar");
             }
         }
-
-
         #endregion
-
-
 
         #region Return Manager
         private void saveReturnButton_Click(object sender, EventArgs e)
@@ -495,10 +469,8 @@ namespace PresentationLayer.Forms
             LoanBusiness loanBussines = new LoanBusiness();
             Loan loan = new Loan();
 
-
             Return.IdLoan = Convert.ToInt32(LoanComboBox.SelectedValue);
             Return.ActualReturnDate = actualReturnDateTimePicker.Value;
-
 
             ReturnValidator returnvalidator = new ReturnValidator();
             ValidationResult returnResults = returnvalidator.Validate(Return);
@@ -507,7 +479,8 @@ namespace PresentationLayer.Forms
             {
                 foreach (var failure in returnResults.Errors)
                 {
-                    MessageBox.Show("Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage);
+                    MessageBox.Show("La propiedad " + failure.PropertyName + " no pasó la validación. El error fué el siguiente: " + failure.ErrorMessage);
+
                 }
             }
             else
@@ -527,10 +500,6 @@ namespace PresentationLayer.Forms
 
                 }
             }
-
-
-
-
 
             LoadAllData();
         }
@@ -568,21 +537,56 @@ namespace PresentationLayer.Forms
                 MessageBox.Show("Debe seleccionar una fila antes de eliminar");
             }
         }
-
-
-
-
-
-
-
         #endregion
-
-
 
         private void searchBookTextBox_TextChanged(object sender, EventArgs e)
         {
             BookBusiness bookBusiness = new BookBusiness();
             booksDataGridView.DataSource = bookBusiness.SearchBook(searchBookTextBox.Text);
+        }
+
+        private void authorFirstNameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir solo letras y espacios, bloquear números y caracteres especiales
+            if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Esto detiene la inserción del carácter no permitido
+                MessageBox.Show("No se permiten números ni carácteres especiales.");
+            }
+        }
+        private void titleBookTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir letras, números y espacios, bloquear caracteres especiales
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten letras, números y espacios.");
+            }
+        }
+        private void publisherBookTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten letras, números y espacios.");
+            }
+        }
+        private void isbnBookTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir números, guiones y controlar que no sea un carácter de control
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '-' && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten números y guiones.");
+            }
+        }
+        private void authorLastNameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("No se permiten números ni carácteres especiales.");
+            }
         }
     }
 }

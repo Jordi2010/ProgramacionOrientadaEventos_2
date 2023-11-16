@@ -566,11 +566,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Javie\\source\\repos\\POEVERSIONFINAL\\Laboratorio2\\Tarea1\\LibraryManagement\\PresentationLayer\\PresentationLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Javie\\source\\repos\\poe-final-project\\Laboratorio2\\Tarea1\\LibraryManagement\\PresentationLayer\\PresentationLayer.csproj",
       "projectName": "PresentationLayer",
-      "projectPath": "C:\\Users\\Javie\\source\\repos\\POEVERSIONFINAL\\Laboratorio2\\Tarea1\\LibraryManagement\\PresentationLayer\\PresentationLayer.csproj",
+      "projectPath": "C:\\Users\\Javie\\source\\repos\\poe-final-project\\Laboratorio2\\Tarea1\\LibraryManagement\\PresentationLayer\\PresentationLayer.csproj",
       "packagesPath": "C:\\Users\\Javie\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Javie\\source\\repos\\POEVERSIONFINAL\\Laboratorio2\\Tarea1\\LibraryManagement\\PresentationLayer\\obj\\",
+      "outputPath": "C:\\Users\\Javie\\source\\repos\\poe-final-project\\Laboratorio2\\Tarea1\\LibraryManagement\\PresentationLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Javie\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -587,11 +587,11 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "C:\\Users\\Javie\\source\\repos\\POEVERSIONFINAL\\Laboratorio2\\Tarea1\\LibraryManagement\\BusinessLayer\\BusinessLayer.csproj": {
-              "projectPath": "C:\\Users\\Javie\\source\\repos\\POEVERSIONFINAL\\Laboratorio2\\Tarea1\\LibraryManagement\\BusinessLayer\\BusinessLayer.csproj"
+            "C:\\Users\\Javie\\source\\repos\\poe-final-project\\Laboratorio2\\Tarea1\\LibraryManagement\\BusinessLayer\\BusinessLayer.csproj": {
+              "projectPath": "C:\\Users\\Javie\\source\\repos\\poe-final-project\\Laboratorio2\\Tarea1\\LibraryManagement\\BusinessLayer\\BusinessLayer.csproj"
             },
-            "C:\\Users\\Javie\\source\\repos\\POEVERSIONFINAL\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj": {
-              "projectPath": "C:\\Users\\Javie\\source\\repos\\POEVERSIONFINAL\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj"
+            "C:\\Users\\Javie\\source\\repos\\poe-final-project\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj": {
+              "projectPath": "C:\\Users\\Javie\\source\\repos\\poe-final-project\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj"
             }
           }
         }

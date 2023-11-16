@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eH3h4MxqR19SfEeQIkLjGIz8z/XXSXGbuPdmUnmVGIiw89W7klCuNg0p0PiVx3GQc02xpumMldd5IwV7YUtXOA==",
+  "dgSpecHash": "rddBnXl9tuWG+VRimNxc0wtCtMtGOpH7HIsjtjun9sQ9ZOjyXwrGeTnaX7gF3bTgij+Nv6SBjtSqd4iLd8jCGg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Javie\\source\\repos\\POEVERSIONFINAL\\Laboratorio2\\Tarea1\\LibraryManagement\\BusinessLayer\\BusinessLayer.csproj",
+  "projectFilePath": "C:\\Users\\Javie\\source\\repos\\poe-final-project\\Laboratorio2\\Tarea1\\LibraryManagement\\BusinessLayer\\BusinessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Javie\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Javie\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

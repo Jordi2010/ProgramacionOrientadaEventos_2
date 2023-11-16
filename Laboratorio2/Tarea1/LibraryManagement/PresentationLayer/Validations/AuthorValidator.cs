@@ -12,11 +12,17 @@ namespace PresentationLayer.Validations
     {
         public AuthorValidator() 
         {
-            RuleFor(author => author.FirstName).NotEmpty()
-                .WithMessage("El nombre no puede estar vacío.");
+            RuleFor(author => author.FirstName)
+                .Cascade(CascadeMode.Stop)
+                .NotEmpty()
+                .WithMessage("El nombre no puede estar vacío.")
+                .MinimumLength(5).WithMessage("Por favor introduzca mínimo 5 carácteres.");
 
-            RuleFor(author => author.LastName).NotEmpty()
-                .WithMessage("El apellido no puede estar vacío.");
+            RuleFor(author => author.LastName)
+                .Cascade(CascadeMode.Stop)
+                .NotEmpty()
+                .WithMessage("El apellido no puede estar vacío.")
+                .MinimumLength(5).WithMessage("Por favor introduzca mínimo 5 carácteres.");
         }
     }
 }

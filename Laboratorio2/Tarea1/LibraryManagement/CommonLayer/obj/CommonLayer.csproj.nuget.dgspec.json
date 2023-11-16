@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Javie\\source\\repos\\POEVERSIONFINAL\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj": {}
+    "C:\\Users\\Javie\\source\\repos\\poe-final-project\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Javie\\source\\repos\\POEVERSIONFINAL\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj": {
+    "C:\\Users\\Javie\\source\\repos\\poe-final-project\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Javie\\source\\repos\\POEVERSIONFINAL\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Javie\\source\\repos\\poe-final-project\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj",
         "projectName": "CommonLayer",
-        "projectPath": "C:\\Users\\Javie\\source\\repos\\POEVERSIONFINAL\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj",
+        "projectPath": "C:\\Users\\Javie\\source\\repos\\poe-final-project\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\CommonLayer.csproj",
         "packagesPath": "C:\\Users\\Javie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Javie\\source\\repos\\POEVERSIONFINAL\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\obj\\",
+        "outputPath": "C:\\Users\\Javie\\source\\repos\\poe-final-project\\Laboratorio2\\Tarea1\\LibraryManagement\\CommonLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Javie\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -79,8 +79,5 @@ namespace DataLayer.Data
                 _connection.CloseConnection();
             }
         }
-
-
-
     }
 }

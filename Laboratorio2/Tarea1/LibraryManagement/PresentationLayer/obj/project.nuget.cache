@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LkIcsw6HIjLS5wIwl1kPAorRt1RZLPtlL3c5I6HsDpvShBIDI5+c7Z5864we/+7DVarFUNhtIf1F98RCn0gXLQ==",
+  "dgSpecHash": "LsYW5b/Hx5Vex6bayH9NzdajtiGvMjYFFPGBI+g88du5Xa+IqSYCpGfyyfvGRKZZlTC1mmaiLGe5+mpl+bQ8iw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Javie\\source\\repos\\POEVERSIONFINAL\\Laboratorio2\\Tarea1\\LibraryManagement\\PresentationLayer\\PresentationLayer.csproj",
+  "projectFilePath": "C:\\Users\\Javie\\source\\repos\\poe-final-project\\Laboratorio2\\Tarea1\\LibraryManagement\\PresentationLayer\\PresentationLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Javie\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",
     "C:\\Users\\Javie\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

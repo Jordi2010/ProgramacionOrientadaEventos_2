@@ -19,9 +19,10 @@ namespace DataLayer.Data
         public DataTable GetAllBook()
         {
             _sqlCommand.Connection = _connection.OpenConnection();
-            _sqlCommand.CommandText = "SELECT l.idLibro, l.editorialLibro, l.nombreLibro, l.isbnLibro, l.generoLibro, a.nombre, s.estadoLibro, l.idAutor, l.idestadoLibro " +
-                "FROM libros as l inner join autores as a on l.idAutor = a.idAutor " +
-                "inner join estadoLibro as s on l.idestadoLibro = s.idestadoLibro";
+            _sqlCommand.CommandText = "SELECT libros.idLibro AS ID, libros.editorialLibro AS Editorial, libros.nombreLibro AS Nombre, libros.isbnLibro AS ISBN, " +
+                           "libros.generoLibro AS Género, autores.nombre AS Autor, estadoLibro.estadoLibro AS Estado, libros.idAutor, libros.idestadoLibro " +
+                           "FROM libros INNER JOIN autores ON libros.idAutor = autores.idAutor " +
+                           "INNER JOIN estadoLibro ON libros.idestadoLibro = estadoLibro.idestadoLibro";
             _sqlCommand.CommandType = CommandType.Text;
 
             _readerRows = _sqlCommand.ExecuteReader();
@@ -128,10 +129,7 @@ namespace DataLayer.Data
             {
                 _sqlCommand.Parameters.Clear();
                 _connection.CloseConnection();
-
             }
-
         }
-
     }
 }

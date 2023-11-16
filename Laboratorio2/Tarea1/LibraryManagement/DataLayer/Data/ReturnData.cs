@@ -19,7 +19,7 @@ namespace DataLayer.Data
         public DataTable GetAllReturn()
         {
             _sqlCommand.Connection = _connection.OpenConnection();
-            _sqlCommand.CommandText = "select d.idDevoluciones, p.clientePrestamo, l.nombreLibro,  d.fechaDevolucionReal, d.idPrestamo from devoluciones as d\r\ninner join prestamos as p on d.idPrestamo = p.idPrestamo\r\ninner join libros as l on p.idLibro = l.idLibro";
+            _sqlCommand.CommandText = "select d.idDevoluciones AS ID, p.clientePrestamo AS Cliente, l.nombreLibro AS Nombre,  d.fechaDevolucionReal AS DevReal, d.idPrestamo AS IDP from devoluciones as d\r\ninner join prestamos as p on d.idPrestamo = p.idPrestamo\r\ninner join libros as l on p.idLibro = l.idLibro";
             _sqlCommand.CommandType = CommandType.Text;
 
             _readerRows = _sqlCommand.ExecuteReader();
@@ -29,8 +29,6 @@ namespace DataLayer.Data
 
             return booksTable;
         }
-
-     
         public void AddReturn(Return Return)
         {
             _sqlCommand.Connection = _connection.OpenConnection();
@@ -46,7 +44,6 @@ namespace DataLayer.Data
             _sqlCommand.Parameters.Clear();
             _connection.CloseConnection();
         }
-
         public void UpdateReturn(Return Return)
         {
             _sqlCommand.Connection = _connection.OpenConnection();
@@ -61,7 +58,6 @@ namespace DataLayer.Data
             _sqlCommand.Parameters.Clear();
             _connection.CloseConnection();
         }
-
         public void DeleteReturn(Return Return)
         {
             _sqlCommand.Connection = _connection.OpenConnection();
@@ -75,6 +71,4 @@ namespace DataLayer.Data
             _connection.CloseConnection();
         }
     }
-
-
 }
