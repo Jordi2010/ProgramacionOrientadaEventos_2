@@ -12,6 +12,8 @@ namespace PresentationLayer.Validations
     {
         public AuthorValidator() 
         {
+            CascadeMode = CascadeMode.Stop;
+
             RuleFor(author => author.FirstName)
                 .Cascade(CascadeMode.Stop)
                 .NotEmpty()

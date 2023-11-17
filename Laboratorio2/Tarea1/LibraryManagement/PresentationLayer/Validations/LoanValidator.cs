@@ -12,6 +12,8 @@ namespace PresentationLayer.Validations
     {
         public LoanValidator() 
         {
+            CascadeMode = CascadeMode.Stop;
+
             RuleFor(loan => loan.IdBook)
                .NotEmpty().WithMessage("No hay libros disponibles o no ha escogido ninguno.");
 

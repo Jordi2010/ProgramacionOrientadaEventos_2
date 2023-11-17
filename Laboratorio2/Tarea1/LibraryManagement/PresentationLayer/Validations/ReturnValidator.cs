@@ -12,6 +12,8 @@ namespace PresentationLayer.Validations
     {
         public ReturnValidator() 
         {
+            CascadeMode = CascadeMode.Stop;
+
             RuleFor(reeturn => reeturn.IdLoan)
                 .NotEmpty().WithMessage("Por favor llene los campos necesarios.");
 

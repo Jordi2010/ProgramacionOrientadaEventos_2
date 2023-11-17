@@ -20,9 +20,9 @@ namespace DataLayer.Data
         {
             _sqlCommand.Connection = _connection.OpenConnection();
             _sqlCommand.CommandText = "SELECT libros.idLibro AS ID, libros.editorialLibro AS Editorial, libros.nombreLibro AS Nombre, libros.isbnLibro AS ISBN, " +
-                           "libros.generoLibro AS Género, autores.nombre AS Autor, estadoLibro.estadoLibro AS Estado, libros.idAutor, libros.idestadoLibro " +
-                           "FROM libros INNER JOIN autores ON libros.idAutor = autores.idAutor " +
-                           "INNER JOIN estadoLibro ON libros.idestadoLibro = estadoLibro.idestadoLibro";
+                   "libros.generoLibro AS Género, CONCAT(autores.nombre, ' ', autores.apellido) AS Autor, estadoLibro.estadoLibro AS Estado, libros.idAutor, libros.idestadoLibro " +
+                   "FROM libros INNER JOIN autores ON libros.idAutor = autores.idAutor " +
+                   "INNER JOIN estadoLibro ON libros.idestadoLibro = estadoLibro.idestadoLibro";
             _sqlCommand.CommandType = CommandType.Text;
 
             _readerRows = _sqlCommand.ExecuteReader();

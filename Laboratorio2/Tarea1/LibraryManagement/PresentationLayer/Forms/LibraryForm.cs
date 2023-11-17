@@ -49,7 +49,7 @@ namespace PresentationLayer.Forms
             AuthorBusiness authorBusiness = new AuthorBusiness();
             authorBookComboBox.DataSource = authorBusiness.GetAuthor();
             authorBookComboBox.DisplayMember = "Nombre";
-            authorBookComboBox.ValueMember = "idAutor";
+            authorBookComboBox.ValueMember = "ID";
         }
         private void LoadStatusComboBoxData()
         {
@@ -247,7 +247,6 @@ namespace PresentationLayer.Forms
                 foreach (var failure in authorResult.Errors)
                 {
                     MessageBox.Show("La propiedad " + failure.PropertyName + " no pasó la validación. El error fué el siguiente: " + failure.ErrorMessage);
-
                 }
             }
             else
@@ -407,12 +406,10 @@ namespace PresentationLayer.Forms
                     }
                     catch (Exception ex)
                     {
-
                         MessageBox.Show("Error: " + ex.Message);
                     }
                     customerTextBox.Clear();
                 }
-
             }
 
             LoadLoanData();
@@ -480,7 +477,6 @@ namespace PresentationLayer.Forms
                 foreach (var failure in returnResults.Errors)
                 {
                     MessageBox.Show("La propiedad " + failure.PropertyName + " no pasó la validación. El error fué el siguiente: " + failure.ErrorMessage);
-
                 }
             }
             else
@@ -497,7 +493,6 @@ namespace PresentationLayer.Forms
                     loan.IdLoanStatus = Convert.ToInt32(statusLoanComboBox.SelectedValue);
                     loanBussines.UpdateStatusLoan(loan);
                     returnBusiness.AddReturn(Return);
-
                 }
             }
 
@@ -545,6 +540,7 @@ namespace PresentationLayer.Forms
             booksDataGridView.DataSource = bookBusiness.SearchBook(searchBookTextBox.Text);
         }
 
+        #region Validaciones
         private void authorFirstNameTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permitir solo letras y espacios, bloquear números y caracteres especiales
@@ -571,15 +567,6 @@ namespace PresentationLayer.Forms
                 MessageBox.Show("Solo se permiten letras, números y espacios.");
             }
         }
-        private void isbnBookTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Permitir números, guiones y controlar que no sea un carácter de control
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '-' && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-                MessageBox.Show("Solo se permiten números y guiones.");
-            }
-        }
         private void authorLastNameTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -588,5 +575,17 @@ namespace PresentationLayer.Forms
                 MessageBox.Show("No se permiten números ni carácteres especiales.");
             }
         }
+        private void isbnBookTextBox_Leave(object sender, EventArgs e)
+        {
+            string input = isbnBookTextBox.Text;
+
+            // Verificar si el texto contiene al menos un número y al menos un guion
+            if (!Regex.IsMatch(input, @"^(?=.*\d)(?=.*-).+$"))
+            {
+                MessageBox.Show("El ISBN debe contener al menos un guion.");
+                isbnBookTextBox.Text = "";
+            }
+        }
     }
 }
+#endregion

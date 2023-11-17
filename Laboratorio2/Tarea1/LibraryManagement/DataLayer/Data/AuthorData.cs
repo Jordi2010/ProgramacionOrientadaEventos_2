@@ -19,7 +19,7 @@ namespace DataLayer.Data
         public DataTable GetAllAutores()
         {
             _sqlCommand.Connection = _connection.OpenConnection();
-            _sqlCommand.CommandText = "SELECT * FROM Autores";
+            _sqlCommand.CommandText = "SELECT autores.idAutor AS ID, autores.nombre AS Nombre, autores.apellido AS Apellido FROM Autores";
             _sqlCommand.CommandType = CommandType.Text;
 
             _readerRows = _sqlCommand.ExecuteReader();

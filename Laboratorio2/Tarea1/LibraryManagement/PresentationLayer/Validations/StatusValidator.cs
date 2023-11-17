@@ -12,6 +12,8 @@ namespace PresentationLayer.Validations
     {
         public StatusValidator() 
         {
+            CascadeMode = CascadeMode.Stop;
+
             RuleFor(status => status.IdStatus)
                .Cascade(CascadeMode.Stop)
                .NotEmpty().WithMessage("El ID no puede estar vacío.")
