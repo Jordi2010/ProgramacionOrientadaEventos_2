@@ -323,7 +323,7 @@
             isbnBookTextBox.PlaceholderText = "978-0-306-40615-7";
             isbnBookTextBox.Size = new Size(292, 29);
             isbnBookTextBox.TabIndex = 7;
-            isbnBookTextBox.Leave += isbnBookTextBox_Leave;
+            isbnBookTextBox.KeyPress += isbnBookTextBox_KeyPress;
             // 
             // isbnBookLabel
             // 

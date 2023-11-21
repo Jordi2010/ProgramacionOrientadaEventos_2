@@ -25,7 +25,7 @@ namespace PresentationLayer.Validations
             RuleFor(book => book.Isbn)
                   .NotEmpty().WithMessage("Este campo no puede estar vacío.")
                   .MinimumLength(13).WithMessage("Por favor introduzca mínimo 13 caracteres.")
-                  .MaximumLength(13).WithMessage("No se permiten más de 13 caracteres.");
+                  .MaximumLength(13).WithMessage("No se permiten más de 13 carácteres.");
 
             RuleFor(book => book.Genre)
                   .NotEmpty().WithMessage("Este campo no puede estar vacío.")

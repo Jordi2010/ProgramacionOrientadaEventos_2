@@ -22,6 +22,10 @@ namespace PresentationLayer.Forms
     {
         private bool isEditMode = false;
         BookBusiness bookBusiness = new BookBusiness();
+        private string originalPublisher;
+        private string originalTitle;
+        private string originalIsbn;
+        private string originalGenre;
         public LibraryForm()
         {
             InitializeComponent();
@@ -142,10 +146,15 @@ namespace PresentationLayer.Forms
             BookBusiness bookBusiness = new BookBusiness();
             Book book = new Book();
 
-            book.Publisher = publisherBookTextBox.Text;
-            book.Title = titleBookTextBox.Text;
-            book.Isbn = isbnBookTextBox.Text;
-            book.Genre = genreBookTextBox.Text;
+            originalPublisher = publisherBookTextBox.Text;
+            originalTitle = titleBookTextBox.Text;
+            originalIsbn = isbnBookTextBox.Text;
+            originalGenre = genreBookTextBox.Text;
+
+            book.Publisher = originalPublisher;
+            book.Title = originalTitle;
+            book.Isbn = originalIsbn;
+            book.Genre = originalGenre;
             book.IdAuthor = Convert.ToInt32(authorBookComboBox.SelectedValue);
             book.IdStatus = Convert.ToInt32(statusBookComboBox.SelectedValue);
 
@@ -158,6 +167,21 @@ namespace PresentationLayer.Forms
                 {
                     MessageBox.Show("La propiedad " + failure.PropertyName + " no pasó la validación. El error fué el siguiente: " + failure.ErrorMessage);
 
+                    switch (failure.PropertyName)
+                    {
+                        case "Publisher":
+                            publisherBookTextBox.Clear();
+                            break;
+                        case "Title":
+                            titleBookTextBox.Clear();
+                            break;
+                        case "Isbn":
+                            isbnBookTextBox.Clear();
+                            break;
+                        case "Genre":
+                            genreBookTextBox.Clear();
+                            break;
+                    }
                 }
             }
             else
@@ -172,10 +196,11 @@ namespace PresentationLayer.Forms
                 {
                     bookBusiness.AddBook(book);
                 }
-            }
 
-            LoadAllData();
-            ClearBookForm();
+                // Solo limpia el formulario si la validación es exitosa y la operación se realiza correctamente
+                LoadAllData();
+                ClearBookForm();
+            }
         }
         private void editBookButton_Click(object sender, EventArgs e)
         {
@@ -575,15 +600,14 @@ namespace PresentationLayer.Forms
                 MessageBox.Show("No se permiten números ni carácteres especiales.");
             }
         }
-        private void isbnBookTextBox_Leave(object sender, EventArgs e)
+        private void isbnBookTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            string input = isbnBookTextBox.Text;
+            string input = isbnBookTextBox.Text + e.KeyChar;
 
-            // Verificar si el texto contiene al menos un número y al menos un guion
-            if (!Regex.IsMatch(input, @"^(?=.*\d)(?=.*-).+$"))
+            if ((!char.IsDigit(e.KeyChar) && e.KeyChar != '-' && !char.IsControl(e.KeyChar)) ||
+                (e.KeyChar == '-' && input.Count(c => c == '-') > 4))
             {
-                MessageBox.Show("El ISBN debe contener al menos un guion.");
-                isbnBookTextBox.Text = "";
+                e.Handled = true;
             }
         }
     }
