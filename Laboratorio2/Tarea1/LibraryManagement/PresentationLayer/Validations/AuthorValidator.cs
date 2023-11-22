@@ -16,14 +16,12 @@ namespace PresentationLayer.Validations
 
             RuleFor(author => author.FirstName)
                 .Cascade(CascadeMode.Stop)
-                .NotEmpty()
-                .WithMessage("El nombre no puede estar vacío.")
+                .NotEmpty().WithMessage("El nombre no puede estar vacío.")
                 .MaximumLength(50).WithMessage("Este campo no permite más de 50 carácteres.");
 
             RuleFor(author => author.LastName)
                 .Cascade(CascadeMode.Stop)
-                .NotEmpty()
-                .WithMessage("El apellido no puede estar vacío.")
+                .NotEmpty().WithMessage("El apellido no puede estar vacío.")
                 .MaximumLength(50).WithMessage("Este campo no permite más de 50 carácteres.");
         }
     }
